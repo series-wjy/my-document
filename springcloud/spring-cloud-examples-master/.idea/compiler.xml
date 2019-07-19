@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-producer-2 (2)" />
+        <module name="spring-cloud-eureka (3)" />
+        <module name="gateway-service-zuul-simple" />
+        <module name="spring-cloud-config-server" />
+        <module name="spring-cloud-eureka (4)" />
+        <module name="spring-cloud-consumer-hystrix-dashboard" />
+        <module name="spring-cloud-eureka (5)" />
+        <module name="spring-cloud-consumer" />
+        <module name="spring-cloud-eureka (2)" />
+        <module name="spring-cloud-consumer-node2" />
+        <module name="spring-cloud-producer (1)" />
+        <module name="hystrix-dashboard-turbine" />
+        <module name="spring-cloud-eureka (1)" />
+        <module name="spring-cloud-producer (2)" />
+        <module name="spring-cloud-producer-2 (1)" />
+        <module name="spring-cloud-config-client" />
+        <module name="spring-boot-admin-server" />
+        <module name="spring-cloud-producer (3)" />
+        <module name="spring-cloud-consumer-node1" />
+        <module name="gateway-service-zuul-eureka" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway-service-zuul-eureka" target="1.8" />
+      <module name="gateway-service-zuul-simple" target="1.8" />
+      <module name="hystrix-dashboard-turbine" target="1.8" />
+      <module name="spring-boot-admin-eureka" target="1.8" />
+      <module name="spring-boot-admin-server" target="1.8" />
+      <module name="spring-cloud-config-client" target="1.8" />
+      <module name="spring-cloud-config-server" target="1.8" />
+      <module name="spring-cloud-consumer" target="1.7" />
+      <module name="spring-cloud-consumer-hystrix-dashboard" target="1.8" />
+      <module name="spring-cloud-consumer-node1" target="1.8" />
+      <module name="spring-cloud-consumer-node2" target="1.8" />
+      <module name="spring-cloud-eureka (1)" target="1.7" />
+      <module name="spring-cloud-eureka (2)" target="1.8" />
+      <module name="spring-cloud-eureka (3)" target="1.8" />
+      <module name="spring-cloud-eureka (4)" target="1.8" />
+      <module name="spring-cloud-eureka (5)" target="1.8" />
+      <module name="spring-cloud-parent" target="1.8" />
+      <module name="spring-cloud-producer (1)" target="1.7" />
+      <module name="spring-cloud-producer (2)" target="1.8" />
+      <module name="spring-cloud-producer (3)" target="1.8" />
+      <module name="spring-cloud-producer-2 (1)" target="1.8" />
+      <module name="spring-cloud-producer-2 (2)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
