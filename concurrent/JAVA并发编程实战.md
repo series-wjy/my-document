@@ -2,7 +2,7 @@
 
 ## 并发编程思维导图
 
-![1552921772183](D:\kaikeba\wjy\concurrent\assets\1552921772183.png)
+![1552921772183](d:\data\document\concurrent\assets\1552921772183.png)
 
 ## 01、可见性、原子性和有序性问题：并发编程的Bug源头
 
@@ -10,17 +10,17 @@
 
 一个线程对共享变量的修改，另外一个线程能够立刻看到，我们称为**可见性**
 
-![1552921804991](D:\kaikeba\wjy\concurrent\assets\1552921804991.png)
+![1552921804991](d:\data\document\concurrent\assets\1552921804991.png)
 
-![1552921861547](D:\kaikeba\wjy\concurrent\assets\1552921861547.png)
+![1552921861547](d:\data\document\concurrent\assets\1552921861547.png)
 
 **源头二：线程切换带来的原子性问题**
 
 **我们把一个或者多个在CPU执行的过程中不被中断的特性称为原子性。**
 
-![1554164526207](D:\kaikeba\wjy\concurrent\1554164526207.png)
+![1554164526207](d:\data\document\concurrent\1554164526207.png)
 
-![1552921979246](D:\kaikeba\wjy\concurrent\assets\1552921979246.png)
+![1552921979246](d:\data\document\concurrent\assets\1552921979246.png)
 
 上面代码中的count +=1，至少需要三条CPU指令：
 
@@ -30,7 +30,7 @@
 
 **源头三：编译优化带来的有序性问题**
 
-![1552922102636](D:\kaikeba\wjy\concurrent\assets\1552922102636.png)
+![1552922102636](d:\data\document\concurrent\assets\1552922102636.png)
 
 **总结：**
 
@@ -44,7 +44,7 @@
 
 **happens-before：前面一个操作的结果对后续操作可见。**
 
-![1552923257940](D:\kaikeba\wjy\concurrent\assets\1552923257940.png)
+![1552923257940](d:\data\document\concurrent\assets\1552923257940.png)
 
 依据传递性依赖规则：线程A写变量v happens-before 线程B读变量v，线程A执行的X=42对线程B的读变量X可见。
 
@@ -69,17 +69,17 @@
 
 原子性问题的源头是：**线程切换。**受保护的资源和锁之间的关系应该是N:1的关系。
 
-![1552923989258](D:\kaikeba\wjy\concurrent\assets\1552923989258.png)
+![1552923989258](D:\data\document\concurrent\assets\1552923989258.png)
 
 ​								**long**类型变量在32位CPU上的写操作
 
 **同一时刻只有一个线程执行，这个条件非常重要，叫做：互斥。**
 
-![1552924098755](D:\kaikeba\wjy\concurrent\assets\1552924098755.png)
+![1552924098755](D:\data\document\concurrent\assets\1552924098755.png)
 
 我们把一段需要互斥执行的代码称为：**临界区。**
 
-![1552924162632](D:\kaikeba\wjy\concurrent\assets\1552924162632.png)
+![1552924162632](D:\data\document\concurrent\assets\1552924162632.png)
 
 **管程中的锁规则：对一个锁的解锁操作happens-before于后续对这个锁的加锁操作。**
 

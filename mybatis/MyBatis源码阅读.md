@@ -113,7 +113,7 @@ private void parseConfiguration(XNode root) {
 
 负责根据用户传递的parameterObject，动态地生成SQL语句，将信息封装到BoundSql对象中，并返回BoundSql表示动态生成的SQL语句以及相应的参数信息。
 
-![](D:\data\mybatis\assets\SqlSource.png)
+![](D:\data\document\mybatis\assets\SqlSource.png)
 
 DynamicSqlSource：封装动态SQL标签解析后的SQL语句和带有${}的语句。
 
@@ -155,11 +155,11 @@ public interface SqlSessionFactory {
 
 ### Executor接口
 
-![](D:\data\mybatis\assets\Executor.png)
+![](D:\data\document\mybatis\assets\Executor.png)
 
 ### StatementHandler接口
 
-![StatementHandler](D:\data\mybatis\assets\StatementHandler.png)
+![StatementHandler](D:\data\document\mybatis\assets\StatementHandler.png)
 
 RoutingStatementHandler：使用静态代理模式对PreparedStatementHanlder，CallableStatementHandler，SimpleStatementHandler进行访问。
 
@@ -195,6 +195,148 @@ public interface ResultSetHandler {
 
 + 解析流程：
 
-SqlSessionFactoryBuilder().build(reader)：执行完成返回SqlSessionFactory对象
+SqlSessionFactoryBuilder().build(reader)：执行完成返回SqlSessionFactory对象。
 
-+ 
+1. 初始化全局配置文件解析器，声明原始Configuration对象。
+
+   ```java
+   XMLConfigBuilder parser = new XMLConfigBuilder(reader, environment, properties);
+   ```
+
+   + 构造XPath语法解析器。
+
+     ```java
+     XPathParser parser = new XPathParser(inputStream, true, props, new XMLMapperEntityResolver());
+     ```
+
+     + 解析全局配置文件，封装为Document对象（用XPath语法解析）
+
+       ```java
+       public XPathParser(Reader reader, boolean validation, Properties variables, EntityResolver entityResolver) {
+           commonConstructor(validation, variables, entityResolver);
+           this.document = createDocument(new InputSource(reader));
+       }
+       ```
+
+   + 初始化Configuration对象，同时初始化内置类的别名
+
+     ```java
+     private XMLConfigBuilder(XPathParser parser, String environment, Properties props) {
+         super(new Configuration());
+         ......
+     }
+     
+     public Configuration() {
+         typeAliasRegistry.registerAlias("JDBC", JdbcTransactionFactory.class);
+         typeAliasRegistry.registerAlias("MANAGED", ManagedTransactionFactory.class);
+         ......
+         languageRegistry.setDefaultDriverClass(XMLLanguageDriver.class);
+         languageRegistry.register(RawLanguageDriver.class);
+       }
+     ```
+
+2. 调用XMLConfigBuilder.parse()解析全局配置文件内容，并将配置信息设置到Configuration对象。
+
+   ```java
+   public Configuration parse() {
+       if (parsed) {
+         throw new BuilderException("Each XMLConfigBuilder can only be used once.");
+       }
+       parsed = true;
+       parseConfiguration(parser.evalNode("/configuration"));
+       return configuration;
+   }
+   ```
+
+   + 调用XPathParser.evalNode()方法，通过XPath解析器，解析XML配置文件，返回XNode对象。
+
+     ```java
+     public XNode evalNode(Object root, String expression) {
+         Node node = (Node) evaluate(expression, root, XPathConstants.NODE);
+         if (node == null) {
+           return null;
+         }
+         return new XNode(this, node, variables);
+       }
+     ```
+
+   + 调用XMLConfigBuilder.parseConfiguration(XNode)解析XNode对象信息，从全局配置文件根节点开始，设置配置信息到Configuration对象
+
+     ```java
+     private void parseConfiguration(XNode root) {
+         try {
+           //issue #117 read properties first
+           propertiesElement(root.evalNode("properties"));
+           Properties settings = settingsAsProperties(root.evalNode("settings"));
+           loadCustomVfs(settings);
+           loadCustomLogImpl(settings);
+           typeAliasesElement(root.evalNode("typeAliases"));
+           pluginElement(root.evalNode("plugins"));
+           objectFactoryElement(root.evalNode("objectFactory"));
+           objectWrapperFactoryElement(root.evalNode("objectWrapperFactory"));
+           reflectorFactoryElement(root.evalNode("reflectorFactory"));
+           settingsElement(settings);
+           // read it after objectFactory and objectWrapperFactory issue #631
+           environmentsElement(root.evalNode("environments"));
+           databaseIdProviderElement(root.evalNode("databaseIdProvider"));
+           typeHandlerElement(root.evalNode("typeHandlers"));
+           // 加载映射文件
+           mapperElement(root.evalNode("mappers"));
+         } catch (Exception e) {
+           throw new BuilderException("Error parsing SQL Mapper Configuration. Cause: " + e, e);
+         }
+     }
+     ```
+
+3. 创建SqlSessionFactory接口的默认实现
+
+   ```java
+   public SqlSessionFactory build(Configuration config) {
+       return new DefaultSqlSessionFactory(config);
+   }
+   ```
+
+### 加载映射文件流程
+
++ 入口XMLConfigBuilder.mapperElement(root.evalNode("mappers"));
+
+  ```java
+  // parent=<mappers><package name="tk.mybatis.simple.mapper"/></mappers>
+  private void mapperElement(XNode parent) throws Exception {
+      if (parent != null) {
+        // 获取<mappers>标签的子标签
+        for (XNode child : parent.getChildren()) {
+          // <package>标签解析
+          if ("package".equals(child.getName())) {
+            String mapperPackage = child.getStringAttribute("name");
+            // 通过注解解析mapper配置
+            configuration.addMappers(mapperPackage);
+          } else {
+            // <mapper>标签解析
+            String resource = child.getStringAttribute("resource");
+            String url = child.getStringAttribute("url");
+            String mapperClass = child.getStringAttribute("class");
+            if (resource != null && url == null && mapperClass == null) {
+              ErrorContext.instance().resource(resource);
+              InputStream inputStream = Resources.getResourceAsStream(resource);
+              XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, resource, configuration.getSqlFragments());
+               // 解析mapper映射文件
+              mapperParser.parse();
+            } else if (resource == null && url != null && mapperClass == null) {
+              ErrorContext.instance().resource(url);
+              InputStream inputStream = Resources.getUrlAsStream(url);
+              XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, url, configuration.getSqlFragments());
+              mapperParser.parse();
+            } else if (resource == null && url == null && mapperClass != null) {
+              Class<?> mapperInterface = Resources.classForName(mapperClass);
+              configuration.addMapper(mapperInterface);
+            } else {
+              throw new BuilderException("A mapper element may only specify a url, resource or class, but not more than one.");
+            }
+          }
+        }
+      }
+    }
+  ```
+
+  
