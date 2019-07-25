@@ -44,6 +44,7 @@
     <mappers>
         <package name="tk.mybatis.simple.mapper"/>
         <!--<mapper class="" resource="" url=""></mapper>
+        <mapper resource="org/mybatis/builder/BlogMapper.xml"/>
         <mapper url="file:///var/mappers/BlogMapper.xml"/>
         <mapper class="org.mybatis.builder.BlogMapper"/>-->
     </mappers>

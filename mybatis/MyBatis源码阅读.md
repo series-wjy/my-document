@@ -298,7 +298,7 @@ SqlSessionFactoryBuilder().build(reader)：执行完成返回SqlSessionFactory�
 
 ### 加载映射文件流程
 
-+ 入口XMLConfigBuilder.mapperElement(root.evalNode("mappers"));
+- 入口XMLConfigBuilder.mapperElement(root.evalNode("mappers"));
 
   ```java
   // parent=<mappers><package name="tk.mybatis.simple.mapper"/></mappers>
@@ -328,6 +328,7 @@ SqlSessionFactoryBuilder().build(reader)：执行完成返回SqlSessionFactory�
               XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, url, configuration.getSqlFragments());
               mapperParser.parse();
             } else if (resource == null && url == null && mapperClass != null) {
+              // mapper接口解析
               Class<?> mapperInterface = Resources.classForName(mapperClass);
               configuration.addMapper(mapperInterface);
             } else {
@@ -339,4 +340,142 @@ SqlSessionFactoryBuilder().build(reader)：执行完成返回SqlSessionFactory�
     }
   ```
 
-  
+- 解析流程
+
+  解析mapper配置分为两大类，一类是通过\<package>标签配置的注解解析，一类是通过\<mapper [class|url|class]>标签配置的单个类或mapper.xml配置文件解析。
+
+1. 初始化mapper文件解析器XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, resource, configuration.getSqlFragments());
+
+   + 构造XPath语法解析器。
+
+     ```java
+     XPathParser parser = new XPathParser(inputStream, true, configuration.getVariables(), new XMLMapperEntityResolver());
+     ```
+   
+     + 解析全局配置文件，封装为Document对象（用XPath语法解析）。
+   
+       ```java
+       public XPathParser(InputStream inputStream, boolean validation, Properties variables, EntityResolver entityResolver) {  commonConstructor(validation, variables, entityResolver);  this.document = createDocument(new InputSource(inputStream));}
+       ```
+   
+   + 初始化MapperBuilderAssistant属性对象，用于构建MappedStatement对象。
+   
+     ```java
+     private XMLMapperBuilder(XPathParser parser, Configuration configuration, String resource, Map<String, XNode> sqlFragments) {
+         super(configuration);
+         this.builderAssistant = new MapperBuilderAssistant(configuration, resource);
+         this.parser = parser;
+         this.sqlFragments = sqlFragments;
+         this.resource = resource;
+     }
+     ```
+   
+2. 调用XMLMapperBuilder.parse()方法，解析mapper配置文件。
+
+   + 调用XMLMapperBuilder.configurationElement(XNode context)方法，解析mapper配置文件内容。
+
+     ```java
+     public void parse() {
+         if (!configuration.isResourceLoaded(resource)) {
+           configurationElement(parser.evalNode("/mapper"));
+           configuration.addLoadedResource(resource);
+           bindMapperForNamespace();
+         }
+     
+         parsePendingResultMaps();
+         parsePendingCacheRefs();
+         parsePendingStatements();
+       }
+     ```
+
+     + 调用XMLMapperBuilder.buildStatementFromContext(List\<XNode> list)用于构造MappedStatement对象。
+
+       ```java
+       private void configurationElement(XNode context) {
+           try {
+             String namespace = context.getStringAttribute("namespace");
+             if (namespace == null || namespace.equals("")) {
+               throw new BuilderException("Mapper's namespace cannot be empty");
+             }
+             builderAssistant.setCurrentNamespace(namespace);
+             cacheRefElement(context.evalNode("cache-ref"));
+             cacheElement(context.evalNode("cache"));
+             parameterMapElement(context.evalNodes("/mapper/parameterMap"));
+             resultMapElements(context.evalNodes("/mapper/resultMap"));
+             sqlElement(context.evalNodes("/mapper/sql"));
+             buildStatementFromContext(context.evalNodes("select|insert|update|delete"));
+           } catch (Exception e) {
+             throw new BuilderException("Error parsing Mapper XML. The XML location is '" + resource + "'. Cause: " + e, e);
+           }
+         }
+       ```
+
+       + 循环mapper配置SQL语句节点信息，初始化为XMLStatementBuilder对象，用于创建对应的MappedStatement对象。
+
+         ```java
+         private void buildStatementFromContext(List<XNode> list, String requiredDatabaseId) {
+             for (XNode context : list) {
+               final XMLStatementBuilder statementParser = new XMLStatementBuilder(configuration, builderAssistant, context, requiredDatabaseId);
+               try {
+                 statementParser.parseStatementNode();
+               } catch (IncompleteElementException e) {
+                 configuration.addIncompleteStatement(statementParser);
+               }
+             }
+         }
+         ```
+
+         + 调用XMLStatementBuilder.parseStatementNode()生成MappedStatement对象。
+
+           ```java
+           public void parseStatementNode() {
+               .......
+               builderAssistant.addMappedStatement(id, sqlSource, statementType, sqlCommandType,
+                       fetchSize, timeout, parameterMap, parameterTypeClass, resultMap, resultTypeClass,
+                       resultSetTypeEnum, flushCache, useCache, resultOrdered,
+                       keyGenerator, keyProperty, keyColumn, databaseId, langDriver, resultSets);
+           }
+           ```
+
+           
+
+           + 调用MapperBuilderAssistant.addMappedStatement(...)方法生成MappedStatement对象，并将生成的MappedStatement对象设置到Configuration对象中。
+
+             ```java
+             public MappedStatement addMappedStatement(...) {
+                 ......
+                 MappedStatement.Builder statementBuilder = new MappedStatement.Builder(configuration, id, sqlSource, sqlCommandType)
+                     .resource(resource)
+                     .fetchSize(fetchSize)
+                     .timeout(timeout)
+                     .statementType(statementType)
+                     .keyGenerator(keyGenerator)
+                     .keyProperty(keyProperty)
+                     .keyColumn(keyColumn)
+                     .databaseId(databaseId)
+                     .lang(lang)
+                     .resultOrdered(resultOrdered)
+                     .resultSets(resultSets)
+                     .resultMaps(getStatementResultMaps(resultMap, resultType, id))
+                     .resultSetType(resultSetType)
+                     .flushCacheRequired(valueOrDefault(flushCache, !isSelect))
+                     .useCache(valueOrDefault(useCache, isSelect))
+                     .cache(currentCache);
+             
+                 ParameterMap statementParameterMap = getStatementParameterMap(parameterMap, parameterType, id);
+                 if (statementParameterMap != null) {
+                   statementBuilder.parameterMap(statementParameterMap);
+                 }
+             
+                 MappedStatement statement = statementBuilder.build();
+                 configuration.addMappedStatement(statement);
+             }
+             ```
+
+### SQL解析流程
+
++ 入口
+
+  XMLLanguageDriver.createSqlSource(configuration, context, parameterTypeClass);
+
++ 解析流程
