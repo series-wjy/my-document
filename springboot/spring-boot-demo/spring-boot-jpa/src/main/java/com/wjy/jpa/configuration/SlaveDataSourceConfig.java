@@ -29,11 +29,13 @@ public class SlaveDataSourceConfig {
     @Qualifier("slave")
     private DataSource dataSource;
     @Autowired
-    private JpaProperties jpaProperties;
+    @Qualifier("vendorProperties")
+    private Map<String, Object> vendorProperties;
+
     @Bean("entityManagerFactorySlave")
     public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean(EntityManagerFactoryBuilder builder) {
         return builder.dataSource(dataSource)
-                .properties(getVendorProperties())
+                .properties(vendorProperties)
                 .packages("com.wjy.jpa")
                 .build();
     }
@@ -47,9 +49,5 @@ public class SlaveDataSourceConfig {
     @Bean("transactionManagerSlave")
     public PlatformTransactionManager transactionManager(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(localContainerEntityManagerFactoryBean(builder).getObject());
-    }
-
-    private Map getVendorProperties() {
-        return jpaProperties.getProperties();
     }
 }

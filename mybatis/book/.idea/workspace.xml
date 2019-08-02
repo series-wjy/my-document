@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3fbc9bd-63ad-4256-b24a-4f53a16a047d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../MyBatis源码阅读.md" beforeDir="false" afterPath="$PROJECT_DIR$/../MyBatis源码阅读.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/datasource/DataSource1Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/datasource/DataSource2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/enums/UserSexEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/mapper/test1/User1Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/mapper/test2/User2Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/java/com/wjy/mybatis/web/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-mybatis/src/main/resources/mybatis-generator/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_3.xml" afterDir="false" />
@@ -83,9 +92,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_8_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_8_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-all/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-all/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-all/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/simple-all/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis-spring-boot/mybatis-spring-boot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-spring-boot/mybatis-spring-boot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-jpa/src/main/java/com/wjy/jpa/configuration/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-jpa/src/main/java/com/wjy/jpa/configuration/DataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-jpa/src/main/java/com/wjy/jpa/configuration/MasterDataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-jpa/src/main/java/com/wjy/jpa/configuration/MasterDataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-jpa/src/main/java/com/wjy/jpa/configuration/SlaveDataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-jpa/src/main/java/com/wjy/jpa/configuration/SlaveDataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/spring-boot-web/pom.xml" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/mybatis-spring/target/" />
+    <ignored path="$PROJECT_DIR$/simple-all/target/" />
+    <ignored path="$PROJECT_DIR$/mybatis-spring-boot/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +128,85 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple-all/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/SqlSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4335">
+              <caret line="275" column="8" selection-start-line="275" selection-start-column="8" selection-end-line="275" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3859">
+              <caret line="290" column="32" selection-start-line="290" selection-start-column="32" selection-end-line="290" selection-end-column="32" />
+              <folding>
+                <element signature="e#8908#8909#0" expanded="true" />
+                <element signature="e#8960#8961#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/Configuration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8466">
+              <caret line="762" column="30" lean-forward="true" selection-start-line="762" selection-start-column="30" selection-end-line="762" selection-end-column="30" />
+              <folding>
+                <element signature="e#25357#25358#0" expanded="true" />
+                <element signature="e#25416#25417#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/binding/MapperRegistry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/binding/MapperProxyFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple-all/src/test/java/tk/mybatis/simple/mapper/BaseMapperTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+              <folding>
+                <element signature="e#775#776#0" expanded="true" />
+                <element signature="e#820#821#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -126,8 +224,39 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
   <component name="ProjectId" id="1OpKzkS9xq503azhC85nKEP63pQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="simple-all" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -257,8 +386,53 @@
       <workItem from="1564362192587" duration="405000" />
       <workItem from="1564669366230" duration="521000" />
       <workItem from="1564669931291" duration="5689000" />
+      <workItem from="1564724937028" duration="726000" />
+      <workItem from="1564729759203" duration="3000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="729000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CheckStyle" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="RestServices" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -269,8 +443,28 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -287,34 +481,40 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/builder/xml/XMLStatementBuilder.java</url>
           <line>95</line>
+          <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <condition expression="parameterType != null" language="JAVA" />
           <url>jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/builder/xml/XMLStatementBuilder.java</url>
           <line>75</line>
+          <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <condition expression="id.equals(&quot;insert&quot;);" language="JAVA" />
           <url>jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/builder/xml/XMLStatementBuilder.java</url>
           <line>85</line>
+          <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://E:/maven/mvnlib/org/mybatis/mybatis/3.5.1/mybatis-3.5.1.jar!/org/apache/ibatis/scripting/defaults/RawLanguageDriver.class</url>
           <line>18</line>
+          <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <condition expression="parameterType!=null" language="JAVA" />
           <url>jar://E:/maven/mvnlib/org/mybatis/mybatis/3.5.1/mybatis-3.5.1.jar!/org/apache/ibatis/scripting/xmltags/XMLLanguageDriver.class</url>
           <line>29</line>
+          <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://E:/maven/mvnlib/org/mybatis/mybatis/3.5.1/mybatis-3.5.1.jar!/org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.class</url>
           <line>51</line>
+          <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
@@ -323,6 +523,83 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/simple-all/src/test/java/tk/mybatis/simple/SimpleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/SqlSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple-all/src/test/java/tk/mybatis/simple/mapper/UserMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/SqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4335">
+          <caret line="275" column="8" selection-start-line="275" selection-start-column="8" selection-end-line="275" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3859">
+          <caret line="290" column="32" selection-start-line="290" selection-start-column="32" selection-end-line="290" selection-end-column="32" />
+          <folding>
+            <element signature="e#8908#8909#0" expanded="true" />
+            <element signature="e#8960#8961#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/session/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8466">
+          <caret line="762" column="30" lean-forward="true" selection-start-line="762" selection-start-column="30" selection-end-line="762" selection-end-column="30" />
+          <folding>
+            <element signature="e#25357#25358#0" expanded="true" />
+            <element signature="e#25416#25417#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/binding/MapperRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple-all/src/test/java/tk/mybatis/simple/mapper/BaseMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.1/mybatis-3.5.1-sources.jar!/org/apache/ibatis/binding/MapperProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

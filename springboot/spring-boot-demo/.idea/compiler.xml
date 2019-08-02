@@ -6,16 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-simple" />
-        <module name="spring-boot-jpa" />
-        <module name="spring-boot-web" />
         <module name="spring-boot-redis" />
+        <module name="spring-boot-simple" />
+        <module name="spring-boot-mybatis" />
+        <module name="spring-boot-web" />
+        <module name="spring-boot-jpa" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-boot-jpa" options="-parameters" />
+      <module name="spring-boot-mybatis" options="-parameters" />
       <module name="spring-boot-redis" options="-parameters" />
       <module name="spring-boot-simple" options="-parameters" />
       <module name="spring-boot-web" options="-parameters" />
