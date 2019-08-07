@@ -12,6 +12,7 @@
         <module name="spring-boot-schedule" />
         <module name="spring-boot-mail" />
         <module name="spring-boot-web" />
+        <module name="spring-boot-jpa-thymeleaf" />
         <module name="spring-boot-redis" />
         <module name="spring-boot-shiro" />
       </profile>
@@ -20,6 +21,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-boot-jpa" options="-parameters" />
+      <module name="spring-boot-jpa-thymeleaf" options="-parameters" />
       <module name="spring-boot-mail" options="-parameters" />
       <module name="spring-boot-mybatis" options="-parameters" />
       <module name="spring-boot-redis" options="-parameters" />
