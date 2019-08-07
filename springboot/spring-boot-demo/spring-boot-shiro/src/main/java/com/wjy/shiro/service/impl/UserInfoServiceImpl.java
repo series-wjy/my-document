@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 @Service
-@Transactional
 public class UserInfoServiceImpl implements UserInfoService {
     @Resource
     private UserInfoDao userInfoDao;
@@ -18,6 +17,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     public UserInfo findByUsername(String username) {
         System.out.println("UserInfoServiceImpl.findByUsername()");
         UserInfo userInfo = userInfoDao.findByUsername(username);
+        System.out.println("----->>userInfo="+userInfo);
         return userInfo;
     }
 }

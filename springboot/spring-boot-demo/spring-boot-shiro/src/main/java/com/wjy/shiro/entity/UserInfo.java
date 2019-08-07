@@ -1,7 +1,9 @@
 package com.wjy.shiro.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @Entity
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class UserInfo implements Serializable {
     @Id
     @GeneratedValue
@@ -25,7 +28,9 @@ public class UserInfo implements Serializable {
     private String password; //密码;
     private String salt;//加密密码的盐
     private byte state;//用户状态,0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 , 1:正常状态,2：用户被锁定.
-    @ManyToMany(fetch= FetchType.EAGER)//立即从数据库中进行加载数据;
+
+    @ManyToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL)//立即从数据库中进行加载数据;
+    @JsonIgnoreProperties("userInfos")
     @JoinTable(name = "SysUserRole", joinColumns = { @JoinColumn(name = "uid") }, inverseJoinColumns ={@JoinColumn(name = "roleId") })
     private List<SysRole> roleList;// 一个用户具有多个角色
 
@@ -38,4 +43,9 @@ public class UserInfo implements Serializable {
         return this.username+this.salt;
     }
     // 省略 get set 方法
+    public String toString() {
+        return "UserInfo(uid=" + this.getUid() + ", username=" + this.getUsername() + ", name=" +
+                this.getName() + ", password=" + this.getPassword() + ", salt=" + this.getSalt() +
+                ", state=" + this.getState() + ")";
+    }
  }
