@@ -36,7 +36,7 @@ public class UserController {
     @RequestMapping("/add")
     public String add(User user) {
         userService.save(user);
-        System.out.printf("测试jenkins");
+        System.out.printf("测试jenkins1");
         return "redirect:/list";
     }
 
