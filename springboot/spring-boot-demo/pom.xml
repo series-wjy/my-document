@@ -13,6 +13,8 @@
         <module>spring-boot-simple</module>
         <module>spring-boot-web</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-jpa</module>
+        <module>spring-boot-mybatis</module>
     </modules>
 
     <parent>

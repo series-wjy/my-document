@@ -29,8 +29,10 @@ public class MasterDataSourceConfig {
     @Autowired
     @Qualifier("master")
     private DataSource dataSourceMaster;
+
     @Autowired
-    private JpaProperties jpaProperties;
+    @Qualifier("vendorProperties")
+    private Map<String, Object> vendorProperties;
 
     @Bean("entityManagerMaster")
     @Primary
@@ -41,15 +43,12 @@ public class MasterDataSourceConfig {
     @Primary
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(EntityManagerFactoryBuilder builder) {
         return builder.dataSource(dataSourceMaster)
-                .properties(getVendorProperties())
+                .properties(vendorProperties)
                 .packages("com.wjy.jpa")
                 //持久化单元名称，当存在多个EntityManagerFactory时，需要制定此名称
                 .persistenceUnit("masterPersistenceUnit")
                 .build();
 
-    }
-    private Map getVendorProperties() {
-        return jpaProperties.getProperties();
     }
     @Bean("transactionManagerMaster")
     @Primary

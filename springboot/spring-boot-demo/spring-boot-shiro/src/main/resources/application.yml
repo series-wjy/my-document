@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.56.15:3306/test
+    username: root
+    password: ouyang
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        enable_lazy_load_no_trans: true
+    open-in-view: true #将jpa的session绑定到整个线程的Servlet过滤器，处理请求
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    prefix: classpath:/pages/
+#日志配置
+logging:
+  path: e:/user/local/log
+  level:
+    root: info
+    com.favorites: DEBUG
+    org.springframework.web: info
+    org.hibernate: info

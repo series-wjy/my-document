@@ -120,3 +120,8 @@ compression.type：启用指定类型的压缩算法
 7. 确保replication.factor>min.insync.repicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作，降低了系统的可用性。推荐设置replication.factor=min.insync.repicas+1。
 8. Consumer端参数，设置enable.auto.commit=false。确保消息消费完成再提交，并采用手动提交位移的方式。这对于**单Consumer、多线程处理的场景至关重要**。
 
+## 客户端实践及原理剖析
+
+## 深入kafka内核
+
+## 管理与监控

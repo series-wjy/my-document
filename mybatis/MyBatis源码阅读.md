@@ -480,4 +480,116 @@ SqlSessionFactoryBuilder().build(reader)：执行完成返回SqlSessionFactory�
 
 + 解析流程
 
+  ```java
+  public SqlSource createSqlSource(Configuration configuration, XNode script, Class<?> parameterType) {
+      XMLScriptBuilder builder = new XMLScriptBuilder(configuration, script, parameterType);
+      return builder.parseScriptNode();
+  }
+  ```
+  
+  1. 构造XMLScriptBuilder对象，初始化动态SQL节点处理器集合。
+  
+     ```java
+     private void initNodeHandlerMap() {
+         nodeHandlerMap.put("trim", new TrimHandler());
+         nodeHandlerMap.put("where", new WhereHandler());
+         nodeHandlerMap.put("set", new SetHandler());
+         nodeHandlerMap.put("foreach", new ForEachHandler());
+         nodeHandlerMap.put("if", new IfHandler());
+         nodeHandlerMap.put("choose", new ChooseHandler());
+         nodeHandlerMap.put("when", new IfHandler());
+         nodeHandlerMap.put("otherwise", new OtherwiseHandler());
+         nodeHandlerMap.put("bind", new BindHandler());
+     }
+     ```
+  
+  2. 调用XMLScriptBuilder.parseScriptNode()方法解析SQL语句配置文件
+  
+     ```java
+     public SqlSource parseScriptNode() {
+         MixedSqlNode rootSqlNode = parseDynamicTags(context);
+         SqlSource sqlSource;
+         if (isDynamic) {
+           sqlSource = new DynamicSqlSource(configuration, rootSqlNode);
+         } else {
+           sqlSource = new RawSqlSource(configuration, rootSqlNode, parameterType);
+         }
+         return sqlSource;
+     }
+     ```
+  
+     + 解析动态标签，最终返回SqlSource对象
+  
+       ```java
+       protected MixedSqlNode parseDynamicTags(XNode node) {
+           List<SqlNode> contents = new ArrayList<>();
+           NodeList children = node.getNode().getChildNodes();
+           for (int i = 0; i < children.getLength(); i++) {
+             ......
+           }
+           return new MixedSqlNode(contents);
+         }
+       ```
+  
+       
+
+### 获取mapper代理对象流程
+
++ 入口
+
+  SqlSession.getMapper(Class\<T> type);
+
++ 解析流程
+
+  调用DefaultSqlSession.getMapper(Class\<T> type)获取mapper代理对象。
+
+  ```java
+  public <T> T getMapper(Class<T> type) {
+      return configuration.getMapper(type, this);
+  }
+  ```
+
+  最终调用Configuration.getMapper(type, this)方法，获取mapper代理对象，将当前SqlSession对象和mapper代理对象绑定到一起。
+
+  ```java
+  public <T> T getMapper(Class<T> type, SqlSession sqlSession) {
+      return mapperRegistry.getMapper(type, sqlSession);
+  }
+  ```
+
+  MapperRegistry类有两大属性Configuration和所有的mapper类型接口Map<Class\<?>, MapperProxyFactory<?>> knownMappers，调用MapperRegistry.getMapper(Class\<T> type, SqlSession sqlSession)方法，生成mapper代理对象。
+
+  ```java
+  public <T> T getMapper(Class<T> type, SqlSession sqlSession) {
+      final MapperProxyFactory<T> mapperProxyFactory = (MapperProxyFactory<T>) knownMappers.get(type);
+      if (mapperProxyFactory == null) {
+        throw new BindingException("Type " + type + " is not known to the MapperRegistry.");
+      }
+      try {
+        return mapperProxyFactory.newInstance(sqlSession);
+      } catch (Exception e) {
+        throw new BindingException("Error getting mapper instance. Cause: " + e, e);
+      }
+  }
+  ```
+
+  每一个mapper接口都有一个对应的MapperProxyFactory与之对应。最终根据动态代理生成mapper代理类对象。
+
+  ```java
+  public class MapperProxyFactory<T> {
+    private final Class<T> mapperInterface;
+    private final Map<Method, MapperMethod> methodCache = new ConcurrentHashMap<>();
+  
+    @SuppressWarnings("unchecked")
+    protected T newInstance(MapperProxy<T> mapperProxy) {
+      return (T) Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[] { mapperInterface }, mapperProxy);
+    }
+  
+    public T newInstance(SqlSession sqlSession) {
+      final MapperProxy<T> mapperProxy = new MapperProxy<>(sqlSession, mapperInterface, methodCache);
+      return newInstance(mapperProxy);
+    }
+  }
+  ```
+
   
