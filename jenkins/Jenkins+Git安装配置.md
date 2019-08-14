@@ -154,6 +154,8 @@ Passphrase 不用设置，Path to key 写上生成的ssh路径：`/root/.ssh/id_
 
 ## 二、配置Github
 
+Github配置和Gitlab配置大同小异，只是Github的webhook需要Jenkins服务器提供外网IP地址配置，其他配置和Gitlab没有什么大的区别。
+
 ## 三、Gitlab私服配置
 
 GitLab的官方网站关于安装gitlab的介绍页面如下： https://about.gitlab.com/installation/ 
@@ -306,7 +308,7 @@ GitLab的官方网站关于安装gitlab的介绍页面如下： https://about.gi
 
 配置构建后触发动作。
 
-![1565764391388](D:\data\document\jenkins\assets\1565764391388.png)
+![1565772546874](D:\data\document\jenkins\assets\1565772546874.png)
 
 + Name：这个是从刚才在“系统设置”里配置的“Publish over SSH”中选择的 
 + Source files：当前构建下你要发送的文件 
@@ -334,37 +336,35 @@ GitLab的官方网站关于安装gitlab的介绍页面如下： https://about.gi
 
 ## 五、附录
 
-附上启动脚本。
+附上一个简单	启动脚本。
 
 ```shell
-#!/bin/bash -ilex
+#!/bin/bash ilex
 #export BUILD_ID=dontKillMe这一句很重要，这样指定了，项目启动之后才不会被Jenkins杀掉。
 export BUILD_ID=dontKillMe
 source /etc/profile
-pid_path=/PID
 function findJar()
 {
 	#遍历文件夹获取jar
-	for file in `find  * -name "${1}"`
+	for file in `find  * -name "$1"`
 	do
 	#Jenkins中编译好的jar名称 
 	jar_name=${file##*/}
 	#获取运行编译好的进程ID，便于我们在重新部署项目的时候先杀掉以前的进程
-	pid=$(cat ${pid_path}/${jar_name}.pid) 
+	pid=$(ps -ef|grep $jar_name|grep -v grep|awk '{printf $2}') #$(cat ${pid_path}/${jar_name}.pid) 
 	#rm -f ${www_path}/${jar_name}
 	#杀掉以前可能启动的项目进程 
-	kill -9 ${pid} 
+	if [ -n $pid ]; then
+	 kill -9 ${pid}
+	 sleep 1;
+	fi 
 	#启动jar，后台启动 
 	#BUILD_ID=dontKillMe
 	BUILD_ID=dontKillMe nohup java -Xmx512m -Xms512m -Xmn200m -jar ${file} > ${jar_name%-*.*.*-SNAPSHOT.jar}.out 2>&1 & 
 	echo $! > ${pid_path}/${jar_name}.pid 
 	done
 }
- 
-#如果PID目录不存在，则创建
-if [ ! -d "${pid_path}" ]; then
-  mkdir ${pid_path}
-fi
+
 if [ $# -gt 0 ] ;then
 	for regx in $*
 	do
