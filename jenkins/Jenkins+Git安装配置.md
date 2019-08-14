@@ -276,21 +276,43 @@ GitLab的官方网站关于安装gitlab的介绍页面如下： https://about.gi
 
 ![1565752298269](D:\data\document\jenkins\assets\1565752298269.png)
 
+#### 通用配置
+
 勾选**丢弃旧的构建**，选择是否备份被替换的旧包。我这里选择备份最近的10个。
 
 ![1565752630796](D:\data\document\jenkins\assets\1565752630796.png)
 
-源码管理选择Git，添加jenkins用户在gitlab上的凭据(即用户名密码)，这里选择打包的分支为release分支，这里根据需求自己填写（默认为master分支）。
+#### 源码管理
+
+选择Git，添加jenkins用户在gitlab上的凭据(即用户名密码)，这里选择打包的分支为release分支，这里根据需求自己填写（默认为master分支）。
 
 ![1565752705794](D:\data\document\jenkins\assets\1565752705794.png)
 
-构建触发器，勾选gitlab-ci，记住后面的GitLab CI Service URL后面要填在gitlab的webhooks中。
+#### 构建触发器
+
+勾选gitlab-ci，记住后面的GitLab CI Service URL后面要填在gitlab的webhooks中。
 
 现在有develop分支和release分支，如果不做这一步，开发只要向gitlab中提交代码（develop分支或者release分支），那么jenkins就会进行构建打包。如果需要设置判断过滤只有向release分支push代码时，才会触发构建打包。点开高级，填写根据正则过滤branch，写法如下，并generate一个token，不然后面webhooks会报403：
 
 ![1565759611793](D:\data\document\jenkins\assets\1565759611793.png)
 
-### Gitlab配置
+#### Build
+
+选择构建工具为maven3，配置好Root POM和Goals and options  ，root pom是你项目的pom.xml，goals and options是mvn的执行命令，可以填 ：install -DskipTests ，不需要填mvn xxx。
+
+![1565762770999](D:\data\document\jenkins\assets\1565762770999.png)
+
+#### Post-build Actions
+
+配置构建后触发动作。
+
+![1565764391388](D:\data\document\jenkins\assets\1565764391388.png)
+
++ Name：这个是从刚才在“系统设置”里配置的“Publish over SSH”中选择的 
++ Source files：当前构建下你要发送的文件 
++ Remove prefix：需要移除的前缀 
++ Remote directory：发送的远程路径（会在刚才“系统设置”中Push Server配置的“Remote directory”后追加） 
++ Exec command：发送完成后执行的命令或者脚本(这里的shell脚本能够启动项目，实现一键启动。
 
 在git项目配置界面设置链接和token。这里要注意路径，根据部署jenkins的路径填写，不然会报404错误，并填写刚刚对应的token信息，保存：
 
@@ -309,4 +331,47 @@ GitLab的官方网站关于安装gitlab的介绍页面如下： https://about.gi
 点击测试，返回200的话就表示成功了。其他错误可以根据gitlab日志来排除原因gitlab/gitlab-rails/production.log：
 
 ![1565760950001](D:\data\document\jenkins\assets\1565760950001.png)
+
+## 五、附录
+
+附上启动脚本。
+
+```shell
+#!/bin/bash -ilex
+#export BUILD_ID=dontKillMe这一句很重要，这样指定了，项目启动之后才不会被Jenkins杀掉。
+export BUILD_ID=dontKillMe
+source /etc/profile
+pid_path=/PID
+function findJar()
+{
+	#遍历文件夹获取jar
+	for file in `find  * -name "${1}"`
+	do
+	#Jenkins中编译好的jar名称 
+	jar_name=${file##*/}
+	#获取运行编译好的进程ID，便于我们在重新部署项目的时候先杀掉以前的进程
+	pid=$(cat ${pid_path}/${jar_name}.pid) 
+	#rm -f ${www_path}/${jar_name}
+	#杀掉以前可能启动的项目进程 
+	kill -9 ${pid} 
+	#启动jar，后台启动 
+	#BUILD_ID=dontKillMe
+	BUILD_ID=dontKillMe nohup java -Xmx512m -Xms512m -Xmn200m -jar ${file} > ${jar_name%-*.*.*-SNAPSHOT.jar}.out 2>&1 & 
+	echo $! > ${pid_path}/${jar_name}.pid 
+	done
+}
+ 
+#如果PID目录不存在，则创建
+if [ ! -d "${pid_path}" ]; then
+  mkdir ${pid_path}
+fi
+if [ $# -gt 0 ] ;then
+	for regx in $*
+	do
+	findJar $regx
+	done
+else
+	findJar "*.jar"
+fi
+```
 
