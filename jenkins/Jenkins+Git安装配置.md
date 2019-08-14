@@ -48,15 +48,21 @@
 
 ### 4、Jenkins配置
 
-#### 插件配置
+##### 插件配置
 
-有很多插件都是选择的默认的安装的，所以现在需要我们安装的插件不多， Maven Integration plugin和publish over SSH。
+有很多插件都是选择的默认的安装的，所以现在需要我们安装的插件不多：
+
++ Maven Integration plugin
++ publish over SSH
++ Gitlab Hook Plugin
++ Gitlab Plugin
++ Build Authorization Token Root Plugin
 
 插件安装：系统管理 > 插件管理 > 可选插件,勾选需要安装的插件，点击直接安装或者下载重启后安装。
 
 ![1565621739647](D:\data\document\jenkins\assets\1565621739647.png)
 
-#### 全局工具配置
+##### 全局工具配置
 
 系统管理 > 全局工具配置
 
@@ -76,7 +82,7 @@
 
 ### 5、配置目标服务器SSH
 
-#### 使用密钥方式登录目标发布服务器
+##### 使用密钥方式登录目标发布服务器
 
 ssh 的配置可使用密钥，也可以使用密码，这里我们使用密钥来配置，在配置之前先配置好jenkins服务器和应用服务器的密钥认证 **Jenkins服务器**上生成密钥对，使用`ssh-keygen -t rsa`命令
 
@@ -117,7 +123,7 @@ service sshd restart
 
 **上面这种方式比较复杂，其实在 Jenkins 后台直接添加操作即可，参考下面方式**。
 
-#### 使用用户名+密码方式登录目标发布服务器
+##### 使用用户名+密码方式登录目标发布服务器
 
 配置通过ssh推送服务，点击添加SSH Server。
 
@@ -131,7 +137,7 @@ service sshd restart
 
 ![1565623378448](D:\data\document\jenkins\assets\1565623378448.png)
 
-#### Push SSH
+### 6、Push SSH
 
 Passphrase 不用设置，Path to key 写上生成的ssh路径：`/root/.ssh/id_rsa`
 
@@ -146,7 +152,7 @@ Passphrase 不用设置，Path to key 写上生成的ssh路径：`/root/.ssh/id_
 
 > 点击下方增加可以添加多个应用服务器的地址
 
-## 二、安装配置Github
+## 二、配置Github
 
 ## 三、Gitlab私服配置
 
@@ -262,5 +268,45 @@ GitLab的官方网站关于安装gitlab的介绍页面如下： https://about.gi
    + 主机内存不足 （最好使用4G内存的主机）
    + 参考：https://blog.csdn.net/ouyang_peng/article/details/72903221
 
-## 四、配置Job
+## 四、配置构建Job
+
+### 创建测试project
+
+新建一个Job，输入Job名称，选择Freestyle project或者Maven项目，点击OK。
+
+![1565752298269](D:\data\document\jenkins\assets\1565752298269.png)
+
+勾选**丢弃旧的构建**，选择是否备份被替换的旧包。我这里选择备份最近的10个。
+
+![1565752630796](D:\data\document\jenkins\assets\1565752630796.png)
+
+源码管理选择Git，添加jenkins用户在gitlab上的凭据(即用户名密码)，这里选择打包的分支为release分支，这里根据需求自己填写（默认为master分支）。
+
+![1565752705794](D:\data\document\jenkins\assets\1565752705794.png)
+
+构建触发器，勾选gitlab-ci，记住后面的GitLab CI Service URL后面要填在gitlab的webhooks中。
+
+现在有develop分支和release分支，如果不做这一步，开发只要向gitlab中提交代码（develop分支或者release分支），那么jenkins就会进行构建打包。如果需要设置判断过滤只有向release分支push代码时，才会触发构建打包。点开高级，填写根据正则过滤branch，写法如下，并generate一个token，不然后面webhooks会报403：
+
+![1565759611793](D:\data\document\jenkins\assets\1565759611793.png)
+
+### Gitlab配置
+
+在git项目配置界面设置链接和token。这里要注意路径，根据部署jenkins的路径填写，不然会报404错误，并填写刚刚对应的token信息，保存：
+
+![1565759941598](D:\data\document\jenkins\assets\1565759941598.png)
+
+这里URL如果是本地IP服务器地址，会报错，报错信息如下：
+
+![1565760691654](D:\data\document\jenkins\assets\1565760691654.png)
+
+这是因为Gitlab 10.6 版本以后为了安全，不允许向本地网络发送webhook请求，如果想向本地网络发送webhook请求，则需要使用管理员帐号登录，默认管理员帐号是root，密码就是你Gitlab搭建好之后第一次输入的密码，登录之后， 点击Admin Area：
+
+![1565760845248](D:\data\document\jenkins\assets\1565760845248.png)
+
+即可进入Admin area，在Admin area中，在settings标签下面，找到Network->OutBound Request，勾选上Allow requests to the local network from hooks and services ，保存更改即可解决问题。
+
+点击测试，返回200的话就表示成功了。其他错误可以根据gitlab日志来排除原因gitlab/gitlab-rails/production.log：
+
+![1565760950001](D:\data\document\jenkins\assets\1565760950001.png)
 
