@@ -12,7 +12,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-simple/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-web/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-web-actuator/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-redis/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-mybatis/pom.xml" />
@@ -21,6 +21,8 @@
         <option value="$PROJECT_DIR$/spring-boot-shiro/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-jpa-thymeleaf/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-upload/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-admin-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka-server/pom.xml" />
       </list>
     </option>
   </component>
