@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/spring-boot-mail/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-shiro/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-jpa-thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-upload/pom.xml" />
       </list>
     </option>
   </component>
