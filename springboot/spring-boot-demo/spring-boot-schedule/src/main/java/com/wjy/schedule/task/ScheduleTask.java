@@ -15,9 +15,13 @@ import org.springframework.stereotype.Component;
 public class ScheduleTask {
 
     private int count = 0;
+    byte[] bytes;
+    byte[] bytes1;
 
-    @Scheduled(cron="*/6 * * * * ?")
+    @Scheduled(cron="*/5 * * * * ?")
     public void process() {
+        bytes = new byte[1024*1024*10];
+        bytes1 = new byte[1024*1024*1];
         System.out.println("this is scheduled task" + count);
     }
 }

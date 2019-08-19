@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-upload" />
-        <module name="spring-boot-web-actuator" />
-        <module name="spring-boot-mybatis" />
-        <module name="spring-boot-jpa" />
         <module name="spring-boot-simple" />
+        <module name="spring-boot-shiro" />
+        <module name="spring-boot-nginx-mysql-docker" />
+        <module name="spring-boot-admin-server" />
+        <module name="spring-boot-jpa" />
         <module name="spring-boot-schedule" />
+        <module name="spring-boot-docker" />
+        <module name="spring-boot-web-actuator" />
+        <module name="spring-boot-upload" />
         <module name="spring-boot-mail" />
         <module name="spring-boot-jpa-thymeleaf" />
-        <module name="spring-boot-redis" />
         <module name="spring-cloud-eureka-server" />
-        <module name="spring-boot-admin-server" />
-        <module name="spring-boot-shiro" />
+        <module name="spring-boot-mybatis" />
+        <module name="spring-boot-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,10 +29,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-boot-admin-server" options="-parameters" />
+      <module name="spring-boot-docker" options="-parameters" />
       <module name="spring-boot-jpa" options="-parameters" />
       <module name="spring-boot-jpa-thymeleaf" options="-parameters" />
       <module name="spring-boot-mail" options="-parameters" />
       <module name="spring-boot-mybatis" options="-parameters" />
+      <module name="spring-boot-nginx-mysql-docker" options="-parameters" />
       <module name="spring-boot-redis" options="-parameters" />
       <module name="spring-boot-schedule" options="-parameters" />
       <module name="spring-boot-shiro" options="-parameters" />
