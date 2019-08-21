@@ -111,18 +111,47 @@ compression.type：启用指定类型的压缩算法
 
 ## 无消息丢失配置
 
-1. 使用producer.send(msg, callback)带有回调通知的方法，不要用producer.send(msg)。
-2. Producer端参数，设置acks=all。表示所有Broker副本都要接受消息，该消息才算“已提交”；
-3. Producer端参数，设置retires为一个较大的数。自动重试消息发送，避免消息丢失。
-4. Broker端参数，设置unclean.leader.election.enable=false。避免消息同步落后原来Leader太多的Broker当选新的Leader。
-5. Broker端参数，设置replication.factor>=3。保证消息的冗余。
-6. Broker端参数，设置min.insync.repicas>1。控制消息至少被写入多少副本才算“已提交”。生成环境切记不要使用默认值1。
-7. 确保replication.factor>min.insync.repicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作，降低了系统的可用性。推荐设置replication.factor=min.insync.repicas+1。
-8. Consumer端参数，设置enable.auto.commit=false。确保消息消费完成再提交，并采用手动提交位移的方式。这对于**单Consumer、多线程处理的场景至关重要**。
+1. producer端
+
+   + 使用producer.send(msg, callback)带有回调通知的方法，不要用producer.send(msg)。
+
+   + Producer端参数，设置acks=all。表示所有Broker副本都要接受消息，该消息才算“已提交”；
+
+   + Producer端参数，设置retires为一个较大的数。自动重试消息发送，避免消息丢失。
+
+2. Broker端参数
+
+   + 设置unclean.leader.election.enable=false。避免消息同步落后原来Leader太多的Broker当选新的Leader。
+
+   + Broker端参数，设置replication.factor>=3。保证消息的冗余。
+
+   + Broker端参数，设置min.insync.repicas>1。控制消息至少被写入多少副本才算“已提交”。生成环境切记不要使用默认值1。
+
+   + 确保replication.factor>min.insync.repicas。如果两者相等，那么只要有一个副本挂机，整个分区就无法正常工作，降低了系统的可用性。推荐设置replication.factor=min.insync.repicas+1。
+
+3. Consumer端参数
+
+   + 设置enable.auto.commit=false。确保消息消费完成再提交，并采用手动提交位移的方式。这对于**单Consumer、多线程处理的场景至关重要**。
 
 ## 客户端实践及原理剖析
 
 ### 生产者消息分区机制原理剖析
+
+#### 分区的目的
+
+Kafka的消息组织结构实际上是三层结构：主题->分区->消息。主题中的一条消息只会保存到某一个分区中，而不会在多个分区中保存多份。官网上的这张图清晰的展示Kafka的三级结构，如图所示：
+
+![img](D:\data\document\kafka\assets\18e487b7e64eeb8d0a487c289d83ab63.png)
+
+分区的作用就是提供负载均衡的能力，实现系统的高伸缩性（Scalability）。不同的分区被放到不同的Broker上，数据的读写也是针对分区粒度，这样每个Broker都能独立的执行各自分区的读写请求操作。并且，还可以通过增加Broker来提高系统的整体吞吐量。
+
+这种分区的思想在其他分布式中间件中同样存在，比如MongoDB和Elasticsearch中叫分片Shard，Hbase中叫Region，在Cassandra中叫作vnode。
+
+除了提供负载均衡这种核心功能外，利用分区还可以实现一些业务需求，比如实现业务级的消息顺序问题。
+
+#### 分区策略
+
+**分区策略就是决定生产者将消息发送到哪个分区的算法。**Kafka提供了默认的分区策略，同时也支持自定义分区策略。
 
 ### 生产者压缩算法
 
