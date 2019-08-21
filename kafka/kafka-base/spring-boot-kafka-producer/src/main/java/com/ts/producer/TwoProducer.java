@@ -1,9 +1,6 @@
 package com.ts.producer;
 
-import org.apache.kafka.clients.producer.Callback;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.clients.producer.RecordMetadata;
+import org.apache.kafka.clients.producer.*;
 
 import java.util.Properties;
 
@@ -13,6 +10,7 @@ public class TwoProducer {
 
     public TwoProducer() {
         Properties properties = new Properties();
+        properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "");
         properties.put("bootstrap.servers",
                        "kafkaOS1:9092,kafkaOS2:9092,kafkaOS3:9092");
         properties.put("key.serializer",

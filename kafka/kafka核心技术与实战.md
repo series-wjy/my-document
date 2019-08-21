@@ -151,11 +151,87 @@ Kafka的消息组织结构实际上是三层结构：主题->分区->消息。�
 
 #### 分区策略
 
-**分区策略就是决定生产者将消息发送到哪个分区的算法。**Kafka提供了默认的分区策略，同时也支持自定义分区策略。
+**分区策略就是决定生产者将消息发送到哪个分区的算法。**Kafka提供了默认的分区策略，同时也支持自定义分区策略。自定义分区策略需要实现org.apache.kafka.clients.producer.Partitioner接口。该接口有两个方法：partition()和close()方法，通常只需要实现最重要的partition方法。
 
+```java
+public interface Partitioner extends Configurable, Closeable {
 
+    /**
+     * Compute the partition for the given record.
+     *
+     * @param topic The topic name
+     * @param key The key to partition on (or null if no key)
+     * @param keyBytes The serialized key to partition on( or null if no key)
+     * @param value The value to partition on or null
+     * @param valueBytes The serialized value to partition on or null
+     * @param cluster The current cluster metadata
+     */
+    public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster);
+
+    /**
+     * This is called when partitioner is closed.
+     */
+    public void close();
+
+}
+```
+
+实现了Partitioner接口，同时定义好partition()方法，在producer端设置partitioner.class参数为你的自定义分区实现类的全限定名，生产者程序就会按照你的逻辑代码来对消息进行分区了。
+
+#### 常见的分区策略
+
+1. 轮询策略(Round-robin)
+
+   即顺序分配。比如下图，有三个分区，那么第一条消息发送到分区0，第二条消息发送到分区1，第三条消息发送到分区2，第四条消息再次发送到分区0，依次类推。
+
+   ![img](E:\data\my-document\kafka\assets\6c630aaf0b365115897231a4e0a7e1af.png)
+
+   Kafka默认的分区策略就是轮询策略，如果你为配置partitioner.class参数指定分区策略，那么生产者就会按照轮询的方式向主题的所有分区发送消息。
+
+   **轮询策略有非常优秀的负载均衡表现，它总是能保证消息最大限度的被平均分配到所有分区上，故默认情况下它是最合理的分区策略，也是最常用的分区策略之一。**
+
+2. 随机策略(Randomness)
+
+   随机策略就是随意的将消息放置到任意一个分区上，如下图所示。
+
+   ![img](E:\data\my-document\kafka\assets\5b50b76efb8ada0f0779ac3275d215a3.png)
+
+   实现随机策略很简单，只需要两行代码就可以。计算出该主题的分区数，然后随机返回一个小于分区总数的正整数：
+
+   ```java
+   List<PartitionInfo> partitions = cluster.partitionsForTopic(topic);
+   return ThreadLocalRandom.current().nextInt(partitions.size());
+   ```
+
+   表面上看随机策略是力求将数据均匀的打散到各个分区，实际表现上看，它要逊色于轮询策略。所以**如果要追求数据的均匀分布，还是使用轮询策略比较好**。
+
+3. 按消息键保存策略
+
+   Kafka 允许为每条消息定义消息键，简称为 Key。这个 Key 的作用非常大，它可以是一个有着明确业务含义的字符串，比如客户代码、部门编号或是业务 ID 等；也可以用来表征消息元数据。特别是在 Kafka 不支持时间戳的年代，在一些场景中，工程师们都是直接将消息创建时间封装进 Key 里面的。一旦消息被定义了 Key，那么你就可以保证同一个 Key 的所有消息都进入到相同的分区里面，由于每个分区下的消息处理都是有顺序的，故这个策略被称为按消息键保序策略，如下图所示。
+
+   ![img](E:\data\my-document\kafka\assets\63aba008c3e3ad6b6dcc20464b600035.png)
+
+   如果要实现随机策略版的 partition 方法，很简单，只需要两行代码即可：
+
+   ```java
+   List<PartitionInfo> partitions = cluster.partitionsForTopic(topic);
+   return Math.abs(key.hashCode()) % partitions.size();
+   ```
+
+   实际上，前面提到的 Kafka 默认分区策略实际上同时实现了两种策略：如果指定了 Key，那么默认实现按消息键保序策略；如果没有指定 Key，则使用轮询策略。从上图中可以明显看出，自定义Key分区策略可以实现相同的键发送到相同的分区中，可以实现单分区内消息的有序性。
+
+4. 其他分区策略
+
+   按IP地址进行分区，假设Kafka集群分为南北两个片区，将消息生产者请求根据南北不同的片区查找对应的leader分区，随机挑选一个进行发送。
+
+   ```java
+   List<PartitionInfo> partitions = cluster.partitionsForTopic(topic);
+   return partitions.stream().filter(p -> isSouth(p.leader().host())).map(PartitionInfo::partition).findAny().get();
+   ```
 
 ### 生产者压缩算法
+
+压缩（compression）是一种用时间去换空间的经典 trade-off 思想，就是用 CPU 时间去换磁盘空间或网络 I/O 传输量，希望以较小的 CPU 开销带来更少的磁盘占用或更少的网络 I/O 传输。在 Kafka 中也是一样。
 
 ### 无消息丢失配置
 
