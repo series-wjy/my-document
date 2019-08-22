@@ -43,7 +43,7 @@ public class SimpleConsumer extends ShutdownableThread {
     @Override
     public void doWork() {
         // 指定要消费的主题，可以指定多个主题
-        consumer.subscribe(Collections.singletonList("test"));
+        consumer.subscribe(Collections.singletonList("cities"));
         // poll()是阻塞的方法，其参数表示，若broker中没有消息，该poll()等待的最长时间
         // 到时仍没有消息，则返回null
         ConsumerRecords<Integer, String> records = consumer.poll(1000);

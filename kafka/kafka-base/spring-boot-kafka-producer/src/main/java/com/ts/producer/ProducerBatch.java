@@ -5,15 +5,16 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
+import java.io.IOException;
 import java.util.Properties;
 
-public class SomeProducerBatch {
+public class ProducerBatch {
     // 第一个泛型为key的类型，第二个泛型为消息本身的类型
     private KafkaProducer<Integer, String> producer;
 
-    public SomeProducerBatch() {
+    public ProducerBatch() {
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "kafkaOS1:9092,kafkaOS2:9092,kafkaOS3:9092");
+        properties.put("bootstrap.servers", "192.168.56.21:9092,192.168.56.22:9092,192.168.56.23:9092");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.IntegerSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         // 指定要批量发送的消息个数，默认16k
@@ -34,10 +35,17 @@ public class SomeProducerBatch {
                 public void onCompletion(RecordMetadata metadata, Exception exception) {
                     System.out.print("partition = " + metadata.partition());
                     System.out.print("，topic = " + metadata.topic());
-                    System.out.println("，offset = " + metadata.offset());
+                    System.out.print("，offset = " + metadata.offset());
+                    System.out.println("，timestamp = " + metadata.timestamp());
                 }
             });
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        ProducerBatch batch = new ProducerBatch();
+        batch.sendMsg();
+        System.in.read();
     }
 }
 
