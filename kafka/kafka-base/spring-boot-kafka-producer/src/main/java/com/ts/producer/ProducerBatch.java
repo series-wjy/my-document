@@ -26,8 +26,10 @@ public class ProducerBatch {
 
     public void sendMsg() {
         for (int i=0; i<50; i++) {
+//            ProducerRecord<Integer, String> record =
+//                    new ProducerRecord<>("msg-test", 0, i * 10, "msg-test-" + i*100);
             ProducerRecord<Integer, String> record =
-                    new ProducerRecord<>("cities", 0, i * 10, "city-" + i*100);
+                    new ProducerRecord<>("msg-test", i * 10, "msg-test-" + i*100);
 
             producer.send(record, new Callback() {
                 // RecordMetadata，消息元数据，即主题、消息的key、消息本身等的封装对象
@@ -39,6 +41,11 @@ public class ProducerBatch {
                     System.out.println("，timestamp = " + metadata.timestamp());
                 }
             });
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

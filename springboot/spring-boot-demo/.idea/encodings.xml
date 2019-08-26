@@ -7,7 +7,9 @@
     <file url="file://$PROJECT_DIR$/spring-boot-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-jpa-thymeleaf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-mail" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-memcached" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-mybatis-plus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-nginx-mysql-docker" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-nginx-mysql-docker/app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-redis" charset="UTF-8" />
@@ -17,6 +19,7 @@
     <file url="file://$PROJECT_DIR$/spring-boot-simple" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-upload" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-web-actuator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-webflux" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka-server" charset="UTF-8" />
   </component>
 </project>

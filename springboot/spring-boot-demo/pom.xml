@@ -24,6 +24,9 @@
         <module>spring-cloud-eureka-server</module>
         <module>spring-boot-docker</module>
         <module>spring-boot-nginx-mysql-docker/app</module>
+        <module>spring-boot-memcached</module>
+        <module>spring-boot-webflux</module>
+        <module>spring-boot-mybatis-plus</module>
     </modules>
 
     <parent>

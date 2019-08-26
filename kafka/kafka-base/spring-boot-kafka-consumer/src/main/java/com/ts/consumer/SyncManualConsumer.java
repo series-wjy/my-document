@@ -6,6 +6,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -16,7 +17,7 @@ public class SyncManualConsumer extends ShutdownableThread {
         super("KafkaConsumerTest", false);
 
         Properties properties = new Properties();
-        String brokers = "kafkaOS1:9092,kafkaOS2:9092,kafkaOS3:9092";
+        String brokers = "192.168.56.21:9092,192.168.56.22:9092,192.168.56.23:9092";
         properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, brokers);
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "cityGro11");
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
@@ -35,8 +36,8 @@ public class SyncManualConsumer extends ShutdownableThread {
     @Override
     public void doWork() {
         // 指定要消费的主题
-        consumer.subscribe(Collections.singletonList("cities"));
-        ConsumerRecords<Integer, String> records = consumer.poll(1000);
+        consumer.subscribe(Collections.singletonList("msg-test"));
+        ConsumerRecords<Integer, String> records = consumer.poll(Duration.ofSeconds(1));
         for(ConsumerRecord record : records) {
             System.out.print("topic = " + record.topic());
             System.out.print(" partition = " + record.partition());

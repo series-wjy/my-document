@@ -31,7 +31,7 @@ public class TwoProducer {
         //                        new ProducerRecord<>("cities", 1, "shanghai");
         // 指定主题、要写入的patition、key，及消息本身
         ProducerRecord<Integer, String> record =
-                                  new ProducerRecord<>("cities", 0, 1, "shanghai");
+                                  new ProducerRecord<>("abc", 0, 1, "shanghai");
 
         // 可以调用以下两个参数的send()方法，可以在消息发布成功后触发回调的执行
         producer.send(record, new Callback() {

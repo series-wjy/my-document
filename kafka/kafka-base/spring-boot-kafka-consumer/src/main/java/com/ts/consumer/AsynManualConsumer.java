@@ -35,7 +35,7 @@ public class AsynManualConsumer extends ShutdownableThread {
     @Override
     public void doWork() {
         // 指定要消费的主题
-        consumer.subscribe(Collections.singletonList("cities"));
+        consumer.subscribe(Collections.singletonList("msg-test"));
         ConsumerRecords<Integer, String> records = consumer.poll(1000);
         for(ConsumerRecord record : records) {
             System.out.print("topic = " + record.topic());

@@ -31,7 +31,7 @@ public class SimpleProducer {
         //                        new ProducerRecord<>("cities", 1, "shanghai");
         // 指定主题、要写入的patition、key，及消息本身
         ProducerRecord<Integer, String> record =
-                                  new ProducerRecord<>("cities", 1, 1, "shanghai");
+                                  new ProducerRecord<>("abc", 1, 1, "shanghai");
 
         // 发布消息，其返回值为Future对象，表示其发送过程为异步，不过这里不使用该返回结果
         // Future<RecordMetadata> future = producer.send(record);

@@ -25,6 +25,9 @@
         <option value="$PROJECT_DIR$/spring-cloud-eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-docker/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-nginx-mysql-docker/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-memcached/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-webflux/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-mybatis-plus/pom.xml" />
       </list>
     </option>
   </component>
