@@ -6,6 +6,7 @@
 		<groupId>com.wjy</groupId>
 		<artifactId>spring-boot-demo</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.wjy</groupId>

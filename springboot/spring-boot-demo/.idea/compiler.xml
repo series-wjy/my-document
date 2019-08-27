@@ -13,7 +13,6 @@
         <module name="spring-boot-nginx-mysql-docker" />
         <module name="spring-boot-admin-server" />
         <module name="spring-boot-jpa" />
-        <module name="spring-boot-schedule" />
         <module name="spring-boot-docker" />
         <module name="spring-boot-web-actuator" />
         <module name="spring-boot-upload" />
@@ -22,6 +21,7 @@
         <module name="spring-boot-memcached" />
         <module name="spring-cloud-eureka-server" />
         <module name="spring-boot-mybatis" />
+        <module name="spring-boot-schedule" />
         <module name="spring-boot-redis" />
       </profile>
     </annotationProcessing>
