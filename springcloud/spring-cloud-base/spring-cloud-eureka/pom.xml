@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wjy</groupId>
-	<artifactId>spring-boot-eureka</artifactId>
+	<artifactId>spring-cloud-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-eureka</name>
-	<description>spring-boot-eureka</description>
+	<name>spring-cloud-eureka</name>
+	<description>spring-cloud-eureka</description>
 
 	<properties>
 		<java.version>1.8</java.version>

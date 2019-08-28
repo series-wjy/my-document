@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/microservice-simple/demo.iml" filepath="$PROJECT_DIR$/microservice-simple/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka/spring-boot-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka/spring-boot-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-base.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" />
