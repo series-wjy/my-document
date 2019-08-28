@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/spring-boot-eureka/spring-boot-eureka.iml" filepath="$PROJECT_DIR$/spring-boot-eureka/spring-boot-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-simple/demo.iml" filepath="$PROJECT_DIR$/microservice-simple/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-base.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-hystrix-monitor/spring-cloud-hystrix-monitor.iml" filepath="$PROJECT_DIR$/spring-cloud-hystrix-monitor/spring-cloud-hystrix-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-provider/spring-cloud-provider.iml" filepath="$PROJECT_DIR$/spring-cloud-provider/spring-cloud-provider.iml" />
     </modules>
   </component>
 </project>
