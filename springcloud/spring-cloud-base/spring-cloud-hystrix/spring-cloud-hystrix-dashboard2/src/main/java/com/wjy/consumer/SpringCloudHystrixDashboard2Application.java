@@ -1,7 +1,6 @@
 package com.wjy.consumer;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
-import com.netflix.turbine.streaming.servlet.TurbineStreamServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -17,10 +16,10 @@ import org.springframework.context.annotation.Bean;
 @EnableHystrixDashboard
 @EnableCircuitBreaker
 //@EnableTurbine
-public class SpringCloudHystrixDashboardApplication {
+public class SpringCloudHystrixDashboard2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCloudHystrixDashboardApplication.class, args);
+		SpringApplication.run(SpringCloudHystrixDashboard2Application.class, args);
 	}
 
 	@Bean
@@ -30,16 +29,6 @@ public class SpringCloudHystrixDashboardApplication {
 		registrationBean.setLoadOnStartup(1);
 		registrationBean.addUrlMappings("/actuator/hystrix.stream");
 		registrationBean.setName("HystrixMetricsStreamServlet");
-		return registrationBean;
-	}
-
-//	@Bean
-	public ServletRegistrationBean getServlet(){
-		TurbineStreamServlet streamServlet = new TurbineStreamServlet();
-		ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
-		registrationBean.setLoadOnStartup(1);
-		registrationBean.addUrlMappings("/turbine.stream");
-		registrationBean.setName("TurbineStreamServlet");
 		return registrationBean;
 	}
 }
