@@ -7,11 +7,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/microservice-simple/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-eureka/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-cloud-provider/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-provider/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-hystrix-monitor/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-consumer2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-hystrix-dashboard-turbine/pom.xml" />
       </list>
     </option>
   </component>
