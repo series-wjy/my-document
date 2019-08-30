@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3316f13-ccd5-4013-a68c-1304f6451d57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concurrent-base/src/main/java/com/wjy/base/semaphore/AlternateOuputAtomic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concurrent-base/src/main/java/com/wjy/base/semaphore/AlternateOuputVolatile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concurrent-base/src/main/java/com/wjy/base/semaphore/AlternateOutputSemaphore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot/spring-boot-demo/.idea/compiler.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,8 +190,16 @@
       <workItem from="1565225225187" duration="3696000" />
       <workItem from="1565230194795" duration="8296000" />
       <workItem from="1565310440513" duration="1967000" />
-      <workItem from="1567130773128" duration="15837000" />
+      <workItem from="1567130773128" duration="16233000" />
     </task>
+    <task id="LOCAL-00001" summary="提交">
+      <created>1567150221079</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567150221080</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +215,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

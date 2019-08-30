@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
+        <module name="spring-cloud-config-client" />
         <module name="spring-cloud-hystrix-dashboard2" />
         <module name="spring-cloud-hystrix-dashboard1" />
         <module name="spring-cloud-consumer2" />
@@ -14,6 +15,7 @@
         <module name="spring-cloud-provider" />
         <module name="spring-cloud-eureka" />
         <module name="spring-cloud-hystrix-dashboard-turbine" />
+        <module name="spring-cloud-config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +23,8 @@
       <module name="microservice-simple" target="1.8" />
       <module name="microservice-simple-provider" target="1.8" />
       <module name="spring-boot-eureka" target="1.8" />
+      <module name="spring-cloud-config-client" target="1.8" />
+      <module name="spring-cloud-config-server" target="1.8" />
       <module name="spring-cloud-consumer1" target="1.8" />
       <module name="spring-cloud-consumer2" target="1.8" />
       <module name="spring-cloud-eureka" target="1.8" />
@@ -36,6 +40,8 @@
       <module name="microservice-simple" options="-parameters" />
       <module name="microservice-simple-provider" options="-parameters" />
       <module name="spring-boot-eureka" options="-parameters" />
+      <module name="spring-cloud-config-client" options="-parameters" />
+      <module name="spring-cloud-config-server" options="-parameters" />
       <module name="spring-cloud-consumer1" options="-parameters" />
       <module name="spring-cloud-consumer2" options="-parameters" />
       <module name="spring-cloud-eureka" options="-parameters" />

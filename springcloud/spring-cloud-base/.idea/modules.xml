@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/microservice-simple/demo.iml" filepath="$PROJECT_DIR$/microservice-simple/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-base.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-client/spring-cloud-config-client.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-client/spring-cloud-config-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/spring-cloud-config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer1/spring-cloud-consumer1.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer1/spring-cloud-consumer1.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer2/spring-cloud-consumer2.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer2/spring-cloud-consumer2.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" />
