@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/microservice-simple/demo.iml" filepath="$PROJECT_DIR$/microservice-simple/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-base.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-client/spring-cloud-config-client.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-client/spring-cloud-config-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-eureka/spring-cloud-config-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-eureka/spring-cloud-config-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/spring-cloud-config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer1/spring-cloud-consumer1.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer1/spring-cloud-consumer1.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer2/spring-cloud-consumer2.iml" filepath="$PROJECT_DIR$/spring-cloud-consumer/spring-cloud-consumer2/spring-cloud-consumer2.iml" />
@@ -12,7 +13,10 @@
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-hystrix/spring-cloud-hystrix-dashboard-turbine/spring-cloud-hystrix-dashboard-turbine.iml" filepath="$PROJECT_DIR$/spring-cloud-hystrix/spring-cloud-hystrix-dashboard-turbine/spring-cloud-hystrix-dashboard-turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-hystrix/spring-cloud-hystrix-dashboard1/spring-cloud-hystrix-dashboard1.iml" filepath="$PROJECT_DIR$/spring-cloud-hystrix/spring-cloud-hystrix-dashboard1/spring-cloud-hystrix-dashboard1.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-hystrix/spring-cloud-hystrix-dashboard2/spring-cloud-hystrix-dashboard2.iml" filepath="$PROJECT_DIR$/spring-cloud-hystrix/spring-cloud-hystrix-dashboard2/spring-cloud-hystrix-dashboard2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-cloud-provider/spring-cloud-provider.iml" filepath="$PROJECT_DIR$/spring-cloud-provider/spring-cloud-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-producer/spring-cloud-provider1/spring-cloud-provider1.iml" filepath="$PROJECT_DIR$/spring-cloud-producer/spring-cloud-provider1/spring-cloud-provider1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-producer/spring-cloud-provider2/spring-cloud-provider2.iml" filepath="$PROJECT_DIR$/spring-cloud-producer/spring-cloud-provider2/spring-cloud-provider2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-zipkin/spring-cloud-zipkin.iml" filepath="$PROJECT_DIR$/spring-cloud-zipkin/spring-cloud-zipkin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-zuul/spring-cloud-zuul.iml" filepath="$PROJECT_DIR$/spring-cloud-zuul/spring-cloud-zuul.iml" />
     </modules>
   </component>
 </project>

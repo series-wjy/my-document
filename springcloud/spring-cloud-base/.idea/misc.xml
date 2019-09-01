@@ -23,6 +23,11 @@
         <option value="$PROJECT_DIR$/spring-cloud-config-client/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-producer/spring-cloud-provider2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-producer/spring-cloud-provider1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-zipkin/pom.xml" />
       </list>
     </option>
   </component>
