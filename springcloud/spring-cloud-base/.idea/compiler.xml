@@ -11,13 +11,14 @@
         <module name="demo" />
         <module name="spring-cloud-config-server" />
         <module name="spring-cloud-hystrix-dashboard-turbine" />
-        <module name="spring-cloud-provider1" />
-        <module name="spring-cloud-zuul" />
-        <module name="spring-cloud-config-eureka" />
         <module name="spring-cloud-provider2" />
+        <module name="spring-cloud-zuul" />
+        <module name="spring-cloud-gateway" />
+        <module name="spring-cloud-config-eureka" />
         <module name="spring-cloud-zipkin" />
         <module name="spring-cloud-eureka" />
         <module name="spring-cloud-config-client" />
+        <module name="spring-cloud-provider1" />
         <module name="spring-cloud-hystrix-dashboard2" />
         <module name="spring-cloud-hystrix-dashboard1" />
       </profile>
@@ -33,6 +34,7 @@
       <module name="spring-cloud-consumer1" target="1.8" />
       <module name="spring-cloud-consumer2" target="1.8" />
       <module name="spring-cloud-eureka" target="1.8" />
+      <module name="spring-cloud-gateway" target="1.8" />
       <module name="spring-cloud-hystrix-dashboard-turbine" target="1.8" />
       <module name="spring-cloud-hystrix-dashboard1" target="1.8" />
       <module name="spring-cloud-hystrix-dashboard2" target="1.8" />
@@ -54,6 +56,7 @@
       <module name="spring-cloud-consumer1" options="-parameters" />
       <module name="spring-cloud-consumer2" options="-parameters" />
       <module name="spring-cloud-eureka" options="-parameters" />
+      <module name="spring-cloud-gateway" options="-parameters" />
       <module name="spring-cloud-hystrix-dashboard-turbine" options="-parameters" />
       <module name="spring-cloud-hystrix-dashboard1" options="-parameters" />
       <module name="spring-cloud-hystrix-dashboard2" options="-parameters" />

@@ -12,4 +12,9 @@ public class HelloController {
         System.out.println(name + "comming here......");
         return "hello "+name+"，this is first messge";
     }
+
+    @RequestMapping("/foo")
+    public String foo(@RequestParam String foo) {
+        return "hello "+foo+"!";
+    }
 }

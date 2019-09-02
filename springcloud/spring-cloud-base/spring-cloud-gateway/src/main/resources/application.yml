@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+#      routes:
+#        - id: wjy_route
+#          uri: http://www.ityouknow.com
+#          predicates:
+#            - Path=/spring-cloud
+#            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+      routes:
+        - id: add_request_parameter_route
+          uri: http://localhost:9001
+          filters:
+            - AddRequestParameter=foo, bar
+          predicates:
+            - Method=GET
+      discovery:
+        locator:
+          enabled: true
+  application:
+    name: spring-cloud-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8001/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
