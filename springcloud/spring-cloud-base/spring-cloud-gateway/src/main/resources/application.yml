@@ -11,7 +11,9 @@ spring:
 #            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
       routes:
         - id: add_request_parameter_route
-          uri: http://localhost:9001
+#          uri: http://localhost:9001
+          #格式为：lb://应用注册服务名
+          uri: lb://spring-cloud-producer
           filters:
             - AddRequestParameter=foo, bar
           predicates:
