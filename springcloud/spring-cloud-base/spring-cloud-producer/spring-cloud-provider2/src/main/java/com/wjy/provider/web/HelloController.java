@@ -19,4 +19,9 @@ public class HelloController {
         }
         return "hello "+name+"，this is second messge";
     }
+
+    @RequestMapping("/foo")
+    public String foo(@RequestParam String foo) {
+        return "hello "+foo+" two!";
+    }
 }
