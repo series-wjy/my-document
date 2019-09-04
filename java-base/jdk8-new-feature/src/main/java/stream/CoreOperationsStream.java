@@ -5,11 +5,12 @@
 package stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author wangjiayou 2019/9/3
@@ -17,12 +18,17 @@ import java.util.stream.Stream;
  */
 public class CoreOperationsStream {
     public static void main(String[] args) {
-        Collection<String> list = get();
+//        sequentialStream();
+        parallelStream();
+    }
+
+    private static void sequentialStream() {
+        Collection<String> list = getStringList();
+        Consumer action = System.out::println;
 
         // intermediate operations
         // filter()
         System.out.println("==============filter()=========================");
-        Consumer action = System.out::println;
         list.stream().filter(x -> x.startsWith("A")).forEach(action);
         // map()
         System.out.println("==============map()=========================");
@@ -47,14 +53,48 @@ public class CoreOperationsStream {
         System.out.println(matchResult);
         matchResult = list.stream().noneMatch(String::isEmpty);
         System.out.println(matchResult);
+
+        // match()
+        System.out.println("==============count()=========================");
+        long counts = list.stream().filter(x -> x.startsWith("A")).count();
+        System.out.println(counts);
+
+        // reduce()
+        System.out.println("==============reduce()=========================");
+        Optional<String> reduce = list.stream().reduce((x1, x2) -> x1 + "#" + x2);
+        reduce.ifPresent(action);
+
+        // findFirst()
+        System.out.println("==============findFirst()=========================");
+        Optional<String> s1 = list.stream().filter(x -> x.startsWith("S")).findFirst();
+        System.out.println(s1.get());
     }
 
-    private static Collection get() {
+    private static void parallelStream() {
+        Collection<Integer> list = getIntegerList();
+
+        Optional reduce = list.parallelStream().filter(x -> x % 2 == 0).reduce((x1, x2) -> x1 + x2);
+        Consumer action = System.out::println;
+        reduce.ifPresent(action);
+
+        Integer[] arr = list.parallelStream().filter(x -> x %2 ==0).toArray(Integer[]::new);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private static Collection getIntegerList() {
+        List<Integer> memberNames = new ArrayList<>();
+        for(int i = 1; i <= 10; i ++) {
+            memberNames.add(i);
+        }
+        return memberNames;
+    }
+
+    private static Collection getStringList() {
         List<String> memberNames = new ArrayList<>();
         memberNames.add("Amitabh");
         memberNames.add("Shekhar");
         memberNames.add("Aman");
-        memberNames.add("Rahul");
+        memberNames.add("Helmos");
         memberNames.add("Shahrukh");
         memberNames.add("Salman");
         memberNames.add("Yana");
