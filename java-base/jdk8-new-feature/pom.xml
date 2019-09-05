@@ -7,6 +7,15 @@
     <groupId>com.wjy</groupId>
     <artifactId>jdk8-new-feature</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>

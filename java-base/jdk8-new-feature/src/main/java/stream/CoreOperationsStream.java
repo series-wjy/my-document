@@ -77,7 +77,7 @@ public class CoreOperationsStream {
         Consumer action = System.out::println;
         reduce.ifPresent(action);
 
-        Integer[] arr = list.parallelStream().filter(x -> x %2 ==0).toArray(Integer[]::new);
+        Integer[] arr = list.parallelStream().filter(x -> x %2 == 0).toArray(Integer[]::new);
         System.out.println(Arrays.toString(arr));
     }
 
