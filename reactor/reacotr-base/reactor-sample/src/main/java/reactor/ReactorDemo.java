@@ -33,6 +33,7 @@ public class ReactorDemo {
         Mono<String> noData = Mono.empty();
 
         Mono<String> data = Mono.just("foo");
+        Flux<String> data2 =Flux.empty();
 
         Flux<Integer> numbersFromFiveToSeven = Flux.range(5, 3);
         System.out.println(numbersFromFiveToSeven.collectList().block());
