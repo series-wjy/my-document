@@ -18,13 +18,13 @@ public class SafeWM2 {
     public static void main(String[] args) {
         SafeWM2 obj = new SafeWM2();
         CountDownLatch latch = new CountDownLatch(2);
+        int a = 0;
         new Thread(() -> {
             while (true) {
                 latch.countDown();
-
+                System.out.println(a);
             }
         }).start();
-
         new Thread(() -> {
             while (true) {
                 latch.countDown();
