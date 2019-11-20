@@ -7,6 +7,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/jdk8-new-feature/pom.xml" />
+        <option value="$PROJECT_DIR$/guava-simples/pom.xml" />
       </list>
     </option>
   </component>

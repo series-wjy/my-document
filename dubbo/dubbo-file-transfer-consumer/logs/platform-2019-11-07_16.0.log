@@ -1,0 +1,860 @@
+2019-11-07 16:00:07,895 INFO [ZkClient-EventThread-25-192.168.0.230:2181] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44784&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113606391&version=1.0.0, hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=42964&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113075254&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:09,352 INFO [DubboClientReconnectTimer-thread-1] c.a.d.r.transport.netty.NettyClient [Log4jLogger.java : 58]  [DUBBO] Close old netty channel [id: 0x09d1a267, /192.168.56.1:53980 :> /192.168.56.1:20880] on create new netty channel [id: 0x29828374, /192.168.56.1:54124 => /192.168.56.1:20880], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:09,355 INFO [DubboClientReconnectTimer-thread-1] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Successed connect to server /192.168.56.1:20880 from NettyClient 192.168.56.1 using dubbo version 2.5.6, channel is NettyChannel [channel=[id: 0x29828374, /192.168.56.1:54124 => /192.168.56.1:20880]], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:17,836 INFO [ZkClient-EventThread-25-192.168.0.230:2181] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44784&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113606391&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:21,811 INFO [DubboClientHandler-localhost:20880-thread-2] c.a.d.r.protocol.dubbo.DubboProtocol [Log4jLogger.java : 58]  [DUBBO] disconected from /192.168.56.1:20880,url:dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42536&revision=1.0.0&side=consumer&timestamp=1573113093448&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:24,523 WARN [DubboClientReconnectTimer-thread-1] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 78]  [DUBBO] client reconnect to localhost:20880 find error . url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42536&revision=1.0.0&side=consumer&timestamp=1573113093448&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42536&revision=1.0.0&side=consumer&timestamp=1573113093448&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:connection timed out
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:157)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$2(ScheduledThreadPoolExecutor.java:1)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283)
+	... 3 common frames omitted
+2019-11-07 16:00:33,184 INFO [ZkClient-EventThread-25-192.168.0.230:2181] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44920&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113632339&version=1.0.0, hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44784&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113606391&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:33,545 INFO [DubboClientReconnectTimer-thread-1] c.a.d.r.transport.netty.NettyClient [Log4jLogger.java : 58]  [DUBBO] Close old netty channel [id: 0x29828374, /192.168.56.1:54124 :> /192.168.56.1:20880] on create new netty channel [id: 0x2dccde5f, /192.168.56.1:54147 => /192.168.56.1:20880], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:33,545 INFO [DubboClientReconnectTimer-thread-1] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Successed connect to server /192.168.56.1:20880 from NettyClient 192.168.56.1 using dubbo version 2.5.6, channel is NettyChannel [channel=[id: 0x2dccde5f, /192.168.56.1:54147 => /192.168.56.1:20880]], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:00:49,833 INFO [ZkClient-EventThread-25-192.168.0.230:2181] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44920&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113632339&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:01:46,985 ERROR [http-nio-8085-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 181] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.caucho.hessian.client.HessianRuntimeException: java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1334)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1309)
+	at com.caucho.hessian.client.HessianURLConnection.getOutputStream(HessianURLConnection.java:97)
+	at com.caucho.hessian.client.HessianProxy.sendRequest(HessianProxy.java:279)
+	at com.caucho.hessian.client.HessianProxy.invoke(HessianProxy.java:171)
+	at com.sun.proxy.$Proxy58.testSaveFile(Unknown Source)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol$2.doInvoke(AbstractProxyProtocol.java:94)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:229)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy1.testSaveFile(proxy1.java)
+	at com.wjy.controller.ConsumerController.testSaveFile(ConsumerController.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 16:03:03,997 INFO [DubboClientHandler-localhost:20880-thread-4] c.a.d.r.protocol.dubbo.DubboProtocol [Log4jLogger.java : 58]  [DUBBO] disconected from /192.168.56.1:20880,url:dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42536&revision=1.0.0&side=consumer&timestamp=1573113093448&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:03:06,662 WARN [DubboClientReconnectTimer-thread-2] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 78]  [DUBBO] client reconnect to localhost:20880 find error . url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42536&revision=1.0.0&side=consumer&timestamp=1573113093448&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42536&revision=1.0.0&side=consumer&timestamp=1573113093448&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:157)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$2(ScheduledThreadPoolExecutor.java:1)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:384)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:354)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:276)
+	... 3 common frames omitted
+2019-11-07 16:03:14,809 INFO [ZkClient-EventThread-25-192.168.0.230:2181] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=32628&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113793979&version=1.0.0, hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44920&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113632339&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:03:15,176 INFO [DubboClientReconnectTimer-thread-2] c.a.d.r.transport.netty.NettyClient [Log4jLogger.java : 58]  [DUBBO] Close old netty channel [id: 0x2dccde5f, /192.168.56.1:54147 :> /192.168.56.1:20880] on create new netty channel [id: 0x1aa9ac6a, /192.168.56.1:54226 => /192.168.56.1:20880], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:03:15,177 INFO [DubboClientReconnectTimer-thread-2] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Successed connect to server /192.168.56.1:20880 from NettyClient 192.168.56.1 using dubbo version 2.5.6, channel is NettyChannel [channel=[id: 0x1aa9ac6a, /192.168.56.1:54226 => /192.168.56.1:20880]], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:03:21,793 ERROR [http-nio-8085-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 181] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.caucho.hessian.client.HessianRuntimeException: java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1334)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1309)
+	at com.caucho.hessian.client.HessianURLConnection.getOutputStream(HessianURLConnection.java:97)
+	at com.caucho.hessian.client.HessianProxy.sendRequest(HessianProxy.java:279)
+	at com.caucho.hessian.client.HessianProxy.invoke(HessianProxy.java:171)
+	at com.sun.proxy.$Proxy58.testSaveFile(Unknown Source)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol$2.doInvoke(AbstractProxyProtocol.java:94)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:229)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy1.testSaveFile(proxy1.java)
+	at com.wjy.controller.ConsumerController.testSaveFile(ConsumerController.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 16:03:33,833 INFO [ZkClient-EventThread-25-192.168.0.230:2181] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=32628&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113793979&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:03:42,422 ERROR [http-nio-8085-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 181] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.caucho.hessian.client.HessianRuntimeException: java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1334)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1309)
+	at com.caucho.hessian.client.HessianURLConnection.getOutputStream(HessianURLConnection.java:97)
+	at com.caucho.hessian.client.HessianProxy.sendRequest(HessianProxy.java:279)
+	at com.caucho.hessian.client.HessianProxy.invoke(HessianProxy.java:171)
+	at com.sun.proxy.$Proxy58.testSaveFile(Unknown Source)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol$2.doInvoke(AbstractProxyProtocol.java:94)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:229)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy1.testSaveFile(proxy1.java)
+	at com.wjy.controller.ConsumerController.testSaveFile(ConsumerController.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 16:05:14,287 ERROR [http-nio-8085-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 181] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.caucho.hessian.client.HessianRuntimeException: java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1334)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1309)
+	at com.caucho.hessian.client.HessianURLConnection.getOutputStream(HessianURLConnection.java:97)
+	at com.caucho.hessian.client.HessianProxy.sendRequest(HessianProxy.java:279)
+	at com.caucho.hessian.client.HessianProxy.invoke(HessianProxy.java:171)
+	at com.sun.proxy.$Proxy58.testSaveFile(Unknown Source)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol$2.doInvoke(AbstractProxyProtocol.java:94)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:229)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy1.testSaveFile(proxy1.java)
+	at com.wjy.controller.ConsumerController.testSaveFile(ConsumerController.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 16:08:07,354 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 44880 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 16:08:07,360 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 16:08:07,594 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 16:08:07 CST 2019]; root of context hierarchy
+2019-11-07 16:08:08,471 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 16:08:10,044 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 16:08:10,219 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 16:08:10,417 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 16:08:11,171 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-consumer' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:08:11,184 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:08:11,185 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:08:11,199 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:08:12,478 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 16:08:12,490 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 16:08:12,491 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 16:08:12,677 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 16:08:12,677 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 5083 ms
+2019-11-07 16:08:12,925 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 16:08:12,929 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 16:08:12,930 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 16:08:12,931 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 16:08:12,931 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 16:08:13,241 INFO [main] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Successed connect to server /192.168.56.1:20880 from NettyClient 192.168.56.1 using dubbo version 2.5.6, channel is NettyChannel [channel=[id: 0x15dd5ac2, /192.168.56.1:54297 => /192.168.56.1:20880]], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,242 INFO [main] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Start NettyClient 2VWC9MAUCX73XUQ/192.168.56.1 connect to the server /192.168.56.1:20880, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,299 INFO [main] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Refer dubbo service com.wjy.service.DemoService from url dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&dubbo=2.5.6&interface=com.wjy.service.DemoService&methods=findAllBook&pid=44880&revision=1.0.0&side=consumer&timestamp=1573114092978&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,363 INFO [main] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Load registry store file C:\Users\Administrator\.dubbo\dubbo-registry-192.168.0.230.cache, data: {com.wjy.service.DemoService:1.0.0=empty://192.168.56.1:20880/com.wjy.service.DemoService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&category=configurators&check=false&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoService&logger=slf4j&methods=findAllBook&organization=UNKNOWN&owner=UNKNOWN&pid=42964&revision=1.0.0&side=provider&timeout=120000&timestamp=1573113076132&version=1.0.0, com.wjy.service.DemoHessianService:1.0.0=empty://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=configurators&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0 empty://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=42536&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573113093887&version=1.0.0 hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=32628&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113793979&version=1.0.0, com.wjy.service.DemoService=empty://192.168.56.1/com.wjy.service.DemoService?application=dubbo-consumer&category=configurators&dubbo=2.5.6&interface=com.wjy.service.DemoService&methods=findAllBook&pid=36100&side=consumer&timestamp=1573109242284 empty://192.168.56.1/com.wjy.service.DemoService?application=dubbo-consumer&category=routers&dubbo=2.5.6&interface=com.wjy.service.DemoService&methods=findAllBook&pid=36100&side=consumer&timestamp=1573109242284 empty://192.168.56.1/com.wjy.service.DemoService?application=dubbo-consumer&category=providers&dubbo=2.5.6&interface=com.wjy.service.DemoService&methods=findAllBook&pid=36100&side=consumer&timestamp=1573109242284, com.wjy.file.FileTransfer=empty://192.168.0.163:8080/com.wjy.file.FileTransfer?application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&category=configurators&check=false&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.file.FileTransfer&logger=slf4j&methods=fileTransfer&organization=UNKNOWN&owner=UNKNOWN&pid=22328&server=servlet&side=provider&timestamp=1573095905409}, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,382 INFO [ZkClient-EventThread-25-192.168.0.230:2181] org.I0Itec.zkclient.ZkEventThread [ZkEventThread.java : 64] Starting ZkClient event thread.
+2019-11-07 16:08:13,392 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2019-11-07 16:08:13,393 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:host.name=windows10.microdone.cn
+2019-11-07 16:08:13,393 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.version=1.8.0_181
+2019-11-07 16:08:13,393 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.vendor=Oracle Corporation
+2019-11-07 16:08:13,393 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.home=D:\Program Files\Java\jdk1.8.0_181\jre
+2019-11-07 16:08:13,394 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.class.path=D:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\access-bridge-64.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\cldrdata.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\dnsns.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jaccess.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jfxrt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\localedata.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\nashorn.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunec.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunjce_provider.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunmscapi.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunpkcs11.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\zipfs.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfxswt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\management-agent.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes;E:\myWorkspaces\maven\mvnlib\org\apel\gaia-app-boot\1.0.1-SNAPSHOT\gaia-app-boot-1.0.1-20190917.083833-92.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-web\1.5.7.RELEASE\spring-boot-starter-web-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter\1.5.7.RELEASE\spring-boot-starter-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-logging\1.5.7.RELEASE\spring-boot-starter-logging-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\yaml\snakeyaml\1.17\snakeyaml-1.17.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-tomcat\1.5.7.RELEASE\spring-boot-starter-tomcat-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-core\8.5.20\tomcat-embed-core-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-el\8.5.20\tomcat-embed-el-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.20\tomcat-embed-websocket-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\hibernate\hibernate-validator\5.3.5.Final\hibernate-validator-5.3.5.Final.jar;E:\myWorkspaces\maven\mvnlib\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;E:\myWorkspaces\maven\mvnlib\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-databind\2.8.10\jackson-databind-2.8.10.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-core\2.8.10\jackson-core-2.8.10.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-web\4.3.11.RELEASE\spring-web-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-aop\4.3.11.RELEASE\spring-aop-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-webmvc\4.3.11.RELEASE\spring-webmvc-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-expression\4.3.11.RELEASE\spring-expression-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-aspects\4.3.11.RELEASE\spring-aspects-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\aspectj\aspectjweaver\1.8.10\aspectjweaver-1.8.10.jar;E:\myWorkspaces\maven\mvnlib\org\apel\gaia-commons\1.0.1-SNAPSHOT\gaia-commons-1.0.1-20190917.083811-103.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-lang3\3.6\commons-lang3-3.6.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-context\4.3.11.RELEASE\spring-context-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\commons-fileupload\commons-fileupload\1.3.3\commons-fileupload-1.3.3.jar;E:\myWorkspaces\maven\mvnlib\commons-io\commons-io\2.5\commons-io-2.5.jar;E:\myWorkspaces\maven\mvnlib\org\apel\hades-dubbo-starter\1.0.2-SNAPSHOT\hades-dubbo-starter-1.0.2-20190813.005904-23.jar;E:\myWorkspaces\maven\mvnlib\com\github\sgroschupf\zkclient\0.1\zkclient-0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;E:\myWorkspaces\maven\mvnlib\jline\jline\0.9.94\jline-0.9.94.jar;E:\myWorkspaces\maven\mvnlib\com\alibaba\dubbo\2.5.6\dubbo-2.5.6.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-beans\4.3.11.RELEASE\spring-beans-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\myWorkspaces\maven\mvnlib\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\log4j-over-slf4j\1.7.25\log4j-over-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\com\google\guava\guava\23.0\guava-23.0.jar;E:\myWorkspaces\maven\mvnlib\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\myWorkspaces\maven\mvnlib\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;E:\myWorkspaces\maven\mvnlib\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;E:\myWorkspaces\maven\mvnlib\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;E:\myWorkspaces\maven\mvnlib\com\bjhy\cache-toolkit\1.0.1-SNAPSHOT\cache-toolkit-1.0.1-20190929.032437-33.jar;E:\myWorkspaces\maven\mvnlib\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-runtime\1.5.6\protostuff-runtime-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-api\1.5.6\protostuff-api-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-collectionschema\1.5.6\protostuff-collectionschema-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-core\1.5.6\protostuff-core-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\commons-dbutils\commons-dbutils\1.0\commons-dbutils-1.0.jar;E:\myWorkspaces\maven\mvnlib\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;E:\myWorkspaces\maven\mvnlib\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;E:\myWorkspaces\maven\mvnlib\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;E:\myWorkspaces\maven\mvnlib\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;E:\myWorkspaces\maven\mvnlib\com\google\code\gson\gson\2.8.1\gson-2.8.1.jar;E:\myWorkspaces\maven\mvnlib\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\myWorkspaces\maven\mvnlib\org\jyaml\jyaml\1.3\jyaml-1.3.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\thread-expire\1.0.1-SNAPSHOT\thread-expire-1.0.1-20181121.073403-2.jar;E:\myWorkspaces\maven\mvnlib\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-redis\1.8.7.RELEASE\spring-data-redis-1.8.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-keyvalue\1.2.7.RELEASE\spring-data-keyvalue-1.2.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-commons\1.13.7.RELEASE\spring-data-commons-1.13.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-tx\4.3.11.RELEASE\spring-tx-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-oxm\4.3.11.RELEASE\spring-oxm-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-context-support\4.3.11.RELEASE\spring-context-support-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-core\1.0.1-SNAPSHOT\brace-core-1.0.1-20190624.075405-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-api\1.0.1-SNAPSHOT\brace-api-1.0.1-20190624.075403-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-utils\1.0.1-SNAPSHOT\brace-utils-1.0.1-20190624.075404-6.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\kryo-shaded\4.0.0\kryo-shaded-4.0.0.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\minlog\1.3.0\minlog-1.3.0.jar;E:\myWorkspaces\maven\mvnlib\de\javakaffee\kryo-serializers\0.42\kryo-serializers-0.42.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\kryo\4.0.0\kryo-4.0.0.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\reflectasm\1.11.3\reflectasm-1.11.3.jar;E:\myWorkspaces\maven\mvnlib\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;E:\myWorkspaces\maven\mvnlib\com\alibaba\fastjson\1.2.28\fastjson-1.2.28.jar;E:\myWorkspaces\maven\mvnlib\de\ruedigermoeller\fst\2.40\fst-2.40.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-common\1.0.1-SNAPSHOT\brace-common-1.0.1-20190624.075402-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\ioc\1.0.1-SNAPSHOT\ioc-1.0.1-20190624.075632-6.jar;E:\myWorkspaces\maven\mvnlib\log4j\log4j\1.2.16\log4j-1.2.16.jar;E:\data\my-document\dubbo\dubbo-commons\target\classes;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot\1.5.7.RELEASE\spring-boot-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-autoconfigure\1.5.7.RELEASE\spring-boot-autoconfigure-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;E:\myWorkspaces\maven\mvnlib\org\objenesis\objenesis\2.1\objenesis-2.1.jar;E:\myWorkspaces\maven\mvnlib\com\caucho\hessian\4.0.38\hessian-4.0.38.jar;E:\myWorkspaces\maven\mvnlib\com\googlecode\xmemcached\xmemcached\2.3.2\xmemcached-2.3.2.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-framework\4.0.1\curator-framework-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-client\4.0.1\curator-client-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-recipes\4.0.1\curator-recipes-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\cxf\cxf-core\3.2.11\cxf-core-3.2.11.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\woodstox\woodstox-core\5.0.3\woodstox-core-5.0.3.jar;E:\myWorkspaces\maven\mvnlib\org\codehaus\woodstox\stax2-api\3.1.4\stax2-api-3.1.4.jar;E:\myWorkspaces\maven\mvnlib\org\apache\ws\xmlschema\xmlschema-core\2.2.4\xmlschema-core-2.2.4.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\ch\qos\logback\logback-classic\1.1.11\logback-classic-1.1.11.jar;E:\myWorkspaces\maven\mvnlib\ch\qos\logback\logback-core\1.1.11\logback-core-1.1.11.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-core\4.3.11.RELEASE\spring-core-4.3.11.RELEASE.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\lib\idea_rt.jar
+2019-11-07 16:08:13,394 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.library.path=D:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\jbr\\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\jbr\\bin\server;D:\Program Files\Python37\Scripts\;D:\Program Files\Python37\;D:\Program Files\Java\jdk1.8.0_181\bin;D:\tools\apache-maven-3.5.4\bin;D:\tools\gradle-4.9\bin;D:\tools\mysql-5.7.22-winx64\bin;D:\tools\apache-ant-1.10.5\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;d:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\bin;;.
+2019-11-07 16:08:13,394 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-11-07 16:08:13,395 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.compiler=<NA>
+2019-11-07 16:08:13,395 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.name=Windows 10
+2019-11-07 16:08:13,395 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.arch=amd64
+2019-11-07 16:08:13,395 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.version=10.0
+2019-11-07 16:08:13,395 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.name=Administrator
+2019-11-07 16:08:13,395 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.home=C:\Users\Administrator
+2019-11-07 16:08:13,396 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.dir=E:\data\my-document\dubbo\dubbo-file-transfer-consumer
+2019-11-07 16:08:13,397 INFO [main] org.apache.zookeeper.ZooKeeper [ZooKeeper.java : 438] Initiating client connection, connectString=192.168.0.230:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@7c6189d5
+2019-11-07 16:08:13,418 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 975] Opening socket connection to server 192.168.0.230/192.168.0.230:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-11-07 16:08:13,421 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 852] Socket connection established to 192.168.0.230/192.168.0.230:2181, initiating session
+2019-11-07 16:08:13,429 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 1235] Session establishment complete on server 192.168.0.230/192.168.0.230:2181, sessionid = 0x10076a66f40002c, negotiated timeout = 30000
+2019-11-07 16:08:13,433 INFO [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 449] zookeeper state changed (SyncConnected)
+2019-11-07 16:08:13,472 INFO [main] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Register: consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=consumers&check=false&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=44880&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573114093311&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,497 INFO [main] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Subscribe: consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=44880&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573114093311&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,534 INFO [main] c.a.d.r.zookeeper.ZookeeperRegistry [Log4jLogger.java : 58]  [DUBBO] Notify urls for subscribe url consumer://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=providers,configurators,routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=44880&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573114093311&version=1.0.0, urls: [hessian://192.168.56.1:8091/dubbo-provider/com.wjy.service.DemoHessianService?anyhost=true&application=hephaestus-api&application.version=hephaestus-api&architecture=UNKNOWN&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=32628&revision=1.0.0&server=servlet&side=provider&timeout=120000&timestamp=1573113793979&version=1.0.0, empty://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=configurators&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=44880&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573114093311&version=1.0.0, empty://192.168.56.1/com.wjy.service.DemoHessianService?application=dubbo-consumer&category=routers&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=44880&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573114093311&version=1.0.0], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:13,575 INFO [main] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Refer dubbo service com.wjy.service.DemoHessianService from url zookeeper://192.168.0.230:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=dubbo-consumer&application.version=hephaestus-api&architecture=UNKNOWN&check=false&dubbo=2.5.6&environment=test&generic=false&interface=com.wjy.service.DemoHessianService&logger=slf4j&methods=testGetFile,testSaveFile&organization=UNKNOWN&owner=UNKNOWN&pid=44880&remote.timestamp=1573113793979&revision=1.0.0&server=servlet&side=consumer&timeout=120000&timestamp=1573114093311&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:08:14,035 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 534] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 16:08:07 CST 2019]; root of context hierarchy
+2019-11-07 16:08:14,120 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/list],methods=[GET]}" onto public com.wjy.vo.Result<java.util.List<com.wjy.vo.FileInfoVo>> com.wjy.controller.ConsumerController.list()
+2019-11-07 16:08:14,121 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testMe],methods=[GET]}" onto public com.wjy.vo.Result<java.lang.String> com.wjy.controller.ConsumerController.testMe()
+2019-11-07 16:08:14,122 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testSaveFile2],methods=[GET]}" onto public com.wjy.vo.Result<java.lang.String> com.wjy.controller.ConsumerController.testSaveFile()
+2019-11-07 16:08:14,123 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testGetFile],methods=[GET]}" onto public void com.wjy.controller.ConsumerController.testGetFile(javax.servlet.http.HttpServletResponse)
+2019-11-07 16:08:14,126 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-11-07 16:08:14,126 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-11-07 16:08:14,166 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 16:08:14,166 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 16:08:14,228 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 16:08:14,783 INFO [main] o.s.j.e.a.AnnotationMBeanExporter [MBeanExporter.java : 431] Registering beans for JMX exposure on startup
+2019-11-07 16:08:14,805 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8085"]
+2019-11-07 16:08:14,818 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8085"]
+2019-11-07 16:08:14,819 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 16:08:14,844 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 201] Tomcat started on port(s): 8085 (http)
+2019-11-07 16:08:14,851 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 57] Started DubboConsumerApplication in 8.392 seconds (JVM running for 9.638)
+2019-11-07 16:08:19,978 INFO [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-07 16:08:19,979 INFO [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 489] FrameworkServlet 'dispatcherServlet': initialization started
+2019-11-07 16:08:20,023 INFO [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 508] FrameworkServlet 'dispatcherServlet': initialization completed in 43 ms
+2019-11-07 16:08:21,100 ERROR [http-nio-8085-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 181] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.caucho.hessian.client.HessianRuntimeException: java.net.ConnectException: Connection refused: connect] with root cause
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1334)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1309)
+	at com.caucho.hessian.client.HessianURLConnection.getOutputStream(HessianURLConnection.java:97)
+	at com.caucho.hessian.client.HessianProxy.sendRequest(HessianProxy.java:279)
+	at com.caucho.hessian.client.HessianProxy.invoke(HessianProxy.java:171)
+	at com.sun.proxy.$Proxy58.testSaveFile(Unknown Source)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol$2.doInvoke(AbstractProxyProtocol.java:94)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:229)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy1.testSaveFile(proxy1.java)
+	at com.wjy.controller.ConsumerController.testSaveFile(ConsumerController.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 16:08:48,354 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 43740 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 16:08:48,361 DEBUG [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 51] Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-11-07 16:08:48,361 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 16:08:49,265 DEBUG [background-preinit] org.jboss.logging [LoggerProviders.java : 160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-11-07 16:08:52,955 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 16:08:52,956 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 16:08:53,139 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 16:08:53,885 DEBUG [main] org.I0Itec.zkclient.ZkConnection [ZkConnection.java : 63] Creating new ZookKeeper instance to connect to 192.168.0.230:2181.
+2019-11-07 16:08:53,885 INFO [ZkClient-EventThread-25-192.168.0.230:2181] org.I0Itec.zkclient.ZkEventThread [ZkEventThread.java : 64] Starting ZkClient event thread.
+2019-11-07 16:08:53,897 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2019-11-07 16:08:53,898 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:host.name=windows10.microdone.cn
+2019-11-07 16:08:53,899 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.version=1.8.0_181
+2019-11-07 16:08:53,899 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.vendor=Oracle Corporation
+2019-11-07 16:08:53,899 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.home=D:\Program Files\Java\jdk1.8.0_181\jre
+2019-11-07 16:08:53,899 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.class.path=D:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\access-bridge-64.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\cldrdata.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\dnsns.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jaccess.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jfxrt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\localedata.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\nashorn.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunec.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunjce_provider.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunmscapi.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunpkcs11.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\zipfs.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfxswt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\management-agent.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes;E:\myWorkspaces\maven\mvnlib\org\apel\gaia-app-boot\1.0.1-SNAPSHOT\gaia-app-boot-1.0.1-20190917.083833-92.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-web\1.5.7.RELEASE\spring-boot-starter-web-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter\1.5.7.RELEASE\spring-boot-starter-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-logging\1.5.7.RELEASE\spring-boot-starter-logging-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\yaml\snakeyaml\1.17\snakeyaml-1.17.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-tomcat\1.5.7.RELEASE\spring-boot-starter-tomcat-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-core\8.5.20\tomcat-embed-core-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-el\8.5.20\tomcat-embed-el-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.20\tomcat-embed-websocket-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\hibernate\hibernate-validator\5.3.5.Final\hibernate-validator-5.3.5.Final.jar;E:\myWorkspaces\maven\mvnlib\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;E:\myWorkspaces\maven\mvnlib\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-databind\2.8.10\jackson-databind-2.8.10.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-core\2.8.10\jackson-core-2.8.10.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-web\4.3.11.RELEASE\spring-web-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-aop\4.3.11.RELEASE\spring-aop-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-webmvc\4.3.11.RELEASE\spring-webmvc-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-expression\4.3.11.RELEASE\spring-expression-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-aspects\4.3.11.RELEASE\spring-aspects-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\aspectj\aspectjweaver\1.8.10\aspectjweaver-1.8.10.jar;E:\myWorkspaces\maven\mvnlib\org\apel\gaia-commons\1.0.1-SNAPSHOT\gaia-commons-1.0.1-20190917.083811-103.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-lang3\3.6\commons-lang3-3.6.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-context\4.3.11.RELEASE\spring-context-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\commons-fileupload\commons-fileupload\1.3.3\commons-fileupload-1.3.3.jar;E:\myWorkspaces\maven\mvnlib\commons-io\commons-io\2.5\commons-io-2.5.jar;E:\myWorkspaces\maven\mvnlib\org\apel\hades-dubbo-starter\1.0.2-SNAPSHOT\hades-dubbo-starter-1.0.2-20190813.005904-23.jar;E:\myWorkspaces\maven\mvnlib\com\github\sgroschupf\zkclient\0.1\zkclient-0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;E:\myWorkspaces\maven\mvnlib\jline\jline\0.9.94\jline-0.9.94.jar;E:\myWorkspaces\maven\mvnlib\com\alibaba\dubbo\2.5.6\dubbo-2.5.6.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-beans\4.3.11.RELEASE\spring-beans-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\myWorkspaces\maven\mvnlib\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\log4j-over-slf4j\1.7.25\log4j-over-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\com\google\guava\guava\23.0\guava-23.0.jar;E:\myWorkspaces\maven\mvnlib\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\myWorkspaces\maven\mvnlib\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;E:\myWorkspaces\maven\mvnlib\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;E:\myWorkspaces\maven\mvnlib\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;E:\myWorkspaces\maven\mvnlib\com\bjhy\cache-toolkit\1.0.1-SNAPSHOT\cache-toolkit-1.0.1-20190929.032437-33.jar;E:\myWorkspaces\maven\mvnlib\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-runtime\1.5.6\protostuff-runtime-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-api\1.5.6\protostuff-api-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-collectionschema\1.5.6\protostuff-collectionschema-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-core\1.5.6\protostuff-core-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\commons-dbutils\commons-dbutils\1.0\commons-dbutils-1.0.jar;E:\myWorkspaces\maven\mvnlib\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;E:\myWorkspaces\maven\mvnlib\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;E:\myWorkspaces\maven\mvnlib\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;E:\myWorkspaces\maven\mvnlib\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;E:\myWorkspaces\maven\mvnlib\com\google\code\gson\gson\2.8.1\gson-2.8.1.jar;E:\myWorkspaces\maven\mvnlib\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\myWorkspaces\maven\mvnlib\org\jyaml\jyaml\1.3\jyaml-1.3.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\thread-expire\1.0.1-SNAPSHOT\thread-expire-1.0.1-20181121.073403-2.jar;E:\myWorkspaces\maven\mvnlib\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-redis\1.8.7.RELEASE\spring-data-redis-1.8.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-keyvalue\1.2.7.RELEASE\spring-data-keyvalue-1.2.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-commons\1.13.7.RELEASE\spring-data-commons-1.13.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-tx\4.3.11.RELEASE\spring-tx-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-oxm\4.3.11.RELEASE\spring-oxm-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-context-support\4.3.11.RELEASE\spring-context-support-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-core\1.0.1-SNAPSHOT\brace-core-1.0.1-20190624.075405-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-api\1.0.1-SNAPSHOT\brace-api-1.0.1-20190624.075403-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-utils\1.0.1-SNAPSHOT\brace-utils-1.0.1-20190624.075404-6.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\kryo-shaded\4.0.0\kryo-shaded-4.0.0.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\minlog\1.3.0\minlog-1.3.0.jar;E:\myWorkspaces\maven\mvnlib\de\javakaffee\kryo-serializers\0.42\kryo-serializers-0.42.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\kryo\4.0.0\kryo-4.0.0.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\reflectasm\1.11.3\reflectasm-1.11.3.jar;E:\myWorkspaces\maven\mvnlib\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;E:\myWorkspaces\maven\mvnlib\com\alibaba\fastjson\1.2.28\fastjson-1.2.28.jar;E:\myWorkspaces\maven\mvnlib\de\ruedigermoeller\fst\2.40\fst-2.40.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-common\1.0.1-SNAPSHOT\brace-common-1.0.1-20190624.075402-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\ioc\1.0.1-SNAPSHOT\ioc-1.0.1-20190624.075632-6.jar;E:\myWorkspaces\maven\mvnlib\log4j\log4j\1.2.16\log4j-1.2.16.jar;E:\data\my-document\dubbo\dubbo-commons\target\classes;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot\1.5.7.RELEASE\spring-boot-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-autoconfigure\1.5.7.RELEASE\spring-boot-autoconfigure-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;E:\myWorkspaces\maven\mvnlib\org\objenesis\objenesis\2.1\objenesis-2.1.jar;E:\myWorkspaces\maven\mvnlib\com\caucho\hessian\4.0.38\hessian-4.0.38.jar;E:\myWorkspaces\maven\mvnlib\com\googlecode\xmemcached\xmemcached\2.3.2\xmemcached-2.3.2.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-framework\4.0.1\curator-framework-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-client\4.0.1\curator-client-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-recipes\4.0.1\curator-recipes-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\cxf\cxf-core\3.2.11\cxf-core-3.2.11.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\woodstox\woodstox-core\5.0.3\woodstox-core-5.0.3.jar;E:\myWorkspaces\maven\mvnlib\org\codehaus\woodstox\stax2-api\3.1.4\stax2-api-3.1.4.jar;E:\myWorkspaces\maven\mvnlib\org\apache\ws\xmlschema\xmlschema-core\2.2.4\xmlschema-core-2.2.4.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\ch\qos\logback\logback-classic\1.1.11\logback-classic-1.1.11.jar;E:\myWorkspaces\maven\mvnlib\ch\qos\logback\logback-core\1.1.11\logback-core-1.1.11.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-core\4.3.11.RELEASE\spring-core-4.3.11.RELEASE.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\lib\idea_rt.jar
+2019-11-07 16:08:53,900 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.library.path=D:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\jbr\\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\jbr\\bin\server;D:\Program Files\Python37\Scripts\;D:\Program Files\Python37\;D:\Program Files\Java\jdk1.8.0_181\bin;D:\tools\apache-maven-3.5.4\bin;D:\tools\gradle-4.9\bin;D:\tools\mysql-5.7.22-winx64\bin;D:\tools\apache-ant-1.10.5\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;d:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\bin;;.
+2019-11-07 16:08:53,900 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-11-07 16:08:53,900 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.compiler=<NA>
+2019-11-07 16:08:53,903 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.name=Windows 10
+2019-11-07 16:08:53,904 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.arch=amd64
+2019-11-07 16:08:53,904 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.version=10.0
+2019-11-07 16:08:53,904 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.name=Administrator
+2019-11-07 16:08:53,907 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.home=C:\Users\Administrator
+2019-11-07 16:08:53,907 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.dir=E:\data\my-document\dubbo\dubbo-file-transfer-consumer
+2019-11-07 16:08:53,908 INFO [main] org.apache.zookeeper.ZooKeeper [ZooKeeper.java : 438] Initiating client connection, connectString=192.168.0.230:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@35178483
+2019-11-07 16:08:53,915 DEBUG [main] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 102] zookeeper.disableAutoWatchReset is false
+2019-11-07 16:08:53,930 DEBUG [main] org.I0Itec.zkclient.ZkClient [ZkClient.java : 874] Awaiting connection to Zookeeper server
+2019-11-07 16:08:53,931 DEBUG [main] org.I0Itec.zkclient.ZkClient [ZkClient.java : 628] Waiting for keeper state SyncConnected
+2019-11-07 16:08:53,935 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 975] Opening socket connection to server 192.168.0.230/192.168.0.230:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-11-07 16:08:53,937 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 852] Socket connection established to 192.168.0.230/192.168.0.230:2181, initiating session
+2019-11-07 16:08:53,938 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 892] Session establishment request sent on 192.168.0.230/192.168.0.230:2181
+2019-11-07 16:08:53,943 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 1235] Session establishment complete on server 192.168.0.230/192.168.0.230:2181, sessionid = 0x10076a66f40002d, negotiated timeout = 30000
+2019-11-07 16:08:53,944 DEBUG [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 351] Received event: WatchedEvent state:SyncConnected type:None path:null
+2019-11-07 16:08:53,945 INFO [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 449] zookeeper state changed (SyncConnected)
+2019-11-07 16:08:53,945 DEBUG [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 395] Leaving process event
+2019-11-07 16:08:53,945 DEBUG [main] org.I0Itec.zkclient.ZkClient [ZkClient.java : 638] State is SyncConnected
+2019-11-07 16:08:53,982 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 1,1  replyHeader:: 1,370,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:53,990 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 2,1  replyHeader:: 2,371,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:53,992 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 3,1  replyHeader:: 3,372,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/consumers,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:53,995 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 4,1  replyHeader:: 4,373,0  request:: '/dubbo/com.wjy.service.DemoHessianService/consumers/consumer%253A%252F%252F192.168.56.1%252Fcom.wjy.service.DemoHessianService%253Fapplication%253Ddubbo-consumer%2526category%253Dconsumers%2526check%253Dfalse%2526dubbo%253D2.5.6%2526interface%253Dcom.wjy.service.DemoHessianService%2526methods%253DtestGetFile%252CtestSaveFile%2526pid%253D43740%2526revision%253D1.0.0%2526side%253Dconsumer%2526timeout%253D120000%2526timestamp%253D1573114133803%2526version%253D1.0.0,,v{s{31,s{'world,'anyone}}},1  response:: '/dubbo/com.wjy.service.DemoHessianService/consumers/consumer%253A%252F%252F192.168.56.1%252Fcom.wjy.service.DemoHessianService%253Fapplication%253Ddubbo-consumer%2526category%253Dconsumers%2526check%253Dfalse%2526dubbo%253D2.5.6%2526interface%253Dcom.wjy.service.DemoHessianService%2526methods%253DtestGetFile%252CtestSaveFile%2526pid%253D43740%2526revision%253D1.0.0%2526side%253Dconsumer%2526timeout%253D120000%2526timestamp%253D1573114133803%2526version%253D1.0.0 
+2019-11-07 16:08:53,998 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 5,1  replyHeader:: 5,374,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,000 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 6,1  replyHeader:: 6,375,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,002 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 7,1  replyHeader:: 7,376,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/providers,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,006 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 8,3  replyHeader:: 8,376,0  request:: '/dubbo/com.wjy.service.DemoHessianService/providers,T  response:: s{136,136,1573099072410,1573099072410,0,23,0,0,0,1,352} 
+2019-11-07 16:08:54,010 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 9,8  replyHeader:: 9,376,0  request:: '/dubbo/com.wjy.service.DemoHessianService/providers,T  response:: v{'hessian%253A%252F%252F192.168.56.1%253A8091%252Fdubbo-provider%252Fcom.wjy.service.DemoHessianService%253Fanyhost%253Dtrue%2526application%253Dhephaestus-api%2526application.version%253Dhephaestus-api%2526architecture%253DUNKNOWN%2526dubbo%253D2.5.6%2526environment%253Dtest%2526generic%253Dfalse%2526interface%253Dcom.wjy.service.DemoHessianService%2526logger%253Dslf4j%2526methods%253DtestGetFile%252CtestSaveFile%2526organization%253DUNKNOWN%2526owner%253DUNKNOWN%2526pid%253D32628%2526revision%253D1.0.0%2526server%253Dservlet%2526side%253Dprovider%2526timeout%253D120000%2526timestamp%253D1573113793979%2526version%253D1.0.0} 
+2019-11-07 16:08:54,013 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 10,1  replyHeader:: 10,377,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,015 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 11,1  replyHeader:: 11,378,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,017 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 12,1  replyHeader:: 12,379,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/configurators,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,018 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 13,3  replyHeader:: 13,379,0  request:: '/dubbo/com.wjy.service.DemoHessianService/configurators,T  response:: s{140,140,1573099072419,1573099072419,0,0,0,0,0,0,140} 
+2019-11-07 16:08:54,019 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 14,8  replyHeader:: 14,379,0  request:: '/dubbo/com.wjy.service.DemoHessianService/configurators,T  response:: v{} 
+2019-11-07 16:08:54,021 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 15,1  replyHeader:: 15,380,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,023 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 16,1  replyHeader:: 16,381,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,025 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 17,1  replyHeader:: 17,382,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/routers,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:08:54,026 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 18,3  replyHeader:: 18,382,0  request:: '/dubbo/com.wjy.service.DemoHessianService/routers,T  response:: s{304,304,1573113037136,1573113037136,0,0,0,0,0,0,304} 
+2019-11-07 16:08:54,027 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002d, packet:: clientPath:null serverPath:null finished:false header:: 19,8  replyHeader:: 19,382,0  request:: '/dubbo/com.wjy.service.DemoHessianService/routers,T  response:: v{} 
+2019-11-07 16:08:55,317 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8085"]
+2019-11-07 16:08:55,333 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8085"]
+2019-11-07 16:08:55,335 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 16:08:55,371 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 57] Started DubboConsumerApplication in 7.828 seconds (JVM running for 8.974)
+2019-11-07 16:09:04,027 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 717] Got ping response for sessionid: 0x10076a66f40002d after 0ms
+2019-11-07 16:09:14,031 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 717] Got ping response for sessionid: 0x10076a66f40002d after 2ms
+2019-11-07 16:09:24,031 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 717] Got ping response for sessionid: 0x10076a66f40002d after 1ms
+2019-11-07 16:09:34,033 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 717] Got ping response for sessionid: 0x10076a66f40002d after 1ms
+2019-11-07 16:10:44,690 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 31212 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 16:10:44,695 DEBUG [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 51] Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-11-07 16:10:44,696 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 16:10:45,671 DEBUG [background-preinit] org.jboss.logging [LoggerProviders.java : 160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-11-07 16:10:50,156 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 16:10:50,157 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 16:10:50,452 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 16:10:51,376 DEBUG [main] org.I0Itec.zkclient.ZkConnection [ZkConnection.java : 63] Creating new ZookKeeper instance to connect to 192.168.0.230:2181.
+2019-11-07 16:10:51,377 INFO [ZkClient-EventThread-25-192.168.0.230:2181] org.I0Itec.zkclient.ZkEventThread [ZkEventThread.java : 64] Starting ZkClient event thread.
+2019-11-07 16:10:51,385 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2019-11-07 16:10:51,385 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:host.name=windows10.microdone.cn
+2019-11-07 16:10:51,386 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.version=1.8.0_181
+2019-11-07 16:10:51,386 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.vendor=Oracle Corporation
+2019-11-07 16:10:51,386 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.home=D:\Program Files\Java\jdk1.8.0_181\jre
+2019-11-07 16:10:51,386 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.class.path=D:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\access-bridge-64.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\cldrdata.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\dnsns.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jaccess.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\jfxrt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\localedata.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\nashorn.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunec.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunjce_provider.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunmscapi.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\sunpkcs11.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext\zipfs.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfxswt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\management-agent.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes;E:\myWorkspaces\maven\mvnlib\org\apel\gaia-app-boot\1.0.1-SNAPSHOT\gaia-app-boot-1.0.1-20190917.083833-92.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-web\1.5.7.RELEASE\spring-boot-starter-web-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter\1.5.7.RELEASE\spring-boot-starter-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-logging\1.5.7.RELEASE\spring-boot-starter-logging-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\yaml\snakeyaml\1.17\snakeyaml-1.17.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-starter-tomcat\1.5.7.RELEASE\spring-boot-starter-tomcat-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-core\8.5.20\tomcat-embed-core-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-el\8.5.20\tomcat-embed-el-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.20\tomcat-embed-websocket-8.5.20.jar;E:\myWorkspaces\maven\mvnlib\org\hibernate\hibernate-validator\5.3.5.Final\hibernate-validator-5.3.5.Final.jar;E:\myWorkspaces\maven\mvnlib\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;E:\myWorkspaces\maven\mvnlib\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-databind\2.8.10\jackson-databind-2.8.10.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-core\2.8.10\jackson-core-2.8.10.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-web\4.3.11.RELEASE\spring-web-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-aop\4.3.11.RELEASE\spring-aop-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-webmvc\4.3.11.RELEASE\spring-webmvc-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-expression\4.3.11.RELEASE\spring-expression-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-aspects\4.3.11.RELEASE\spring-aspects-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\aspectj\aspectjweaver\1.8.10\aspectjweaver-1.8.10.jar;E:\myWorkspaces\maven\mvnlib\org\apel\gaia-commons\1.0.1-SNAPSHOT\gaia-commons-1.0.1-20190917.083811-103.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-lang3\3.6\commons-lang3-3.6.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-context\4.3.11.RELEASE\spring-context-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\commons-fileupload\commons-fileupload\1.3.3\commons-fileupload-1.3.3.jar;E:\myWorkspaces\maven\mvnlib\commons-io\commons-io\2.5\commons-io-2.5.jar;E:\myWorkspaces\maven\mvnlib\org\apel\hades-dubbo-starter\1.0.2-SNAPSHOT\hades-dubbo-starter-1.0.2-20190813.005904-23.jar;E:\myWorkspaces\maven\mvnlib\com\github\sgroschupf\zkclient\0.1\zkclient-0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;E:\myWorkspaces\maven\mvnlib\jline\jline\0.9.94\jline-0.9.94.jar;E:\myWorkspaces\maven\mvnlib\com\alibaba\dubbo\2.5.6\dubbo-2.5.6.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-beans\4.3.11.RELEASE\spring-beans-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\jboss\netty\netty\3.2.5.Final\netty-3.2.5.Final.jar;E:\myWorkspaces\maven\mvnlib\org\javassist\javassist\3.21.0-GA\javassist-3.21.0-GA.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\log4j-over-slf4j\1.7.25\log4j-over-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\com\google\guava\guava\23.0\guava-23.0.jar;E:\myWorkspaces\maven\mvnlib\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;E:\myWorkspaces\maven\mvnlib\com\google\errorprone\error_prone_annotations\2.0.18\error_prone_annotations-2.0.18.jar;E:\myWorkspaces\maven\mvnlib\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;E:\myWorkspaces\maven\mvnlib\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;E:\myWorkspaces\maven\mvnlib\com\bjhy\cache-toolkit\1.0.1-SNAPSHOT\cache-toolkit-1.0.1-20190929.032437-33.jar;E:\myWorkspaces\maven\mvnlib\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-runtime\1.5.6\protostuff-runtime-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-api\1.5.6\protostuff-api-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-collectionschema\1.5.6\protostuff-collectionschema-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\io\protostuff\protostuff-core\1.5.6\protostuff-core-1.5.6.jar;E:\myWorkspaces\maven\mvnlib\commons-dbutils\commons-dbutils\1.0\commons-dbutils-1.0.jar;E:\myWorkspaces\maven\mvnlib\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;E:\myWorkspaces\maven\mvnlib\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;E:\myWorkspaces\maven\mvnlib\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;E:\myWorkspaces\maven\mvnlib\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;E:\myWorkspaces\maven\mvnlib\com\google\code\gson\gson\2.8.1\gson-2.8.1.jar;E:\myWorkspaces\maven\mvnlib\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;E:\myWorkspaces\maven\mvnlib\org\jyaml\jyaml\1.3\jyaml-1.3.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\thread-expire\1.0.1-SNAPSHOT\thread-expire-1.0.1-20181121.073403-2.jar;E:\myWorkspaces\maven\mvnlib\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-redis\1.8.7.RELEASE\spring-data-redis-1.8.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-keyvalue\1.2.7.RELEASE\spring-data-keyvalue-1.2.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\data\spring-data-commons\1.13.7.RELEASE\spring-data-commons-1.13.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-tx\4.3.11.RELEASE\spring-tx-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-oxm\4.3.11.RELEASE\spring-oxm-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-context-support\4.3.11.RELEASE\spring-context-support-4.3.11.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-core\1.0.1-SNAPSHOT\brace-core-1.0.1-20190624.075405-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-api\1.0.1-SNAPSHOT\brace-api-1.0.1-20190624.075403-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-utils\1.0.1-SNAPSHOT\brace-utils-1.0.1-20190624.075404-6.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\kryo-shaded\4.0.0\kryo-shaded-4.0.0.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\minlog\1.3.0\minlog-1.3.0.jar;E:\myWorkspaces\maven\mvnlib\de\javakaffee\kryo-serializers\0.42\kryo-serializers-0.42.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\kryo\4.0.0\kryo-4.0.0.jar;E:\myWorkspaces\maven\mvnlib\com\esotericsoftware\reflectasm\1.11.3\reflectasm-1.11.3.jar;E:\myWorkspaces\maven\mvnlib\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;E:\myWorkspaces\maven\mvnlib\com\alibaba\fastjson\1.2.28\fastjson-1.2.28.jar;E:\myWorkspaces\maven\mvnlib\de\ruedigermoeller\fst\2.40\fst-2.40.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\brace-common\1.0.1-SNAPSHOT\brace-common-1.0.1-20190624.075402-6.jar;E:\myWorkspaces\maven\mvnlib\cn\wulin\ioc\1.0.1-SNAPSHOT\ioc-1.0.1-20190624.075632-6.jar;E:\myWorkspaces\maven\mvnlib\log4j\log4j\1.2.16\log4j-1.2.16.jar;E:\data\my-document\dubbo\dubbo-commons\target\classes;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot\1.5.7.RELEASE\spring-boot-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\boot\spring-boot-autoconfigure\1.5.7.RELEASE\spring-boot-autoconfigure-1.5.7.RELEASE.jar;E:\myWorkspaces\maven\mvnlib\org\ow2\asm\asm\5.0.3\asm-5.0.3.jar;E:\myWorkspaces\maven\mvnlib\org\objenesis\objenesis\2.1\objenesis-2.1.jar;E:\myWorkspaces\maven\mvnlib\com\caucho\hessian\4.0.38\hessian-4.0.38.jar;E:\myWorkspaces\maven\mvnlib\com\googlecode\xmemcached\xmemcached\2.3.2\xmemcached-2.3.2.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-framework\4.0.1\curator-framework-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-client\4.0.1\curator-client-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\curator\curator-recipes\4.0.1\curator-recipes-4.0.1.jar;E:\myWorkspaces\maven\mvnlib\org\apache\cxf\cxf-core\3.2.11\cxf-core-3.2.11.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\woodstox\woodstox-core\5.0.3\woodstox-core-5.0.3.jar;E:\myWorkspaces\maven\mvnlib\org\codehaus\woodstox\stax2-api\3.1.4\stax2-api-3.1.4.jar;E:\myWorkspaces\maven\mvnlib\org\apache\ws\xmlschema\xmlschema-core\2.2.4\xmlschema-core-2.2.4.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\ch\qos\logback\logback-classic\1.1.11\logback-classic-1.1.11.jar;E:\myWorkspaces\maven\mvnlib\ch\qos\logback\logback-core\1.1.11\logback-core-1.1.11.jar;E:\myWorkspaces\maven\mvnlib\org\springframework\spring-core\4.3.11.RELEASE\spring-core-4.3.11.RELEASE.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\lib\idea_rt.jar
+2019-11-07 16:10:51,387 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.library.path=D:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\jbr\\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\jbr\\bin\server;D:\Program Files\Python37\Scripts\;D:\Program Files\Python37\;D:\Program Files\Java\jdk1.8.0_181\bin;D:\tools\apache-maven-3.5.4\bin;D:\tools\gradle-4.9\bin;D:\tools\mysql-5.7.22-winx64\bin;D:\tools\apache-ant-1.10.5\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;d:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\bin;;.
+2019-11-07 16:10:51,388 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+2019-11-07 16:10:51,388 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:java.compiler=<NA>
+2019-11-07 16:10:51,388 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.name=Windows 10
+2019-11-07 16:10:51,388 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.arch=amd64
+2019-11-07 16:10:51,388 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:os.version=10.0
+2019-11-07 16:10:51,389 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.name=Administrator
+2019-11-07 16:10:51,389 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.home=C:\Users\Administrator
+2019-11-07 16:10:51,389 INFO [main] org.apache.zookeeper.ZooKeeper [Environment.java : 100] Client environment:user.dir=E:\data\my-document\dubbo\dubbo-file-transfer-consumer
+2019-11-07 16:10:51,390 INFO [main] org.apache.zookeeper.ZooKeeper [ZooKeeper.java : 438] Initiating client connection, connectString=192.168.0.230:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@138caeca
+2019-11-07 16:10:51,393 DEBUG [main] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 102] zookeeper.disableAutoWatchReset is false
+2019-11-07 16:10:51,404 DEBUG [main] org.I0Itec.zkclient.ZkClient [ZkClient.java : 874] Awaiting connection to Zookeeper server
+2019-11-07 16:10:51,404 DEBUG [main] org.I0Itec.zkclient.ZkClient [ZkClient.java : 628] Waiting for keeper state SyncConnected
+2019-11-07 16:10:51,409 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 975] Opening socket connection to server 192.168.0.230/192.168.0.230:2181. Will not attempt to authenticate using SASL (unknown error)
+2019-11-07 16:10:51,410 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 852] Socket connection established to 192.168.0.230/192.168.0.230:2181, initiating session
+2019-11-07 16:10:51,411 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 892] Session establishment request sent on 192.168.0.230/192.168.0.230:2181
+2019-11-07 16:10:51,416 INFO [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 1235] Session establishment complete on server 192.168.0.230/192.168.0.230:2181, sessionid = 0x10076a66f40002e, negotiated timeout = 30000
+2019-11-07 16:10:51,417 DEBUG [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 351] Received event: WatchedEvent state:SyncConnected type:None path:null
+2019-11-07 16:10:51,418 INFO [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 449] zookeeper state changed (SyncConnected)
+2019-11-07 16:10:51,418 DEBUG [main-EventThread] org.I0Itec.zkclient.ZkClient [ZkClient.java : 395] Leaving process event
+2019-11-07 16:10:51,418 DEBUG [main] org.I0Itec.zkclient.ZkClient [ZkClient.java : 638] State is SyncConnected
+2019-11-07 16:10:51,471 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 1,1  replyHeader:: 1,385,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,483 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 2,1  replyHeader:: 2,386,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,486 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 3,1  replyHeader:: 3,387,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/consumers,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,489 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 4,1  replyHeader:: 4,388,0  request:: '/dubbo/com.wjy.service.DemoHessianService/consumers/consumer%253A%252F%252F192.168.56.1%252Fcom.wjy.service.DemoHessianService%253Fapplication%253Ddubbo-consumer%2526category%253Dconsumers%2526check%253Dfalse%2526dubbo%253D2.5.6%2526interface%253Dcom.wjy.service.DemoHessianService%2526methods%253DtestGetFile%252CtestSaveFile%2526pid%253D31212%2526revision%253D1.0.0%2526side%253Dconsumer%2526timeout%253D120000%2526timestamp%253D1573114251302%2526version%253D1.0.0,,v{s{31,s{'world,'anyone}}},1  response:: '/dubbo/com.wjy.service.DemoHessianService/consumers/consumer%253A%252F%252F192.168.56.1%252Fcom.wjy.service.DemoHessianService%253Fapplication%253Ddubbo-consumer%2526category%253Dconsumers%2526check%253Dfalse%2526dubbo%253D2.5.6%2526interface%253Dcom.wjy.service.DemoHessianService%2526methods%253DtestGetFile%252CtestSaveFile%2526pid%253D31212%2526revision%253D1.0.0%2526side%253Dconsumer%2526timeout%253D120000%2526timestamp%253D1573114251302%2526version%253D1.0.0 
+2019-11-07 16:10:51,495 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 5,1  replyHeader:: 5,389,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,497 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 6,1  replyHeader:: 6,390,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,499 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 7,1  replyHeader:: 7,391,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/providers,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,505 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 8,3  replyHeader:: 8,391,0  request:: '/dubbo/com.wjy.service.DemoHessianService/providers,T  response:: s{136,136,1573099072410,1573099072410,0,23,0,0,0,1,352} 
+2019-11-07 16:10:51,511 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 9,8  replyHeader:: 9,391,0  request:: '/dubbo/com.wjy.service.DemoHessianService/providers,T  response:: v{'hessian%253A%252F%252F192.168.56.1%253A8091%252Fdubbo-provider%252Fcom.wjy.service.DemoHessianService%253Fanyhost%253Dtrue%2526application%253Dhephaestus-api%2526application.version%253Dhephaestus-api%2526architecture%253DUNKNOWN%2526dubbo%253D2.5.6%2526environment%253Dtest%2526generic%253Dfalse%2526interface%253Dcom.wjy.service.DemoHessianService%2526logger%253Dslf4j%2526methods%253DtestGetFile%252CtestSaveFile%2526organization%253DUNKNOWN%2526owner%253DUNKNOWN%2526pid%253D32628%2526revision%253D1.0.0%2526server%253Dservlet%2526side%253Dprovider%2526timeout%253D120000%2526timestamp%253D1573113793979%2526version%253D1.0.0} 
+2019-11-07 16:10:51,513 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 10,1  replyHeader:: 10,392,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,515 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 11,1  replyHeader:: 11,393,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,518 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 12,1  replyHeader:: 12,394,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/configurators,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,519 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 13,3  replyHeader:: 13,394,0  request:: '/dubbo/com.wjy.service.DemoHessianService/configurators,T  response:: s{140,140,1573099072419,1573099072419,0,0,0,0,0,0,140} 
+2019-11-07 16:10:51,521 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 14,8  replyHeader:: 14,394,0  request:: '/dubbo/com.wjy.service.DemoHessianService/configurators,T  response:: v{} 
+2019-11-07 16:10:51,523 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 15,1  replyHeader:: 15,395,-110  request:: '/dubbo,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,525 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 16,1  replyHeader:: 16,396,-110  request:: '/dubbo/com.wjy.service.DemoHessianService,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,528 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 17,1  replyHeader:: 17,397,-110  request:: '/dubbo/com.wjy.service.DemoHessianService/routers,,v{s{31,s{'world,'anyone}}},0  response::  
+2019-11-07 16:10:51,531 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 18,3  replyHeader:: 18,397,0  request:: '/dubbo/com.wjy.service.DemoHessianService/routers,T  response:: s{304,304,1573113037136,1573113037136,0,0,0,0,0,0,304} 
+2019-11-07 16:10:51,533 DEBUG [main-SendThread(192.168.0.230:2181)] org.apache.zookeeper.ClientCnxn [ClientCnxn.java : 818] Reading reply sessionid:0x10076a66f40002e, packet:: clientPath:null serverPath:null finished:false header:: 19,8  replyHeader:: 19,397,0  request:: '/dubbo/com.wjy.service.DemoHessianService/routers,T  response:: v{} 
+2019-11-07 16:10:53,051 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8085"]
+2019-11-07 16:10:53,069 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8085"]
+2019-11-07 16:10:53,071 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 16:10:53,100 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 57] Started DubboConsumerApplication in 9.218 seconds (JVM running for 10.362)
+2019-11-07 16:10:56,097 WARN [DubboClientReconnectTimer-thread-1] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 78]  [DUBBO] client reconnect to localhost:20880 find error . url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=31212&revision=1.0.0&side=consumer&timestamp=1573114250854&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=31212&revision=1.0.0&side=consumer&timestamp=1573114250854&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:157)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$2(ScheduledThreadPoolExecutor.java:1)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:384)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:354)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:276)
+	... 3 common frames omitted
+2019-11-07 16:57:51,227 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 48872 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 16:57:51,231 DEBUG [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 51] Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-11-07 16:57:51,232 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 16:57:52,463 DEBUG [background-preinit] org.jboss.logging [LoggerProviders.java : 160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-11-07 16:59:26,735 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 48472 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 16:59:26,739 DEBUG [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 51] Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-11-07 16:59:26,739 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 16:59:27,461 DEBUG [background-preinit] org.jboss.logging [LoggerProviders.java : 160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-11-07 16:59:45,481 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 42680 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 16:59:45,492 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 16:59:45,606 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7eac9008: startup date [Thu Nov 07 16:59:45 CST 2019]; root of context hierarchy
+2019-11-07 16:59:46,692 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 16:59:48,270 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 16:59:48,461 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 16:59:48,663 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 16:59:49,764 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-consumer' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:59:49,775 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:59:49,776 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:59:49,809 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 16:59:50,824 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 16:59:50,849 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 16:59:50,851 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 16:59:51,042 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 16:59:51,042 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 5436 ms
+2019-11-07 16:59:51,301 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 16:59:51,305 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 16:59:51,305 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 16:59:51,306 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 16:59:51,306 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 16:59:52,626 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0): client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+2019-11-07 16:59:52,630 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Stopping service [Tomcat]
+2019-11-07 16:59:52,646 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 16:59:52,653 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0): client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.wjy.DubboConsumerApplication.main(DubboConsumerApplication.java:14)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0): client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:254)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1316)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0): client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:371)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getSharedClient(DubboProtocol.java:334)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getClients(DubboProtocol.java:311)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.refer(DubboProtocol.java:293)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.refer(ProtocolListenerWrapper.java:65)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.refer(ProtocolFilterWrapper.java:101)
+	at com.alibaba.dubbo.rpc.Protocol$Adaptive.refer(Protocol$Adaptive.java)
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:379)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:320)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:159)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 29 common frames omitted
+Caused by: com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://localhost:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=42680&revision=1.0.0&side=consumer&timestamp=1573117191358&version=1.0.0) failed to connect to server localhost/127.0.0.1:20880, error message is:Connection refused: no further information
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:91)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.<init>(NettyClient.java:61)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyTransporter.connect(NettyTransporter.java:37)
+	at com.alibaba.dubbo.remoting.Transporter$Adaptive.connect(Transporter$Adaptive.java)
+	at com.alibaba.dubbo.remoting.Transporters.connect(Transporters.java:76)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchanger.connect(HeaderExchanger.java:37)
+	at com.alibaba.dubbo.remoting.exchange.Exchangers.connect(Exchangers.java:110)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:368)
+	... 40 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:384)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:354)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:276)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 16:59:52,656 INFO [DubboShutdownHook] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 16:59:52,658 INFO [DubboShutdownHook] c.a.d.r.s.AbstractRegistryFactory [Log4jLogger.java : 58]  [DUBBO] Close all registries [], dubbo version: 2.5.6, current host: 192.168.56.1

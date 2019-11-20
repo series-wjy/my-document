@@ -1,0 +1,377 @@
+2019-11-07 10:15:45,598 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 7256 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:15:45,603 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:15:45,669 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a400542: startup date [Thu Nov 07 10:15:45 CST 2019]; root of context hierarchy
+2019-11-07 10:15:45,933 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:15:46,636 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:15:47,330 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8080 (http)
+2019-11-07 10:15:47,341 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 10:15:47,342 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 10:15:47,458 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 10:15:47,459 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 1790 ms
+2019-11-07 10:15:47,636 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 10:15:47,641 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 10:15:47,642 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 10:15:47,642 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 10:15:47,642 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 10:15:47,945 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 534] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a400542: startup date [Thu Nov 07 10:15:45 CST 2019]; root of context hierarchy
+2019-11-07 10:15:47,998 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-11-07 10:15:47,999 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-11-07 10:15:48,025 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 10:15:48,026 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 10:15:48,057 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 10:15:48,377 INFO [main] o.s.j.e.a.AnnotationMBeanExporter [MBeanExporter.java : 431] Registering beans for JMX exposure on startup
+2019-11-07 10:15:48,391 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8080"]
+2019-11-07 10:15:48,400 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8080"]
+2019-11-07 10:15:48,409 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 10:15:48,432 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 201] Tomcat started on port(s): 8080 (http)
+2019-11-07 10:15:48,437 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 57] Started DubboFileTransferProviderApplication in 3.393 seconds (JVM running for 5.746)
+2019-11-07 10:18:11,316 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 2244 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:18:11,321 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:18:11,361 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a400542: startup date [Thu Nov 07 10:18:11 CST 2019]; root of context hierarchy
+2019-11-07 10:18:11,587 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:18:12,169 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:18:12,764 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8080 (http)
+2019-11-07 10:18:12,772 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 10:18:12,773 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 10:18:12,887 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 10:18:12,887 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 1526 ms
+2019-11-07 10:18:13,052 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 10:18:13,057 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 10:18:13,058 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 10:18:13,059 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 10:18:13,059 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 10:18:13,343 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 534] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a400542: startup date [Thu Nov 07 10:18:11 CST 2019]; root of context hierarchy
+2019-11-07 10:18:13,393 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-11-07 10:18:13,394 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-11-07 10:18:13,420 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 10:18:13,420 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 10:18:13,449 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 10:18:13,741 INFO [main] o.s.j.e.a.AnnotationMBeanExporter [MBeanExporter.java : 431] Registering beans for JMX exposure on startup
+2019-11-07 10:18:13,755 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8080"]
+2019-11-07 10:18:13,764 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8080"]
+2019-11-07 10:18:13,775 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 10:18:13,790 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 201] Tomcat started on port(s): 8080 (http)
+2019-11-07 10:18:13,796 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 57] Started DubboFileTransferProviderApplication in 3.085 seconds (JVM running for 5.008)
+2019-11-07 10:34:39,504 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 16728 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:34:39,512 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:34:39,611 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:34:39 CST 2019]; root of context hierarchy
+2019-11-07 10:34:40,217 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:34:41,065 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\META-INF\spring\module-hephaestus-api-provider.xml]
+2019-11-07 10:34:41,471 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 10:34:41,496 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/gaia-app-boot/1.0.1-SNAPSHOT/gaia-app-boot-1.0.1-20190917.083833-92.jar!/META-INF/spring/module-boot.xml]
+2019-11-07 10:34:41,538 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/META-INF/spring/module-dubbo-starter.xml]
+2019-11-07 10:34:41,595 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/com/bjhy/cache-toolkit/1.0.1-SNAPSHOT/cache-toolkit-1.0.1-20190929.032437-33.jar!/META-INF/spring/module-cache-toolkit.xml]
+2019-11-07 10:34:41,871 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:34:42,352 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'com.alibaba.dubbo.config.RegistryConfig' defined in null: Could not resolve placeholder 'dubbo.zookeeper-address' in value "${dubbo.zookeeper-address}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.zookeeper-address' in value "${dubbo.zookeeper-address}"
+2019-11-07 10:34:42,362 ERROR [main] o.s.b.f.s.DefaultListableBeanFactory [DefaultSingletonBeanRegistry.java : 581] Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:34:39 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+2019-11-07 10:34:42,392 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 10:34:42,432 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'com.alibaba.dubbo.config.RegistryConfig' defined in null: Could not resolve placeholder 'dubbo.zookeeper-address' in value "${dubbo.zookeeper-address}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.zookeeper-address' in value "${dubbo.zookeeper-address}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:223)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:180)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:152)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:281)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.zookeeper-address' in value "${dubbo.zookeeper-address}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:282)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:209)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:141)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:82)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:220)
+	... 15 common frames omitted
+2019-11-07 10:35:02,643 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 17648 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:35:02,648 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:35:02,771 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:35:02 CST 2019]; root of context hierarchy
+2019-11-07 10:35:03,478 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:35:04,051 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\META-INF\spring\module-hephaestus-api-provider.xml]
+2019-11-07 10:35:04,458 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 10:35:04,482 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/gaia-app-boot/1.0.1-SNAPSHOT/gaia-app-boot-1.0.1-20190917.083833-92.jar!/META-INF/spring/module-boot.xml]
+2019-11-07 10:35:04,540 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/META-INF/spring/module-dubbo-starter.xml]
+2019-11-07 10:35:04,584 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/com/bjhy/cache-toolkit/1.0.1-SNAPSHOT/cache-toolkit-1.0.1-20190929.032437-33.jar!/META-INF/spring/module-cache-toolkit.xml]
+2019-11-07 10:35:04,896 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:35:05,267 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'com.alibaba.dubbo.config.RegistryConfig' defined in null: Could not resolve placeholder 'dubbo.zookeeper.address' in value "${dubbo.zookeeper.address}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.zookeeper.address' in value "${dubbo.zookeeper.address}"
+2019-11-07 10:35:05,271 ERROR [main] o.s.b.f.s.DefaultListableBeanFactory [DefaultSingletonBeanRegistry.java : 581] Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:35:02 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+2019-11-07 10:35:05,279 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 10:35:05,286 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'com.alibaba.dubbo.config.RegistryConfig' defined in null: Could not resolve placeholder 'dubbo.zookeeper.address' in value "${dubbo.zookeeper.address}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.zookeeper.address' in value "${dubbo.zookeeper.address}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:223)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:180)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:152)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:281)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.zookeeper.address' in value "${dubbo.zookeeper.address}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:282)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:209)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:141)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:82)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:220)
+	... 15 common frames omitted
+2019-11-07 10:35:30,235 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 8568 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:35:30,239 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:35:30,322 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:35:30 CST 2019]; root of context hierarchy
+2019-11-07 10:35:31,025 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:35:31,553 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\META-INF\spring\module-hephaestus-api-provider.xml]
+2019-11-07 10:35:31,927 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 10:35:31,952 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/gaia-app-boot/1.0.1-SNAPSHOT/gaia-app-boot-1.0.1-20190917.083833-92.jar!/META-INF/spring/module-boot.xml]
+2019-11-07 10:35:32,000 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/META-INF/spring/module-dubbo-starter.xml]
+2019-11-07 10:35:32,071 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/com/bjhy/cache-toolkit/1.0.1-SNAPSHOT/cache-toolkit-1.0.1-20190929.032437-33.jar!/META-INF/spring/module-cache-toolkit.xml]
+2019-11-07 10:35:32,422 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:35:32,751 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+2019-11-07 10:35:32,753 ERROR [main] o.s.b.f.s.DefaultListableBeanFactory [DefaultSingletonBeanRegistry.java : 581] Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:35:30 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+2019-11-07 10:35:32,763 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 10:35:32,771 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:223)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:180)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:152)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:281)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:282)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:209)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:141)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:82)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:220)
+	... 15 common frames omitted
+2019-11-07 10:37:28,885 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 17992 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:37:28,890 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:37:28,947 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c0c77c7: startup date [Thu Nov 07 10:37:28 CST 2019]; root of context hierarchy
+2019-11-07 10:37:29,444 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:37:30,127 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\META-INF\spring\module-hephaestus-api-provider.xml]
+2019-11-07 10:37:30,742 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 10:37:30,766 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/gaia-app-boot/1.0.1-SNAPSHOT/gaia-app-boot-1.0.1-20190917.083833-92.jar!/META-INF/spring/module-boot.xml]
+2019-11-07 10:37:30,813 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/META-INF/spring/module-dubbo-starter.xml]
+2019-11-07 10:37:30,867 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/com/bjhy/cache-toolkit/1.0.1-SNAPSHOT/cache-toolkit-1.0.1-20190929.032437-33.jar!/META-INF/spring/module-cache-toolkit.xml]
+2019-11-07 10:37:31,266 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:37:31,846 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'springRedisConnectionConfiguration' of type [com.bjhy.cache.toolkit.core.spring.SpringRedisConnectionConfiguration$$EnhancerBySpringCGLIB$$68bc263] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:37:32,182 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:37:32,210 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConnectionConfiguration$$EnhancerBySpringCGLIB$$86d247ad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:37:32,285 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:37:32,342 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'springRedisConnectionFactory' of type [com.bjhy.cache.toolkit.core.spring.SpringRedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:37:32,366 ERROR [main] ROOT [LoggerUtils.java : 43] E:\data\my-document\dubbo/config/application.yml 文件没有找到!
+java.io.FileNotFoundException: E:\data\my-document\dubbo\config\application.yml (系统找不到指定的路径。)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at org.ho.yaml.YamlConfig.loadType(Unknown Source)
+	at org.ho.yaml.Yaml.loadType(Unknown Source)
+	at com.bjhy.cache.toolkit.util.YamlUtil.<clinit>(YamlUtil.java:31)
+	at org.apel.dubbo.starter.config.DubboReferenceConfig.afterPropertiesSet(DubboReferenceConfig.java:83)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:235)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+2019-11-07 10:37:32,930 INFO [main] ROOT [LoggerUtils.java : 21] 使用的redis连接池为spring的redis连接池!
+2019-11-07 10:40:52,390 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 17916 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:40:52,394 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:40:52,528 INFO [main] o.s.c.a.AnnotationConfigApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@43bc63a3: startup date [Thu Nov 07 10:40:52 CST 2019]; root of context hierarchy
+2019-11-07 10:40:53,127 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:40:53,577 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\META-INF\spring\module-hephaestus-api-provider.xml]
+2019-11-07 10:40:53,883 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 10:40:53,908 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/gaia-app-boot/1.0.1-SNAPSHOT/gaia-app-boot-1.0.1-20190917.083833-92.jar!/META-INF/spring/module-boot.xml]
+2019-11-07 10:40:53,938 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/META-INF/spring/module-dubbo-starter.xml]
+2019-11-07 10:40:53,986 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/com/bjhy/cache-toolkit/1.0.1-SNAPSHOT/cache-toolkit-1.0.1-20190929.032437-33.jar!/META-INF/spring/module-cache-toolkit.xml]
+2019-11-07 10:40:54,375 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:40:54,959 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'springRedisConnectionConfiguration' of type [com.bjhy.cache.toolkit.core.spring.SpringRedisConnectionConfiguration$$EnhancerBySpringCGLIB$$985d225b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:40:55,324 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:40:55,345 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConnectionConfiguration$$EnhancerBySpringCGLIB$$18a3a7a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:40:55,404 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:40:55,450 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'springRedisConnectionFactory' of type [com.bjhy.cache.toolkit.core.spring.SpringRedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:40:55,469 ERROR [main] ROOT [LoggerUtils.java : 43] E:\data\my-document\dubbo/config/application.yml 文件没有找到!
+java.io.FileNotFoundException: E:\data\my-document\dubbo\config\application.yml (系统找不到指定的路径。)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at org.ho.yaml.YamlConfig.loadType(Unknown Source)
+	at org.ho.yaml.Yaml.loadType(Unknown Source)
+	at com.bjhy.cache.toolkit.util.YamlUtil.<clinit>(YamlUtil.java:31)
+	at org.apel.dubbo.starter.config.DubboReferenceConfig.afterPropertiesSet(DubboReferenceConfig.java:83)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:235)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:33)
+	at org.apel.gaia.app.boot.AppStarter.startWithBlocking(AppStarter.java:44)
+	at com.wjy.DubboFileTransferProviderApplication.main(DubboFileTransferProviderApplication.java:8)
+2019-11-07 10:40:56,166 INFO [main] ROOT [LoggerUtils.java : 21] 使用的redis连接池为spring的redis连接池!
+2019-11-07 10:41:53,471 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 48] Starting DubboFileTransferProviderApplication on 2VWC9MAUCX73XUQ with PID 17952 (E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes started by Administrator in E:\data\my-document\dubbo)
+2019-11-07 10:41:53,479 INFO [main] c.w.DubboFileTransferProviderApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 10:41:53,697 INFO [main] o.s.c.a.AnnotationConfigApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@49438269: startup date [Thu Nov 07 10:41:53 CST 2019]; root of context hierarchy
+2019-11-07 10:41:54,372 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 10:41:54,789 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\META-INF\spring\module-hephaestus-api-provider.xml]
+2019-11-07 10:41:55,119 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 10:41:55,140 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/gaia-app-boot/1.0.1-SNAPSHOT/gaia-app-boot-1.0.1-20190917.083833-92.jar!/META-INF/spring/module-boot.xml]
+2019-11-07 10:41:55,174 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/META-INF/spring/module-dubbo-starter.xml]
+2019-11-07 10:41:55,215 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from URL [jar:file:/E:/myWorkspaces/maven/mvnlib/com/bjhy/cache-toolkit/1.0.1-SNAPSHOT/cache-toolkit-1.0.1-20190929.032437-33.jar!/META-INF/spring/module-cache-toolkit.xml]
+2019-11-07 10:41:55,440 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 10:41:55,914 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'springRedisConnectionConfiguration' of type [com.bjhy.cache.toolkit.core.spring.SpringRedisConnectionConfiguration$$EnhancerBySpringCGLIB$$3b730b84] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:41:56,199 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:41:56,222 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration$RedisConnectionConfiguration$$EnhancerBySpringCGLIB$$bbb990ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:41:56,288 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:41:56,343 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'springRedisConnectionFactory' of type [com.bjhy.cache.toolkit.core.spring.SpringRedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 10:41:56,732 WARN [main] o.s.c.a.AnnotationConfigApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fileTransferImpl' defined in file [E:\data\my-document\dubbo\dubbo-file-transfer-provider\target\classes\com\wjy\file\FileTransferImpl.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'hessian' available
+2019-11-07 10:41:56,742 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 10:41:56,863 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter [LoggingFailureAnalysisReporter.java : 42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'hessian' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'hessian' in your configuration.
+
+2019-11-07 10:41:56,870 INFO [DubboShutdownHook] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.6, current host: 127.0.0.1
+2019-11-07 10:41:56,872 INFO [DubboShutdownHook] c.a.d.r.s.AbstractRegistryFactory [Log4jLogger.java : 58]  [DUBBO] Close all registries [], dubbo version: 2.5.6, current host: 127.0.0.1

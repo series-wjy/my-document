@@ -1,0 +1,6 @@
+2019-11-13 12:00:00,431 INFO [main] o.s.j.e.a.AnnotationMBeanExporter [MBeanExporter.java : 431] Registering beans for JMX exposure on startup
+2019-11-13 12:00:00,468 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8091"]
+2019-11-13 12:00:00,483 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8091"]
+2019-11-13 12:00:00,484 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-13 12:00:00,516 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 201] Tomcat started on port(s): 8091 (http)
+2019-11-13 12:00:00,535 INFO [main] c.w.DubboFileTransferProviderApplication [StartupInfoLogger.java : 57] Started DubboFileTransferProviderApplication in 10.501 seconds (JVM running for 11.737)

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="es:war">
+    <output-path>E:/kaikeba/09-elasticsearch/elasticsearch-02/es/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>es</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="es.war">
+      <element id="artifact" artifact-name="es:war exploded" />
+    </root>
+  </artifact>
+</component>

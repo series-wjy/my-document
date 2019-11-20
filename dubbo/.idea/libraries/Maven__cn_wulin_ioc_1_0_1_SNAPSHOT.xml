@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.wulin:ioc:1.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/ioc/1.0.1-SNAPSHOT/ioc-1.0.1-20190624.075632-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/ioc/1.0.1-SNAPSHOT/ioc-1.0.1-20190624.075632-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/ioc/1.0.1-SNAPSHOT/ioc-1.0.1-20190624.075632-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

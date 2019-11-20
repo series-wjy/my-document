@@ -1,0 +1,22 @@
+server:
+  port: 8091
+  context-path:
+
+dubbo:
+  application:
+    name: dubbo-provider
+
+cache: 
+  toolkit: 
+    open: false
+    spring-redis: false
+    host: 192.168.0.209
+    #host: 192.168.56.10
+    port: 6379
+    startup-clean: true
+    
+spring:
+  main:
+    web-environment: true
+  application:
+    name: dubbo-provider

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apel:hades-dubbo-starter:1.0.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apel/hades-dubbo-starter/1.0.2-SNAPSHOT/hades-dubbo-starter-1.0.2-20190813.005904-23-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,12 @@
+com\elasticsearch\App.class
+com\elasticsearch\Model\Order.class
+com\elasticsearch\service\BulkProcessorService.class
+com\elasticsearch\service\impl\QueryServiceImpl.class
+com\elasticsearch\service\impl\BulkProcessorServiceImpl.class
+com\elasticsearch\Model\Es.class
+com\elasticsearch\config\ElasticSearchConfig.class
+com\elasticsearch\service\impl\ElasticSearchServiceImpl.class
+com\elasticsearch\service\ElasticSearchService.class
+com\elasticsearch\util\EmptyUtils.class
+com\elasticsearch\service\QueryService.class
+com\elasticsearch\config\ElasticSearchConfig$1.class

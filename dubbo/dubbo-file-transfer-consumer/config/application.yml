@@ -1,0 +1,36 @@
+
+#static_service_url: http://192.168.0.209:9898
+server:
+  context-path:
+  port: 8085
+  maxThreadSize: 5000
+  # 浏览器session过期时间设置 以秒为单位，对手机端app无影响
+  session:
+    timeout: 28800
+dubbo:
+  application:
+    name: dubbo-consumer
+spring:
+  main:
+    web-environment: true
+  application:
+    name: dubbo-consumer
+  redis:
+    host: 192.168.0.209
+    port: 6379
+    timeout: 10000
+    database: 0
+    pool:
+      max-active: 500
+      max-wait: 5000
+      max-idle: 8
+      min-idle: 0
+
+cache: 
+  toolkit: 
+    open: false
+    spring-redis: false
+    host: 192.168.0.209
+    #host: 192.168.56.10
+    port: 6379
+    startup-clean: true

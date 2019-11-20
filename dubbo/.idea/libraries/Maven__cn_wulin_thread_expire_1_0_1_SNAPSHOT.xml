@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.wulin:thread-expire:1.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/thread-expire/1.0.1-SNAPSHOT/thread-expire-1.0.1-20181121.073403-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/thread-expire/1.0.1-SNAPSHOT/thread-expire-1.0.1-20181121.073403-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/thread-expire/1.0.1-SNAPSHOT/thread-expire-1.0.1-20181121.073403-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

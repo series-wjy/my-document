@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.wulin:brace-common:1.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/brace-common/1.0.1-SNAPSHOT/brace-common-1.0.1-20190624.075402-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/brace-common/1.0.1-SNAPSHOT/brace-common-1.0.1-20190624.075402-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/wulin/brace-common/1.0.1-SNAPSHOT/brace-common-1.0.1-20190624.075402-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

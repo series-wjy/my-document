@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+		   http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+           http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+ 	<dubbo:registry protocol="zookeeper" address="192.168.0.230:2181" />
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="20880" host="192.168.0.163"/>
+
+	<!--  用rmi协议在2099端口暴露服务 -->
+	<dubbo:protocol name="rmi" port="2099" host="192.168.0.163" codec="spring"/>
+
+	<!-- 用hessian协议在8091端口暴露服务 -->
+	<dubbo:protocol name="hessian" port="8091" server="servlet" host="192.168.0.163" contextpath="dubbo-provider" />
+</beans>

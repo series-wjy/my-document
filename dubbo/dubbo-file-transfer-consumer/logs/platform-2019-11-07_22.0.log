@@ -1,0 +1,373 @@
+2019-11-07 22:00:00,895 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 22:00:02,710 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 22:00:03,657 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 22:00:04,084 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 22:00:06,177 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-provider' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:00:06,188 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:00:06,190 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:00:06,216 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:00:07,764 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 22:00:07,789 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 22:00:07,791 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 22:00:08,136 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 22:00:08,136 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 9435 ms
+2019-11-07 22:00:08,459 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 22:00:08,469 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 22:00:08,470 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 22:00:08,471 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 22:00:08,471 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 22:00:09,955 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+2019-11-07 22:00:09,962 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Stopping service [Tomcat]
+2019-11-07 22:00:10,028 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 22:00:10,048 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.wjy.DubboConsumerApplication.main(DubboConsumerApplication.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:254)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1316)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:371)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getSharedClient(DubboProtocol.java:334)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getClients(DubboProtocol.java:311)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.refer(DubboProtocol.java:293)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.refer(ProtocolFilterWrapper.java:101)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.refer(ProtocolListenerWrapper.java:65)
+	at com.alibaba.dubbo.rpc.Protocol$Adaptive.refer(Protocol$Adaptive.java)
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:379)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:320)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:159)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 29 common frames omitted
+Caused by: com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-provider&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=58872&revision=1.0.0&side=consumer&timestamp=1573135208596&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:91)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.<init>(NettyClient.java:61)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyTransporter.connect(NettyTransporter.java:37)
+	at com.alibaba.dubbo.remoting.Transporter$Adaptive.connect(Transporter$Adaptive.java)
+	at com.alibaba.dubbo.remoting.Transporters.connect(Transporters.java:76)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchanger.connect(HeaderExchanger.java:37)
+	at com.alibaba.dubbo.remoting.exchange.Exchangers.connect(Exchangers.java:110)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:368)
+	... 40 common frames omitted
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 22:00:10,058 INFO [DubboShutdownHook] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:00:10,062 INFO [DubboShutdownHook] c.a.d.r.s.AbstractRegistryFactory [Log4jLogger.java : 58]  [DUBBO] Close all registries [], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:03:06,578 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 57460 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 22:03:06,586 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 22:03:06,795 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 22:03:06 CST 2019]; root of context hierarchy
+2019-11-07 22:03:07,789 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 22:03:09,530 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 22:03:09,746 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 22:03:10,084 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 22:03:12,608 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-consumer' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:12,619 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:12,625 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:12,653 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:14,614 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 22:03:14,641 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 22:03:14,642 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 22:03:14,889 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 22:03:14,890 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 8096 ms
+2019-11-07 22:03:15,184 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 22:03:15,190 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 22:03:15,192 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 22:03:15,192 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 22:03:15,192 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 22:03:16,700 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+2019-11-07 22:03:16,710 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Stopping service [Tomcat]
+2019-11-07 22:03:16,771 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 22:03:16,796 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.wjy.DubboConsumerApplication.main(DubboConsumerApplication.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:254)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1316)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:371)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getSharedClient(DubboProtocol.java:334)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getClients(DubboProtocol.java:311)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.refer(DubboProtocol.java:293)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.refer(ProtocolFilterWrapper.java:101)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.refer(ProtocolListenerWrapper.java:65)
+	at com.alibaba.dubbo.rpc.Protocol$Adaptive.refer(Protocol$Adaptive.java)
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:379)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:320)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:159)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 29 common frames omitted
+Caused by: com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57460&revision=1.0.0&side=consumer&timestamp=1573135395279&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:connection timed out
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:91)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.<init>(NettyClient.java:61)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyTransporter.connect(NettyTransporter.java:37)
+	at com.alibaba.dubbo.remoting.Transporter$Adaptive.connect(Transporter$Adaptive.java)
+	at com.alibaba.dubbo.remoting.Transporters.connect(Transporters.java:76)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchanger.connect(HeaderExchanger.java:37)
+	at com.alibaba.dubbo.remoting.exchange.Exchangers.connect(Exchangers.java:110)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:368)
+	... 40 common frames omitted
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 22:03:16,804 INFO [DubboShutdownHook] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:03:16,808 INFO [DubboShutdownHook] c.a.d.r.s.AbstractRegistryFactory [Log4jLogger.java : 58]  [DUBBO] Close all registries [], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:03:52,175 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 57108 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 22:03:52,186 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 22:03:52,381 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 22:03:52 CST 2019]; root of context hierarchy
+2019-11-07 22:03:54,264 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 22:03:57,068 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 22:03:57,329 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 22:03:57,673 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 22:03:58,850 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-consumer' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:58,864 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:58,866 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:03:58,893 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:04:00,441 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 22:04:00,467 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 22:04:00,469 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 22:04:00,721 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 22:04:00,722 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 8341 ms
+2019-11-07 22:04:01,043 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 22:04:01,049 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 22:04:01,050 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 22:04:01,050 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 22:04:01,050 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 22:04:02,500 WARN [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 551] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:Connection refused: no further information
+2019-11-07 22:04:02,511 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Stopping service [Tomcat]
+2019-11-07 22:04:02,579 INFO [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-11-07 22:04:02,597 ERROR [main] o.s.boot.SpringApplication [SpringApplication.java : 771] Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'consumerController': Unsatisfied dependency expressed through field 'demoService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:Connection refused: no further information
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.wjy.DubboConsumerApplication.main(DubboConsumerApplication.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'demoService': FactoryBean threw exception on object creation; nested exception is com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:Connection refused: no further information
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:175)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:254)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1316)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: com.alibaba.dubbo.rpc.RpcException: Fail to create remoting client for service(dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0): client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:Connection refused: no further information
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:371)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getSharedClient(DubboProtocol.java:334)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.getClients(DubboProtocol.java:311)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.refer(DubboProtocol.java:293)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.refer(ProtocolFilterWrapper.java:101)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.refer(ProtocolListenerWrapper.java:65)
+	at com.alibaba.dubbo.rpc.Protocol$Adaptive.refer(Protocol$Adaptive.java)
+	at com.alibaba.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:379)
+	at com.alibaba.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:320)
+	at com.alibaba.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:159)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObject(ReferenceBean.java:65)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	... 29 common frames omitted
+Caused by: com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.wjy.service.DemoService&methods=findAllBook&pid=57108&revision=1.0.0&side=consumer&timestamp=1573135441127&version=1.0.0) failed to connect to server /192.168.0.163:20880, error message is:Connection refused: no further information
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:124)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:268)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.<init>(AbstractClient.java:91)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.<init>(NettyClient.java:61)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyTransporter.connect(NettyTransporter.java:37)
+	at com.alibaba.dubbo.remoting.Transporter$Adaptive.connect(Transporter$Adaptive.java)
+	at com.alibaba.dubbo.remoting.Transporters.connect(Transporters.java:76)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchanger.connect(HeaderExchanger.java:37)
+	at com.alibaba.dubbo.remoting.exchange.Exchangers.connect(Exchangers.java:110)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol.initClient(DubboProtocol.java:368)
+	... 40 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:384)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:354)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:276)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-07 22:04:02,604 INFO [DubboShutdownHook] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Run shutdown hook now., dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:04:02,608 INFO [DubboShutdownHook] c.a.d.r.s.AbstractRegistryFactory [Log4jLogger.java : 58]  [DUBBO] Close all registries [], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:06:16,741 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 12704 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 22:06:16,749 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 22:06:16,986 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 22:06:16 CST 2019]; root of context hierarchy
+2019-11-07 22:06:18,230 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 22:06:19,766 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 22:06:20,068 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 22:06:20,399 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 22:06:21,458 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-consumer' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:06:21,470 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:06:21,472 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:06:21,494 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:06:23,150 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 22:06:23,169 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 22:06:23,170 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 22:06:23,411 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 22:06:23,412 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 6426 ms
+2019-11-07 22:06:23,777 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 22:06:23,789 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 22:06:23,790 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 22:06:23,790 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 22:06:23,790 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 22:06:24,358 INFO [main] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Successed connect to server /192.168.0.163:20880 from NettyClient 192.168.56.1 using dubbo version 2.5.6, channel is NettyChannel [channel=[id: 0x27d57a2c, /192.168.0.163:62864 => /192.168.0.163:20880]], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:06:24,358 INFO [main] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Start NettyClient 2VWC9MAUCX73XUQ/192.168.56.1 connect to the server /192.168.0.163:20880, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:06:24,437 INFO [main] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Refer dubbo service com.wjy.service.DemoService from url dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&dubbo=2.5.6&interface=com.wjy.service.DemoService&methods=findAllBook&pid=12704&revision=1.0.0&side=consumer&timestamp=1573135583880&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:06:24,593 INFO [main] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Refer dubbo service com.wjy.service.DemoHessianService from url hessian://192.168.0.163:8091/com.wjy.service.DemoHessianService?application=dubbo-consumer&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=12704&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573135584459&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:06:25,991 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 534] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 22:06:16 CST 2019]; root of context hierarchy
+2019-11-07 22:06:26,360 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/list],methods=[GET]}" onto public com.wjy.vo.Result<java.util.List<com.wjy.vo.FileInfoVo>> com.wjy.controller.ConsumerController.list()
+2019-11-07 22:06:26,363 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testGetFile],methods=[GET]}" onto public void com.wjy.controller.ConsumerController.testGetFile(javax.servlet.http.HttpServletResponse)
+2019-11-07 22:06:26,367 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testSaveFile2],methods=[GET]}" onto public com.wjy.vo.Result<java.lang.String> com.wjy.controller.ConsumerController.testSaveFile()
+2019-11-07 22:06:26,368 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testMe],methods=[GET]}" onto public com.wjy.vo.Result<java.lang.String> com.wjy.controller.ConsumerController.testMe()
+2019-11-07 22:06:26,381 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-11-07 22:06:26,386 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-11-07 22:06:26,479 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 22:06:26,479 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 22:06:26,671 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 22:06:27,451 INFO [main] o.s.j.e.a.AnnotationMBeanExporter [MBeanExporter.java : 431] Registering beans for JMX exposure on startup
+2019-11-07 22:06:27,480 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8085"]
+2019-11-07 22:06:27,503 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8085"]
+2019-11-07 22:06:27,508 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 22:06:27,555 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 201] Tomcat started on port(s): 8085 (http)
+2019-11-07 22:06:27,562 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 57] Started DubboConsumerApplication in 11.776 seconds (JVM running for 13.332)
+2019-11-07 22:06:31,008 INFO [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-07 22:06:31,009 INFO [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 489] FrameworkServlet 'dispatcherServlet': initialization started
+2019-11-07 22:06:31,073 INFO [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 508] FrameworkServlet 'dispatcherServlet': initialization completed in 64 ms
+2019-11-07 22:07:33,956 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 48] Starting DubboConsumerApplication on 2VWC9MAUCX73XUQ with PID 50720 (E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes started by Administrator in E:\data\my-document\dubbo\dubbo-file-transfer-consumer)
+2019-11-07 22:07:34,006 INFO [main] com.wjy.DubboConsumerApplication [SpringApplication.java : 593] No active profile set, falling back to default profiles: default
+2019-11-07 22:07:34,168 INFO [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 583] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 22:07:34 CST 2019]; root of context hierarchy
+2019-11-07 22:07:35,391 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 30] HV000001: Hibernate Validator 5.3.5.Final
+2019-11-07 22:07:37,234 INFO [main] o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java : 317] Loading XML bean definitions from file [E:\data\my-document\dubbo\dubbo-file-transfer-consumer\target\classes\module-dubbo-api-provider.xml]
+2019-11-07 22:07:37,519 INFO [main] c.a.d.common.logger.LoggerFactory [Log4jLogger.java : 58] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2019-11-07 22:07:37,811 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-07 22:07:38,965 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'dubbo-consumer' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:07:38,977 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'com.alibaba.dubbo.config.RegistryConfig' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:07:38,980 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:07:39,000 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'demoHessianService' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-07 22:07:40,621 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 89] Tomcat initialized with port(s): 8085 (http)
+2019-11-07 22:07:40,643 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 179] Starting service [Tomcat]
+2019-11-07 22:07:40,644 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 179] Starting Servlet Engine: Apache Tomcat/8.5.20
+2019-11-07 22:07:40,886 INFO [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring embedded WebApplicationContext
+2019-11-07 22:07:40,887 INFO [localhost-startStop-1] o.s.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 6721 ms
+2019-11-07 22:07:41,237 INFO [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2019-11-07 22:07:41,245 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-11-07 22:07:41,247 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-11-07 22:07:41,247 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-11-07 22:07:41,247 INFO [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2019-11-07 22:07:41,716 INFO [main] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Successed connect to server /192.168.0.163:20880 from NettyClient 192.168.56.1 using dubbo version 2.5.6, channel is NettyChannel [channel=[id: 0x27d57a2c, /192.168.0.163:62893 => /192.168.0.163:20880]], dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:07:41,718 INFO [main] c.a.d.r.transport.AbstractClient [Log4jLogger.java : 58]  [DUBBO] Start NettyClient 2VWC9MAUCX73XUQ/192.168.56.1 connect to the server /192.168.0.163:20880, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:07:41,798 INFO [main] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Refer dubbo service com.wjy.service.DemoService from url dubbo://192.168.0.163:20880/com.wjy.service.DemoService?application=dubbo-consumer&dubbo=2.5.6&interface=com.wjy.service.DemoService&methods=findAllBook&pid=50720&revision=1.0.0&side=consumer&timestamp=1573135661326&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:07:41,872 INFO [main] c.a.dubbo.config.AbstractConfig [Log4jLogger.java : 58]  [DUBBO] Refer dubbo service com.wjy.service.DemoHessianService from url hessian://192.168.0.163:8091/com.wjy.service.DemoHessianService?application=dubbo-consumer&dubbo=2.5.6&interface=com.wjy.service.DemoHessianService&methods=testGetFile,testSaveFile&pid=50720&revision=1.0.0&side=consumer&timeout=120000&timestamp=1573135661815&version=1.0.0, dubbo version: 2.5.6, current host: 192.168.56.1
+2019-11-07 22:07:42,658 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java : 534] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@179ece50: startup date [Thu Nov 07 22:07:34 CST 2019]; root of context hierarchy
+2019-11-07 22:07:42,794 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/list],methods=[GET]}" onto public com.wjy.vo.Result<java.util.List<com.wjy.vo.FileInfoVo>> com.wjy.controller.ConsumerController.list()
+2019-11-07 22:07:42,796 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testMe],methods=[GET]}" onto public com.wjy.vo.Result<java.lang.String> com.wjy.controller.ConsumerController.testMe()
+2019-11-07 22:07:42,797 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testSaveFile2],methods=[GET]}" onto public com.wjy.vo.Result<java.lang.String> com.wjy.controller.ConsumerController.testSaveFile()
+2019-11-07 22:07:42,797 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/files/testGetFile],methods=[GET]}" onto public void com.wjy.controller.ConsumerController.testGetFile(javax.servlet.http.HttpServletResponse)
+2019-11-07 22:07:42,800 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-11-07 22:07:42,800 INFO [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java : 543] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-11-07 22:07:42,856 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 22:07:42,857 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 22:07:42,960 INFO [main] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java : 362] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-11-07 22:07:43,824 INFO [main] o.s.j.e.a.AnnotationMBeanExporter [MBeanExporter.java : 431] Registering beans for JMX exposure on startup
+2019-11-07 22:07:43,850 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Initializing ProtocolHandler ["http-nio-8085"]
+2019-11-07 22:07:43,873 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 179] Starting ProtocolHandler ["http-nio-8085"]
+2019-11-07 22:07:43,875 INFO [main] o.a.tomcat.util.net.NioSelectorPool [DirectJDKLog.java : 179] Using a shared selector for servlet write/read
+2019-11-07 22:07:43,911 INFO [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 201] Tomcat started on port(s): 8085 (http)
+2019-11-07 22:07:43,918 INFO [main] com.wjy.DubboConsumerApplication [StartupInfoLogger.java : 57] Started DubboConsumerApplication in 10.975 seconds (JVM running for 12.443)
+2019-11-07 22:07:47,191 INFO [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 179] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-07 22:07:47,192 INFO [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 489] FrameworkServlet 'dispatcherServlet': initialization started
+2019-11-07 22:07:47,241 INFO [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 508] FrameworkServlet 'dispatcherServlet': initialization completed in 49 ms
