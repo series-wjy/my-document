@@ -6,8 +6,6 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.support.DefaultConversionService;
-import org.springframework.data.elasticsearch.client.ClientConfiguration;
-import org.springframework.data.elasticsearch.client.RestClients;
 import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfiguration;
 import org.springframework.data.elasticsearch.core.ElasticsearchEntityMapper;
 import org.springframework.data.elasticsearch.core.EntityMapper;
@@ -20,23 +18,29 @@ public class ElasticsearchConfig extends AbstractElasticsearchConfiguration {
     @Resource
     RestClientBuilder elasticsearchRestClientBuilder;
 
+    @Resource
+    RestHighLevelClient elasticsearchRestHighLevelClient;
+
+    /**
+     * Elasticsearch RestClient
+     * @Return : org.elasticsearch.client.RestClient
+     * @Create: 2019/11/22 10:20
+     * @Author: wangjiayou
+     */
     @Bean
     public RestClient restClient() {
         return elasticsearchRestClientBuilder.build();
     }
 
     /**
-     * Elasticsearch客户的配置
+     * Elasticsearch RestHighLevelClient
      * @Return : org.elasticsearch.client.RestHighLevelClient
      * @Create: 2019/11/19 17:15
      * @Author: wangjiayou
      */
     @Override
     public RestHighLevelClient elasticsearchClient() {
-        ClientConfiguration clientConfiguration = ClientConfiguration.builder()
-                .connectedTo("192.168.56.101:9200")
-                .build();
-        return RestClients.create(clientConfiguration).rest();
+        return elasticsearchRestHighLevelClient;
     }
 
     /**

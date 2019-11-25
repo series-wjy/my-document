@@ -1,5 +1,7 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.service.ElasticsearchQueryService;
+
 /**
  * @ClassName SvnElasticsearchServiceImpl.java
  * @Author wangjiayou
@@ -7,5 +9,5 @@ package com.example.demo.service.impl;
  * @Description TODO
  * @Create 2019年11月19日 17:09:00
  */
-public class SvnElasticsearchServiceImpl {
+public class SvnLogElasticsearchQueryServiceImpl implements ElasticsearchQueryService {
 }

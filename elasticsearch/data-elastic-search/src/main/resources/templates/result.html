@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<h1>Spring Boot - Upload Status</h1>
-<div th:if="${message}">
-    <h2 th:text="${message}"/>
+<h1>Elasticsearch Query Result</h1>
+<div>
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+        <th>序号</th>
+        <th>id</th>
+        <th>host</th>
+        <th>dateTime</th>
+        <th>logLevel</th>
+        <th>threadPool</th>
+        <th>execClass</th>
+        <th>logContent</th>
+        </thead>
+        <tbody>
+        <tr th:each="entries,stat:${result}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+            <td th:text="${stat.count}"></td>
+            <td th:text="${entries['id']}"></td>
+            <td th:text="${entries['host']}"></td>
+            <td th:text="${entries['dateTime']}"></td>
+            <td th:text="${entries['logLevel']}"></td>
+            <td th:text="${entries['threadPool']}"></td>
+            <td th:text="${entries['execClass']}"></td>
+            <td th:text="${entries['logContent']}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

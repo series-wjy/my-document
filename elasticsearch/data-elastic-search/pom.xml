@@ -10,9 +10,10 @@
 	</parent>
 
 	<groupId>org.apel</groupId>
-	<artifactId>elastic-search</artifactId>
+	<artifactId>data-elastic-search</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>elastic-search</name>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -38,7 +39,11 @@
 			<version>1.18.10</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>28.0-jre</version>
+		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
@@ -79,5 +84,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
