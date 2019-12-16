@@ -1,5 +1,7 @@
 package concurrent;
 
+import sun.misc.Contended;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConcurrentGlobalField {

@@ -332,6 +332,14 @@ InnoDB支持行锁，减少锁冲突，提升并发处理能力。
   + 启动Mysql时设置performance_schema=on，相比设置为off有10%的性能损耗；
   + 查询select blocking_pid from sys.schema_table_lock_waits查询造成阻塞的process id。
 
+### 加锁总结
+
+1. 原则 1：加锁的基本单位是 next-key lock，next-key lock 是前开后闭区间。
+2. 原则 2：查找过程中访问到的对象才会加锁。
+3. 优化 1：索引上的等值查询，给唯一索引加锁的时候，next-key lock 退化为行锁。
+4. 优化 2：索引上的等值查询，向右遍历时且最后一个值不满足等值条件的时候，next-key lock 退化为间隙锁。
+5. 一个 bug：唯一索引上的范围查询会访问到不满足条件的第一个值为止。（**非正式**）
+
 ## 表空间
 
 表数据可以放到共享表空间，也可以每个表独立的存储一个文件。推荐独立的表文件存储，在drop table时可以直接回收表对应的空间，如果使用的是共享表空间，则不会回收对应的空间。
@@ -474,6 +482,47 @@ select @b-@a;
 Mysql的设计思想：**如果内存够，就多利用内存，尽量减少磁盘访问。**
 
 可以利用索引减少排序，因为索引是天然有序的。
+
+### 慢查询
+
+#### 索引没设计好
+
+可以采用online DDL。假设有主备两个库，主库A，备库B，可以先在备库执行alter table语句加上索引，再在主库上执行，大致流程如下：
+
+1. 在备库 B 上执行 set sql_log_bin=off，也就是不写 binlog，然后执行 alter table 语句加上索引；
+2. 执行主备切换；
+3. 这时候主库是 B，备库是 A。在 A 上执行 set sql_log_bin=off，然后执行 alter table 语句加上索引。
+
+当然，在平时做变更的时候，更好的是采用gh-ost这样的方案，但紧急处理是，上面的方案更高效。
+
+#### SQL语句没写好
+
+采用query_rewrite功能改写SQL语句。
+
+```sql
+
+mysql> insert into query_rewrite.rewrite_rules(pattern, replacement, pattern_database) values ("select * from t where id + 1 = ?", "select * from t where id = ? - 1", "db1");
+
+call query_rewrite.flush_rewrite_rules();
+```
+
+#### MySql选错了索引
+
+应急方案是加上**force index**。
+
+在实际情况中，索引没设计好和SQL语句写得不够好是常见的问题。在测试环境中，模拟线上环境，通过慢查询日志的输出，查找存在问题的SQL。特别注意Rows_examined字段是否与预期一致。如果是全量的回归测试，可以采用工具**pt-query-digest**（https://www.percona.com/doc/percona-toolkit/3.0/pt-query-digest.html)）帮助检查所有SQL语句的返回结果。
+
+### QPS突增问题
+
+新功能BUG引起的QPS突增。
+
+1. 如果有白名单，把引发问题的客户端从白名单去掉；
+2. 如果是单独的用户，将用户删除；
+3. 如果新功能和其他功能部署在一起，可以采用SQL重新的方式，将引发问题的SQL重写为“select 1”返回。
+   - 如果其他功能也用到这个SQL，可能会误伤；
+   - 业务功能可能有多个SQL实现，单独重新一个SQL，会导致后面的业务逻辑失败。
+
+**方案1和方案2都要依赖规范的运维体系：虚拟化、白名单、业务账号分离。**
 
 # 常用命令
 

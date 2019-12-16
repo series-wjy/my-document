@@ -9,7 +9,6 @@ import com.wjy.es.entity.Doc;
 import org.elasticsearch.action.ActionResponse;
 import org.elasticsearch.action.admin.cluster.health.ClusterHealthResponse;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
-import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
@@ -151,7 +150,7 @@ public class EsClientTool {
 	public static boolean deleteIndex(String indexName) {
 		ActionResponse deleteResponse = getAdminClient().prepareDelete(indexName.toLowerCase()).execute()
 				.actionGet();
-		return deleteResponse.isAcknowledged() ? true : false;
+		return true;
 	}
 
 	/**
