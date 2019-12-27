@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/elastic-search-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/../bjhy/elasticsearch/elastic-search-demo" />
     <file type="web" url="file://E:/kaikeba/09-elasticsearch/elasticsearch-02/es" />
   </component>
   <component name="JavaScriptSettings">

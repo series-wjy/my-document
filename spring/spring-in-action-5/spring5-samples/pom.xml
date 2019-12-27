@@ -20,6 +20,9 @@
         <module>tacos-app-jdbc</module>
         <module>tacos-app-jpa</module>
         <module>tacos-app-simple</module>
+        <module>tacos-app-security</module>
+        <module>tacos-app-configuration</module>
+        <module>micrometer-sample</module>
     </modules>
 
     <properties>

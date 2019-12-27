@@ -22,8 +22,7 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = DesignTacoController.class)
-@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = TacosAppJdbcApplication.class)
 public class DesignAndOrderTacosBrowserTest {
   
   private static HtmlUnitDriver browser;

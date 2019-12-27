@@ -1,0 +1,11 @@
+com\bjhy\collect\util\GsonUtil.class
+com\bjhy\collect\jvm\JvmInfoCollect$Transportor.class
+com\bjhy\collect\kafka\KafkaClientTemplate$ProducerHolder.class
+com\bjhy\collect\jvm\JvmCollectAgentInterceptor.class
+com\bjhy\collect\agent\JvmInfoCollectAgent.class
+com\bjhy\collect\agent\JvmInfoCollectAgent$AgentTransformer.class
+com\bjhy\collect\jvm\JvmInfoCollect$TransportJvm.class
+com\bjhy\collect\agent\JvmInfoCollectAgent$AgentListener.class
+com\bjhy\collect\kafka\KafkaClientTemplate.class
+com\bjhy\collect\jvm\JvmInfoCollect.class
+com\bjhy\collect\util\GsonUtil$1.class
