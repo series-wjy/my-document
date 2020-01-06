@@ -12,7 +12,7 @@
     <description>数据采集框架</description>
 
     <modules>
-        <module>jvm-info-agent</module>
+        <module>monitor-agent</module>
     </modules>
 
     <properties>

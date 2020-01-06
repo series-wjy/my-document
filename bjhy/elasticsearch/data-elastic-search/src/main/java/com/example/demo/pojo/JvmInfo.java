@@ -22,7 +22,7 @@ public class JvmInfo {
     @Field(type = FieldType.Text, index = true)
     private String hostname;
     @Field(type = FieldType.Text, index = true)
-    private String ip;
+    private String host;
     @Field(type = FieldType.Date,index = true, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
     private String createTime;
 

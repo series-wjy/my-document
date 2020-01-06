@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.1.RELEASE</version>
+        <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ow</groupId>
@@ -22,6 +22,8 @@
         <module>tacos-app-simple</module>
         <module>tacos-app-security</module>
         <module>tacos-app-configuration</module>
+        <module>tacos-app-provide-rest</module>
+        <module>tacos-app-consume-rest</module>
         <module>micrometer-sample</module>
     </modules>
 

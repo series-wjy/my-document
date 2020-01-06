@@ -1,0 +1,10 @@
+com\ow\BytebuddyMain.class
+com\ow\pojo\Foo.class
+com\ow\TestBytebuddy$1.class
+com\ow\agent\BytebuddyAgent1.class
+com\ow\agent\BytebuddyAgent1$1.class
+com\ow\ToString.class
+com\ow\TestBytebuddy.class
+com\ow\TargetClass.class
+com\ow\TestBytebuddy$Bar.class
+com\ow\pojo\Bar.class

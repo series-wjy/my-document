@@ -22,6 +22,11 @@ public class BaseElasticsearchController {
         return "jvm_query";
     }
 
+    @GetMapping("/invoke")
+    public String invoke() {
+        return "invoke_query";
+    }
+
     @GetMapping("/appresult")
     public String appresult() {
         return "app_result";
@@ -30,5 +35,10 @@ public class BaseElasticsearchController {
     @GetMapping("/jvmresult")
     public String jvmresult() {
         return "jvm_result";
+    }
+
+    @GetMapping("/invokeresult")
+    public String invokeresult() {
+        return "invoke_result";
     }
 }

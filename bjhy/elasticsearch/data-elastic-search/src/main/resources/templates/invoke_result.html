@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Elasticsearch Query Result</h1>
+<div>
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+        <th>序号</th>
+        <th>type</th>
+        <th>host</th>
+        <th>serviceName</th>
+        <th>url</th>
+        <th>remote</th>
+        <th>method</th>
+        <th>params</th>
+        <th>callTime</th>
+        <th>duration</th>
+        </thead>
+        <tbody>
+        <tr th:each="entries,stat:${result}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+            <td th:text="${stat.count}"></td>
+            <td th:text="${entries['type']}"></td>
+            <td th:text="${entries['host']}"></td>
+            <td th:text="${entries['serviceName']}"></td>
+            <td th:text="${entries['url']}"></td>
+            <td th:text="${entries['remote']}"></td>
+            <td th:text="${entries['method']}"></td>
+            <td th:text="${entries['params']}"></td>
+            <td th:text="${entries['callTime']}"></td>
+            <td th:text="${entries['duration']}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
