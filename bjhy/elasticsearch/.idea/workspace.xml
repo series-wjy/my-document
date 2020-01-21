@@ -2,425 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b1fa715-a969-4fce-8929-e15d203fef8d" name="Default Changelist" comment="提交">
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/bytebuddy-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/BytebuddyMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/TargetClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/TestBytebuddy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/ToString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/agent/BytebuddyAgent1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/pojo/Bar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/main/java/com/ow/pojo/Foo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/test/java/com/ow/TestByteBuddyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/src/test/java/foo/Bar1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/target/classes/com/ow/BytebuddyMain.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/target/classes/com/ow/TargetClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/target/classes/com/ow/TestBytebuddy$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/target/classes/com/ow/TestBytebuddy$Bar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/target/classes/com/ow/TestBytebuddy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/target/classes/com/ow/agent/BytebuddyAgent1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/README.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/DesignTacoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResourceAssembler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/OrderApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/RecentTacosController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/SpringDataRestConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourceAssembler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourcesProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/src/main/java/tacos/data/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/src/main/java/tacos/data/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/src/main/java/tacos/data/TacoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/src/main/java/tacos/data/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/replay_pid3910.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Taco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/java/tacos/restclient/RestExamples.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/java/tacos/restclient/TacoCloudClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/images/TacoCloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/images/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/mustache/ingredients.mst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/mustache/recents.mst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/scripts/ingredients.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/scripts/recents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/static/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/design.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/discountList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/orderForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/orderList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/resources/templates/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/src/main/java/tacos/security/RegistrationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/src/main/java/tacos/security/RegistrationForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/src/main/java/tacos/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/src/main/java/tacos/security/UserRepositoryUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/.angular-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/e2e/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/e2e/app.po.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/e2e/tsconfig.e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/protractor.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/api/ApiService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/app.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/auth.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/big-button/bigbutton.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/big-button/bigbutton.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/big-button/bigbutton.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cart/cart-item.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cart/cart-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cart/cart.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cart/cart.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cart/cart.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cloud-title/cloudtitle.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cloud-title/cloudtitle.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/cloud-title/cloudtitle.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/design/design.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/design/design.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/design/design.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/footer/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/footer/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/footer/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/footer/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/group-box/groupbox.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/group-box/groupbox.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/group-box/groupbox.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/header/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/header/header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/home/home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/home/home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/home/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/little-button/littlebutton.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/little-button/littlebutton.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/little-button/littlebutton.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/locations/locations.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/locations/locations.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/locations/locations.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/recents/NonWrapsPipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/recents/RecentTacosService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/recents/WrapsPipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/recents/recents.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/recents/recents.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/recents/recents.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/specials/specials.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/specials/specials.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/app/specials/specials.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/CloudBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/Cloud_sm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/TacoCloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/TacoPhoto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/cart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/down-triangle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/assets/taco-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/routes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/src/typings.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/tslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/java/tacos/DiscountCodeProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/java/tacos/web/DiscountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/java/tacos/web/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/java/tacos/web/OrderProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/java/tacos/web/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/images/TacoCloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/images/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/mustache/ingredients.mst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/mustache/recents.mst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/scripts/ingredients.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/scripts/recents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/static/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/design.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/discountList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/orderForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/orderList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/main/resources/templates/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/test/java/tacos/DesignAndOrderTacosBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/test/java/tacos/DesignTacoControllerBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/src/test/java/tacos/HomeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/main/java/tacos/DevelopmentConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/main/java/tacos/TacoCloudApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/test/java/tacos/DesignAndOrderTacosBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/test/java/tacos/DesignTacoControllerBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/test/java/tacos/HomeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/src/test/java/tacos/TacoCloudApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/README.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/DesignTacoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/IngredientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/IngredientResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/IngredientResourceAssembler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/OrderApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/RecentTacosController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/SpringDataRestConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/TacoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/TacoResourceAssembler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/src/main/java/tacos/web/api/TacoResources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/src/main/java/tacos/data/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/src/main/java/tacos/data/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/src/main/java/tacos/data/TacoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/src/main/java/tacos/data/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/replay_pid3910.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/src/main/java/tacos/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/src/main/java/tacos/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/src/main/java/tacos/Taco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/src/main/java/tacos/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/src/main/java/tacos/security/RegistrationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/src/main/java/tacos/security/RegistrationForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/src/main/java/tacos/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/src/main/java/tacos/security/UserRepositoryUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/.angular-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/e2e/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/e2e/app.po.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/e2e/tsconfig.e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/protractor.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/api/ApiService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/app.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/auth.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/big-button/bigbutton.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/big-button/bigbutton.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/big-button/bigbutton.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cart/cart-item.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cart/cart-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cart/cart.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cart/cart.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cart/cart.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cloud-title/cloudtitle.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cloud-title/cloudtitle.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/cloud-title/cloudtitle.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/design/design.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/design/design.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/design/design.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/footer/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/footer/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/footer/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/footer/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/group-box/groupbox.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/group-box/groupbox.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/group-box/groupbox.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/header/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/header/header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/home/home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/home/home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/home/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/little-button/littlebutton.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/little-button/littlebutton.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/little-button/littlebutton.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/locations/locations.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/locations/locations.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/locations/locations.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/recents/NonWrapsPipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/recents/RecentTacosService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/recents/WrapsPipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/recents/recents.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/recents/recents.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/recents/recents.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/specials/specials.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/specials/specials.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/app/specials/specials.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/CloudBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/Cloud_sm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/TacoCloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/TacoPhoto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/cart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/down-triangle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/assets/taco-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/routes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/src/typings.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/tslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/java/tacos/DiscountCodeProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/java/tacos/web/DiscountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/java/tacos/web/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/java/tacos/web/OrderProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/java/tacos/web/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/images/TacoCloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/images/cloud-taco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/mustache/ingredients.mst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/mustache/recents.mst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/scripts/ingredients.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/scripts/recents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/static/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/design.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/discountList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/orderForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/orderList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/main/resources/templates/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/test/java/tacos/DesignAndOrderTacosBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/test/java/tacos/DesignTacoControllerBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/src/test/java/tacos/HomeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/java/tacos/DevelopmentConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/java/tacos/TacoCloudApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/test/java/tacos/DesignAndOrderTacosBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/test/java/tacos/DesignTacoControllerBrowserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/test/java/tacos/HomeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/test/java/tacos/TacoCloudApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-collect/jvm-info-agent/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaagent/bytebuddy-demo/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../concurrent/concurrent-action/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../concurrent/concurrent-action/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/Spring in Action 5th Edition.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/Spring in Action 5th Edition.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/spring5-samples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/spring5-samples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/DesignTacoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/DesignTacoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResourceAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResourceAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/RecentTacosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/RecentTacosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourceAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourceAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourcesProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourcesProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Taco.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Taco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/java/tacos/restclient/TacoCloudClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/java/tacos/restclient/TacoCloudClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/java/tacos/TacoCloudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/java/tacos/TacosApplication.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -693,7 +302,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7bf77a02" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1b64faf4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -749,6 +358,9 @@
       <workItem from="1577946533369" duration="20000" />
       <workItem from="1577946624888" duration="3227000" />
       <workItem from="1578293641357" duration="3641000" />
+      <workItem from="1578365154549" duration="1859000" />
+      <workItem from="1578555148969" duration="2839000" />
+      <workItem from="1578626390704" duration="4587000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1574674904380</created>

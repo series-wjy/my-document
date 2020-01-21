@@ -7,6 +7,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.time.LocalDateTime;
+
 /**
  * @ClassName InvokeLog.java
  * @Author wangjiayou
@@ -34,7 +36,7 @@ public class InvokeLog {
     @Field(type = FieldType.Text, index = true)
     private String params;
     @Field(type = FieldType.Date,index = true, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
-    private String callTime;
+    private LocalDateTime callTime;
     @Field(type = FieldType.Text, index = true)
     private String duration;
 

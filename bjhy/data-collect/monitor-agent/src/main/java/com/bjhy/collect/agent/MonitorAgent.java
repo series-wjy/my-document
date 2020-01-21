@@ -18,7 +18,7 @@ import java.lang.instrument.Instrumentation;
 import static net.bytebuddy.matcher.ElementMatchers.*;
 
 /**
- * @ClassName JvmInfoCollectAgent.java
+ * @ClassName MonitorAgent.java
  * @Author wangjiayou
  * @Version 1.0.0
  * @Description TODO
@@ -32,12 +32,9 @@ public class MonitorAgent {
      * @param inst     对class进行字节码加强的代理实例
      */
     public static void premain(String agentOps, Instrumentation inst) {
-        System.out.println("hello javaagent!this is premain!");
-        // 基于ByteBuddy建立agent规则
-        final ByteBuddy byteBuddy = new ByteBuddy().with(TypeValidation.ENABLED);
+        System.out.println("enter agent premain!");
         // 插件初始化
         PluginsManager.init();
-
         new AgentBuilder.Default()
                 // 忽略不需要拦截的类
                 .ignore(initIgnoreElementMatcher())

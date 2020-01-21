@@ -4,8 +4,8 @@ import com.bjhy.collect.util.GsonUtil;
 
 import java.lang.management.*;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,8 +73,7 @@ public class JvmInfoCollect {
         private String serverName;
         private String hostname;
         private String ip;
-        private String createTime = LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
+        private String collectTime = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
 
         private int threadCount;
         private long threadCpuTime;
@@ -124,12 +123,12 @@ public class JvmInfoCollect {
             this.serverInstanceId = serverInstanceId;
         }
 
-        public String getCreateTime() {
-            return createTime;
+        public String getCollectTime() {
+            return collectTime;
         }
 
-        public void setCreateTime(String createTime) {
-            this.createTime = createTime;
+        public void setCollectTime(String collectTime) {
+            this.collectTime = collectTime;
         }
 
         public int getThreadCount() {

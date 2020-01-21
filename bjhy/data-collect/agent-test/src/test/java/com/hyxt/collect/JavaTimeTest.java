@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 
@@ -20,10 +22,12 @@ public class JavaTimeTest {
         String str1 = "2020-01-06 02:25:19";
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime parse = LocalDateTime.parse(str1, dtf);
+        ZonedDateTime parse = LocalDateTime.parse(str1, dtf).atZone(ZoneId.systemDefault());
+
+        ZonedDateTime date = ZonedDateTime.now();
 
         LocalDateTime callTime = LocalDateTime.parse(str1, dtf2);
-        System.out.println(parse);
+        System.out.println(date);
 
         LocalDateTime time1 = LocalDateTime.now();
         TimeUnit.SECONDS.sleep(1);

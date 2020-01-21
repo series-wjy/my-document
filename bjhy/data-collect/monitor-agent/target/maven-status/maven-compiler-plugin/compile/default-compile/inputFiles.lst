@@ -2,7 +2,7 @@ E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\colle
 E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\plugin\PluginsManager.java
 E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\plugin\InstMethodInterceptorTemplate.java
 E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\jvm\JvmCollectAgentInterceptor1.java
-E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\interceptor\InstMethodInterceptor.java
+E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\interceptor\MonitorInterceptor.java
 E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\agent\MonitorAgent.java
 E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\util\LocalIpUtil.java
 E:\data\my-document\bjhy\data-collect\monitor-agent\src\main\java\com\bjhy\collect\springmvc\InvocationLog.java

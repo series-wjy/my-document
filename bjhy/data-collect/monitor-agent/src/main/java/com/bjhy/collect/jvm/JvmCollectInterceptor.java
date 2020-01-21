@@ -1,6 +1,6 @@
 package com.bjhy.collect.jvm;
 
-import com.bjhy.collect.interceptor.MonitorMethodInterceptor;
+import com.bjhy.collect.interceptor.MonitorInterceptor;
 import com.bjhy.collect.kafka.KafkaClientTemplate;
 
 import java.lang.reflect.Method;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @Description TODO
  * @Create 2019年12月25日 16:25:00
  */
-public class JvmCollectInterceptor implements MonitorMethodInterceptor<JvmInfoCollect.TransportJvm> {
+public class JvmCollectInterceptor implements MonitorInterceptor<JvmInfoCollect.TransportJvm> {
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
 

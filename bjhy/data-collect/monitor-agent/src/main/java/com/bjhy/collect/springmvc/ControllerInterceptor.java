@@ -1,6 +1,6 @@
 package com.bjhy.collect.springmvc;
 
-import com.bjhy.collect.interceptor.MonitorMethodInterceptor;
+import com.bjhy.collect.interceptor.MonitorInterceptor;
 import com.bjhy.collect.kafka.KafkaClientTemplate;
 import com.bjhy.collect.util.GsonUtil;
 import com.bjhy.collect.util.LocalIpUtil;
@@ -20,7 +20,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Optional;
 
-
 /**
  * @ClassName ControllerInterceptor.java
  * @Author wangjiayou
@@ -28,7 +27,7 @@ import java.util.Optional;
  * @Description 拦截Controller的方法
  * @Create 2019年1月3日 16:25:00
  */
-public class ControllerInterceptor implements MonitorMethodInterceptor<InvocationLog> {
+public class ControllerInterceptor implements MonitorInterceptor<InvocationLog> {
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

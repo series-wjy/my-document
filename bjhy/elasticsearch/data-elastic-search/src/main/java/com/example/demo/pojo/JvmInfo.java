@@ -7,6 +7,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,8 +24,8 @@ public class JvmInfo {
     private String hostname;
     @Field(type = FieldType.Text, index = true)
     private String host;
-    @Field(type = FieldType.Date,index = true, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
-    private String createTime;
+    @Field(type = FieldType.Date,index = true, format = DateFormat.custom, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+    private LocalDateTime collectTime;
 
     @Field(type = FieldType.Integer, index = true)
     private int threadCount;
@@ -46,9 +47,9 @@ public class JvmInfo {
 
     @Field(type = FieldType.Object, index = true)
     private Map<String, MemoryUsage> heapMemoryInfo = new HashMap<>();
-    @Field(type = FieldType.Nested, index = true)
+    @Field(type = FieldType.Object, index = true)
     private MemoryUsage heapMemoryUsage;
-    @Field(type = FieldType.Nested, index = true)
+    @Field(type = FieldType.Object, index = true)
     private MemoryUsage nonHeapMemoryUsage;
 
     //查询

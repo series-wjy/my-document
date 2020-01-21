@@ -12,6 +12,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -30,7 +31,7 @@ public class AppLog {
     @Field(type = FieldType.Text,index = true)
     private String host;
     @Field(type = FieldType.Date,index = true, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss,SSS")
-    private String dateTime;
+    private LocalDateTime dateTime;
     @Field(type = FieldType.Text,index = true)
     private String logLevel;
     @Field(type = FieldType.Text,index = true)
@@ -45,7 +46,7 @@ public class AppLog {
     private String endTime;
     private String keyword;
 
-    public AppLog(String id, String host, String dateTime, String logLevel,
+    public AppLog(String id, String host, LocalDateTime dateTime, String logLevel,
                   String threadPool, String execClass, String logContent) {
         this.id = id;
         this.host = host;

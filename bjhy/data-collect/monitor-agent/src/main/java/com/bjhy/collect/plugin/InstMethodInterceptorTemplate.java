@@ -1,6 +1,6 @@
 package com.bjhy.collect.plugin;
 
-import com.bjhy.collect.interceptor.MonitorMethodInterceptor;
+import com.bjhy.collect.interceptor.MonitorInterceptor;
 import net.bytebuddy.implementation.bind.annotation.*;
 
 import java.lang.reflect.Method;
@@ -15,7 +15,7 @@ public class InstMethodInterceptorTemplate {
     /**
      * 实例方法拦截实现对象.
      */
-    private MonitorMethodInterceptor interceptor;
+    private MonitorInterceptor interceptor;
 
     /**
      * TODO
@@ -24,11 +24,11 @@ public class InstMethodInterceptorTemplate {
      * @Create: 2020/1/6 10:19
      * @Author: wangjiayou
      */
-    public static InstMethodInterceptorTemplate getTemplate(MonitorMethodInterceptor interceptor) {
+    public static InstMethodInterceptorTemplate getTemplate(MonitorInterceptor interceptor) {
         return new InstMethodInterceptorTemplate(interceptor);
     }
 
-    private InstMethodInterceptorTemplate(MonitorMethodInterceptor interceptor) {
+    private InstMethodInterceptorTemplate(MonitorInterceptor interceptor) {
         this.interceptor = interceptor;
     }
 
