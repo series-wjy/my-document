@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="concurrent-base" />
+        <module name="disruptor-base" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="concurrent-base" target="1.8" />
+      <module name="disruptor-base" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

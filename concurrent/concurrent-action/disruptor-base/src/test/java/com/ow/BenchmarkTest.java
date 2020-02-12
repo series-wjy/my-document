@@ -1,5 +1,7 @@
 package com.ow;
 
+import org.openjdk.jmh.annotations.*;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
@@ -12,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Threads(2)
 @Fork(1)
 @State(Scope.Benchmark)
-public class Myclass {
+public class BenchmarkTest {
     Lock lock = new ReentrantLock();
     long i = 0;
     AtomicLong atomicLong = new AtomicLong(0);

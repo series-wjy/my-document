@@ -4,16 +4,16 @@
           http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-ui</artifactId>
+	<artifactId>tacocloud-ui-consume</artifactId>
 	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>sia</groupId>
-  	<artifactId>taco-cloud-parent</artifactId>
+  	<artifactId>tacos-app-consume-rest</artifactId>
 		<version>0.0.7-SNAPSHOT</version>
 	</parent>
 
-	<name>tacocloud-ui</name>
+	<name>tacocloud-ui-consume</name>
 	<description>Taco Cloud UI</description>
 
   <properties>

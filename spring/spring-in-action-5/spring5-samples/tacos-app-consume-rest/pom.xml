@@ -8,6 +8,12 @@
   	<version>0.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <parent>
+        <groupId>com.ow</groupId>
+        <artifactId>spring5-samples</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <properties>
       <maven.compiler.source>1.8</maven.compiler.source>
       <maven.compiler.target>1.8</maven.compiler.target>
@@ -15,14 +21,14 @@
     </properties>
 
     <modules>
-      <module>tacos</module>
-      <module>tacocloud-api</module>
-      <module>tacocloud-data</module>
-      <module>tacocloud-domain</module>
-      <module>tacocloud-restclient</module>
-      <module>tacocloud-security</module>
-      <module>tacocloud-web</module>
-      <module>tacocloud-ui</module>
+      <module>tacos-consume</module>
+      <module>tacocloud-api-consume</module>
+      <module>tacocloud-data-consume</module>
+      <module>tacocloud-domain-consume</module>
+      <module>tacocloud-restclient-consume</module>
+      <module>tacocloud-security-consume</module>
+      <module>tacocloud-web-consume</module>
+      <module>tacocloud-ui-consume</module>
     </modules>
 
 </project>

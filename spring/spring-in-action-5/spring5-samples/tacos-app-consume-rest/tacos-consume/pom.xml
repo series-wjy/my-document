@@ -4,15 +4,15 @@
           http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>taco-consume</artifactId>
+	<artifactId>tacos-consume</artifactId>
 	<packaging>jar</packaging>
 
-	<name>taco-consume</name>
+	<name>tacos-consume</name>
 	<description>Taco Cloud Example</description>
 
 	<parent>
 		<groupId>sia</groupId>
-  	<artifactId>taco-app-consume-rest</artifactId>
+  	<artifactId>tacos-app-consume-rest</artifactId>
 		<version>0.0.7-SNAPSHOT</version>
 	</parent>
 
@@ -83,6 +83,11 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>htmlunit-driver</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.4.0</version>
 		</dependency>
 	</dependencies>
 

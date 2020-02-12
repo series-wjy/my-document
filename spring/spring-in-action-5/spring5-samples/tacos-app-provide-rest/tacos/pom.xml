@@ -4,15 +4,15 @@
           http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>taco-cloud</artifactId>
+	<artifactId>tacos</artifactId>
 	<packaging>jar</packaging>
 
-	<name>taco-cloud</name>
+	<name>tacos</name>
 	<description>Taco Cloud Example</description>
 
 	<parent>
 		<groupId>sia</groupId>
-  		<artifactId>tacos-cloud-provider-parent</artifactId>
+  		<artifactId>tacos-app-provide-rest</artifactId>
 		<version>0.0.6-SNAPSHOT</version>
 	</parent>
 

@@ -14,11 +14,12 @@ import javax.validation.constraints.Size;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
 @Data
 @Entity
 @RestResource(rel="tacos", path="tacos")
-public class Taco {
+public class Taco extends RepresentationModel<Taco> {
 
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)

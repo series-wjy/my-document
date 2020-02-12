@@ -4,15 +4,15 @@
           http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-web</artifactId>
+	<artifactId>tacocloud-web-consume</artifactId>
 	<packaging>jar</packaging>
 
-	<name>tacocloud-web</name>
+	<name>tacocloud-web-consume</name>
 	<description>Taco Cloud Web</description>
 
 	<parent>
 		<groupId>sia</groupId>
-  	<artifactId>taco-cloud-parent</artifactId>
+  	<artifactId>tacos-app-consume-rest</artifactId>
 		<version>0.0.7-SNAPSHOT</version>
 	</parent>
 
@@ -26,12 +26,12 @@
 		<!-- TacoCloud dependencies -->
 		<dependency>
 			<groupId>sia</groupId>
-			<artifactId>tacocloud-data</artifactId>
+			<artifactId>tacocloud-data-consume</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>sia</groupId>
-			<artifactId>tacocloud-domain</artifactId>
+			<artifactId>tacocloud-domain-consume</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 
@@ -74,6 +74,7 @@
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+			<version>3.0.2.RELEASE</version>
 		</dependency>
 
 		<!-- Test dependencies -->
@@ -99,6 +100,12 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.data</groupId>-->
+<!--			<artifactId>spring-data-commons</artifactId>-->
+<!--			<version>2.2.3.RELEASE</version>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
 	</dependencies>
 
 </project>

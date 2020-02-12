@@ -4,15 +4,15 @@
           http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>tacocloud-api</artifactId>
+	<artifactId>tacocloud-api-consume</artifactId>
 	<packaging>jar</packaging>
 
-	<name>tacocloud-api</name>
+	<name>tacocloud-api-consume</name>
 	<description>Taco Cloud API</description>
 
 	<parent>
 		<groupId>sia</groupId>
-  	<artifactId>taco-cloud-parent</artifactId>
+  	<artifactId>tacos-app-consume-rest</artifactId>
 		<version>0.0.7-SNAPSHOT</version>
 	</parent>
 
@@ -26,17 +26,17 @@
 		<!-- TacoCloud dependencies -->
 		<dependency>
 			<groupId>sia</groupId>
-			<artifactId>tacocloud-data</artifactId>
+			<artifactId>tacocloud-data-consume</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>sia</groupId>
-			<artifactId>tacocloud-domain</artifactId>
+			<artifactId>tacocloud-domain-consume</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>sia</groupId>
-			<artifactId>tacocloud-security</artifactId>
+			<artifactId>tacocloud-security-consume</artifactId>
 			<version>${tacocloud.version}</version>
 		</dependency>
 

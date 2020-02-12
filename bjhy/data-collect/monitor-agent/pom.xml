@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.bjhy.collect</groupId>
+            <artifactId>monitor-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
         </dependency>
@@ -78,6 +83,31 @@
                                     </manifestEntries>
                                 </transformer>
                             </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <delete dir="${project.basedir}/../../sniffer-agent-dist"/>
+                                <mkdir dir="${project.basedir}/../../sniffer-agent-dist"/>
+                                <copy file="${project.build.directory}/sniffer-agent.jar"
+                                      tofile="${project.basedir}/../../sniffer-agent-dist/sniffer-agent.jar"
+                                      overwrite="true"/>
+                                <mkdir dir="${project.basedir}/../../sniffer-agent-dist/config"/>
+                                <mkdir dir="${project.basedir}/../../sniffer-agent-dist/logs"/>
+                                <copydir src="${project.basedir}/../config"
+                                         dest="${project.basedir}/../../sniffer-agent-dist/config"
+                                         forceoverwrite="true"/>
+                            </tasks>
                         </configuration>
                     </execution>
                 </executions>

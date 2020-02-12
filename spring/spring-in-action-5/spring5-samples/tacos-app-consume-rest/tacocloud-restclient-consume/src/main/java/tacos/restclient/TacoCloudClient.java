@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.hateoas.Resources;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.client.Traverson;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -140,10 +140,10 @@ public class TacoCloudClient {
   //
 
   public Iterable<Ingredient> getAllIngredientsWithTraverson() {
-    ParameterizedTypeReference<Resources<Ingredient>> ingredientType =
-        new ParameterizedTypeReference<Resources<Ingredient>>() {};
+    ParameterizedTypeReference<CollectionModel<Ingredient>> ingredientType =
+        new ParameterizedTypeReference<CollectionModel<Ingredient>>() {};
 
-    Resources<Ingredient> ingredientRes =
+    CollectionModel<Ingredient> ingredientRes =
         traverson
           .follow("ingredients")
           .toObject(ingredientType);
@@ -164,10 +164,10 @@ public class TacoCloudClient {
   }
 
   public Iterable<Taco> getRecentTacosWithTraverson() {
-    ParameterizedTypeReference<Resources<Taco>> tacoType =
-        new ParameterizedTypeReference<Resources<Taco>>() {};
+    ParameterizedTypeReference<CollectionModel<Taco>> tacoType =
+        new ParameterizedTypeReference<CollectionModel<Taco>>() {};
 
-    Resources<Taco> tacoRes =
+    CollectionModel<Taco> tacoRes =
         traverson
           .follow("tacos")
           .follow("recents")

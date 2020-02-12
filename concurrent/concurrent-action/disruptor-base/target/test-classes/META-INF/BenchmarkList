@@ -1,0 +1,3 @@
+JMH S 20 com.ow.BenchmarkTest S 52 com.ow.generated.BenchmarkTest_measureNoLock_jmhTest S 13 measureNoLock S 10 SampleTime I 1 2 A 1 1 1 E I 1 3 T 4 5 ms E I 1 1 E I 9 100000000 I 1 1 E E E E E E U 12 MILLISECONDS E E 
+JMH S 20 com.ow.BenchmarkTest S 50 com.ow.generated.BenchmarkTest_measureLock_jmhTest S 11 measureLock S 10 SampleTime I 1 2 A 1 1 1 E I 1 3 T 4 5 ms E I 1 1 E I 9 100000000 I 1 1 E E E E E E U 12 MILLISECONDS E E 
+JMH S 20 com.ow.BenchmarkTest S 49 com.ow.generated.BenchmarkTest_measureCAS_jmhTest S 10 measureCAS S 10 SampleTime I 1 2 A 1 1 1 E I 1 3 T 4 5 ms E I 1 1 E I 9 100000000 I 1 1 E E E E E E U 12 MILLISECONDS E E 

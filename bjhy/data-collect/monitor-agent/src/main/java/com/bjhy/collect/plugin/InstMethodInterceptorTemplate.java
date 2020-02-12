@@ -6,10 +6,13 @@ import net.bytebuddy.implementation.bind.annotation.*;
 import java.lang.reflect.Method;
 import java.util.concurrent.Callable;
 
+
 /**
- * author   gy4j
- * Email    76429197@qq.com
- * Date     2019-08-27
+ * @ClassName MonitorInterceptor.java
+ * @Author wangjiayou
+ * @Version 1.0.0
+ * @Description TODO
+ * @Create 2019年2月1日 16:00:00
  */
 public class InstMethodInterceptorTemplate {
     /**

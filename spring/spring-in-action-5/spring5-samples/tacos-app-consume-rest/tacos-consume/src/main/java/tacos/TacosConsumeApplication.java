@@ -13,10 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @SpringBootApplication
-public class TacoCloudApplication {
+public class TacosConsumeApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(TacoCloudApplication.class, args);
+    SpringApplication.run(TacosConsumeApplication.class, args);
   }
   
   // To avoid 404s when using Angular HTML 5 routing

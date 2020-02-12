@@ -1,12 +1,11 @@
 package tacos.web.api;
 
-import org.springframework.hateoas.ResourceSupport;
-
 import lombok.Getter;
+import org.springframework.hateoas.RepresentationModel;
 import tacos.Ingredient;
 import tacos.Ingredient.Type;
 
-public class IngredientResource extends ResourceSupport {
+public class IngredientResource extends RepresentationModel<Ingredient> {
 
   @Getter
   private String name;
