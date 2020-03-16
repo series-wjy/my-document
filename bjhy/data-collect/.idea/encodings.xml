@@ -4,14 +4,20 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agent-test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/agent-test/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-agent" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-agent/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-agent/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-core" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-core/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-plugins" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-plugins/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/monitor-plugins/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-os/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-os/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-agent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-agent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-agent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-plugins" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-plugins/jvm-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-plugins/jvm-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-plugins/spring-mvc-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor-sniffer/monitor-plugins/spring-mvc-plugin/src/main/resources" charset="UTF-8" />
   </component>
 </project>

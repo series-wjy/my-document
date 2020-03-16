@@ -1,0 +1,11 @@
+com\bjhy\core\plugin\api\MonitorMethodInterceptorTemplate.class
+com\bjhy\core\loader\AgentClassLoader.class
+com\bjhy\core\plugin\api\Plugin.class
+com\bjhy\core\plugin\IllegalPluginDefineException.class
+com\bjhy\core\plugin\api\MonitorInterceptor.class
+com\bjhy\core\plugin\loader\InterceptorInstanceLoader.class
+com\bjhy\core\loader\AgentClassLoader$1.class
+com\bjhy\core\plugin\PluginsManager.class
+com\bjhy\core\plugin\PluginDefine.class
+com\bjhy\core\loader\AgentClassLoader$Jar.class
+com\bjhy\core\loader\AgentClassLoader$2.class

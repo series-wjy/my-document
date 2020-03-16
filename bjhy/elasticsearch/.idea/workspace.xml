@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b1fa715-a969-4fce-8929-e15d203fef8d" name="Default Changelist" comment="提交">
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/DesignTacoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/DesignTacoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResourceAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/IngredientResourceAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/RecentTacosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/RecentTacosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourceAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourceAssembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourcesProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-api-consume/src/main/java/tacos/web/api/TacoResourcesProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-data-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Taco.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-domain-consume/src/main/java/tacos/Taco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/java/tacos/restclient/TacoCloudClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-restclient-consume/src/main/java/tacos/restclient/TacoCloudClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-security-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-ui-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacocloud-web-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-consume-rest/tacos-consume/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-data/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-security/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-ui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacocloud-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/java/tacos/TacoCloudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/spring-in-action-5/spring5-samples/tacos-app-provide-rest/tacos/src/main/java/tacos/TacosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mysql/MySQL实战.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../mysql/MySQL实战.md" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +48,11 @@
   <component name="ProjectId" id="1TVZovYbtLSbcc9XNXrMO3kTDZ9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -143,16 +120,6 @@
       <set>
         <option value="SpringBootApplicationConfigurationType" />
       </set>
-    </option>
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ElasticsearchDataApplication">
@@ -295,19 +262,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <option name="contentProportion" value="0.18088737" />
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1b64faf4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="StructureViewFactory">
@@ -361,6 +324,7 @@
       <workItem from="1578365154549" duration="1859000" />
       <workItem from="1578555148969" duration="2839000" />
       <workItem from="1578626390704" duration="4587000" />
+      <workItem from="1584088641814" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1574674904380</created>

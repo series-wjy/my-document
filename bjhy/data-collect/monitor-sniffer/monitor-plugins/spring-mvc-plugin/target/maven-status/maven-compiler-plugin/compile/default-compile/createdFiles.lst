@@ -1,0 +1,3 @@
+com\bjhy\plugins\springmvc\InvocationLog.class
+com\bjhy\plugins\springmvc\ControllerInterceptor.class
+com\bjhy\plugins\springmvc\ControllerPlugin.class

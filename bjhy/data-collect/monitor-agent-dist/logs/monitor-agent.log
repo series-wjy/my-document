@@ -1,0 +1,4 @@
+INFO 2020-02-27 16:41:42:753 main AgentClassLoader :  E:\data\my-document\bjhy\data-collect\monitor-agent-dist\plugins\jvm-plugin-1.0-SNAPSHOT.jar loaded. 
+INFO 2020-02-27 16:41:42:754 main AgentClassLoader :  E:\data\my-document\bjhy\data-collect\monitor-agent-dist\plugins\spring-mvc-plugin-1.0-SNAPSHOT.jar loaded. 
+INFO 2020-02-27 16:41:42:820 main PluginsManager :  加载插件：2个 
+INFO 2020-02-27 16:41:42:821 main PluginsManager :  加载插件：4个 

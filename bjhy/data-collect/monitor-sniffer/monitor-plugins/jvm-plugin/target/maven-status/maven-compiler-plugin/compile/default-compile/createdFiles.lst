@@ -1,0 +1,5 @@
+com\bjhy\plugins\jvm\JvmPlugin.class
+com\bjhy\plugins\jvm\JvmInfoCollect$TransportJvm.class
+com\bjhy\plugins\jvm\JvmCollectInterceptor.class
+com\bjhy\plugins\jvm\JvmInfoCollect$Transportor.class
+com\bjhy\plugins\jvm\JvmInfoCollect.class

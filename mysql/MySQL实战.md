@@ -88,7 +88,7 @@
 
 + **binlog**
 
-  ​	Binlog有两种模式，statement 格式的话是记sql语句， row格式会记录行的内容，记两条，更新前和更新后都有。
+  ​	Binlog有三种模式，**statement** 格式的话是记sql语句， **row**格式会记录行的内容，还有一种是前两种格式的混合格式**mixed**，记录两条，更新前和更新后都有。
 
   redo log和binlog主要有以下三点不同：
   
@@ -107,7 +107,8 @@
 
 1. 如果redo log的事务完整，也就是包含commit标识，则直接提交；
 2. 如果redo log的事务只有prepare，则判断对应事务的binlog是否存在并完整：
-   + 如果是，则提交事务；
+   1. 如果是，则提交事务；
+   
    + 否则，回滚事务。
 
 redo log和binlog有一个共同的字段XID，崩溃恢复时，会扫描redo log：
@@ -524,7 +525,237 @@ call query_rewrite.flush_rewrite_rules();
 
 **方案1和方案2都要依赖规范的运维体系：虚拟化、白名单、业务账号分离。**
 
-# 常用命令
+## 数据
+
+### redo log
+
+
+
+### bin log
+
+
+
+### 保证数据不丢失
+
+#### binlog写入机制
+
+事务执行过程中，先将日志写入binlog cache，事务提交时，再将binlog cache写入binlog日志文件中。一个事务的binlog是不可拆分的。无论事务有多大，都要确保一次性写入。系统给每一个线程分配一块binlog cache内存，由binlog_cache_size控制大小，超过该大小就要暂存到磁盘。事务提交的时候，执行器把 binlog cache 里的完整事务写入到 binlog 中，并清空 binlog cache。
+
+<img src="https://static001.geekbang.org/resource/image/9e/3e/9ed86644d5f39efb0efec595abb92e3e.png" alt="img" style="zoom: 67%;" />
+
+每个线程有自己 binlog cache，但是共用同一份 binlog 文件。
+
++ 图中的 write，指的就是指把日志写入到文件系统的 page cache，并没有把数据持久化到磁盘，所以速度比较快。
++ 图中的 fsync，才是将数据持久化到磁盘的操作。一般情况下，我们认为 fsync 才占磁盘的 IOPS。
+
+write 和 fsync 的时机，是由参数 sync_binlog 控制的：
+
++ sync_binlog=0 的时候，表示每次提交事务都只 write，不 fsync；
++ sync_binlog=1 的时候，表示每次提交事务都会执行 fsync；
++ sync_binlog=N(N>1) 的时候，表示每次提交事务都 write，但累积 N 个事务后才 fsync。
+
+出现I/O瓶颈的场景，可以讲sync_binlog设置成较大值，可以提升写入性能。但是，同样存在一定的风险，如果服务器发生异常重启，会丢失最近N个事务的binlog。
+
+#### redolog写入机制
+
+redo log可能存在三种状态，对应如下图：
+
+<img src="https://static001.geekbang.org/resource/image/9d/d4/9d057f61d3962407f413deebc80526d4.png" alt="img" style="zoom:67%;" />
+
+这三种状态分别是：
+
++ 存在 redo log buffer 中，物理上是在 MySQL 进程内存中，就是图中的红色部分；
++ 写到磁盘 (write)，但是没有持久化（fsync)，物理上是在文件系统的 page cache 里面，也就是图中的黄色部分；
++ 持久化到磁盘，对应的是 hard disk，也就是图中的绿色部分。
+
+日志写到redo log buffer的速度很快，write到page cache的速度也很快，但是fsync到磁盘的速度就慢很多。
+
+为了控制 redo log 的写入策略，InnoDB 提供了 innodb_flush_log_at_trx_commit 参数，它有三种可能取值：
+
++ 设置为 0 的时候，表示每次事务提交时都只是把 redo log 留在 redo log buffer 中 ;
++ 设置为 1 的时候，表示每次事务提交时都将 redo log 直接持久化到磁盘；
++ 设置为 2 的时候，表示每次事务提交时都只是把 redo log 写到 page cache。
+
+InnoDB后台线程每隔1秒会将redo log buffer中的日志，调用write写到系统page cache，然后调用fsync持久化到磁盘。**事务执行中间过程的redo log也是直接写到redo log buffer的，这些redo log也会被后台线程一并持久化到磁盘。**
+
+实际上，除了后台线程每秒一次的轮询操作外，还有两种场景会让一个没有提交的事务的 redo log 写入到磁盘中。
+
++ 一种是，redo log buffer 占用的空间即将达到 innodb_log_buffer_size 一半的时候，后台线程会主动写盘。**注意，由于这个事务并没有提交，所以这个写盘动作只是 write，而没有调用 fsync，也就是只留在了文件系统的 page cache**。
++ 另一种是，并行的事务提交的时候，顺带将这个事务的 redo log buffer 持久化到磁盘。假设一个事务 A 执行到一半将部分redo log写到buffer中，这时候有另外一个线程的事务B提交，如果 innodb_flush_log_at_trx_commit 设置的是 1，那么按照这个参数的逻辑，事务 B 要把 redo log buffer 里的日志全部持久化到磁盘。这时候，就会带上事务A在redo log buffer中的日志一起持久化到磁盘。
+
+**两阶段提交的时候说过，时序上 redo log 先 prepare， 再写 binlog，最后再把 redo log commit。**
+
+如果把innodb_flush_log_at_trx_commit设置成 1，那么redo log在prepare阶段就要持久化一次，因为有一个崩溃恢复逻辑是要依赖于prepare的redo log，再加上binlog来恢复的。每秒一次后台轮询刷盘，再加上崩溃恢复逻辑，InnoDB就认为redo log在 commit 的时候就不需要fsync了，只会write到文件系统的page cache中就够了。通常说MySQL的“**双 1**”配置，就是sync_binlog和innodb_flush_log_at_trx_commit都设置成 1。也就是，一个事务完整提交前，需要等待两次刷盘，一次是redo log（prepare阶段），一次是 binlog。
+
+> 把线上生产库设置成“**非双1**”的业务场景
+>
+> + 业务高峰期。一般如果有预知的高峰期，DBA 会有预案，把主库设置成“非双 1”。
+> + 备库延迟，为了让备库尽快赶上主库。
+> + 用备份恢复主库的副本，应用 binlog 的过程，这个跟上一种场景类似。
+> + 批量导入数据的时候。
+>
+> 一般情况下，把生产库改成“非双 1”配置，是设置 innodb_flush_logs_at_trx_commit=2、sync_binlog=1000。
+
+#### 组提交机制
+
+按上面提到的事务提交逻辑，如果MySQL的TPS为两万的话，每秒就会写四万次磁盘，但实际上只会写两万次左右，这就是因为组提交机制。
+
+日志逻辑序列号（log sequence number，LSN）的概念。LSN 是单调递增的，用来对应 redo log 的每一个写入点。每次写入长度为length的 redo log，LSN的值就会加上length。LSN 也会写到InnoDB的数据页中，来确保数据页不会被多次执行重复的redo log。
+
+如图所示，是三个并发事务 (trx1, trx2, trx3) 在 prepare 阶段，都写完redo log buffer，持久化到磁盘的过程，对应的LSN分别是50、120和160。
+
+<img src="https://static001.geekbang.org/resource/image/93/cc/933fdc052c6339de2aa3bf3f65b188cc.png" alt="img" style="zoom: 50%;" />
+
+从图中可以看到：
+
++ trx1是第一个到达的，会被选为这组的leader；
++ 当trx1要开始写盘的时候，这个组里面已经有了三个事务，这时候LSN也变成了160；
++ trx1去写盘的时候，带的就是LSN=160，因此等trx1返回时，所有LSN小于等于160的redo log，都被持久化到磁盘；
++ 这时trx2和trx3就可以直接返回。
+
+在并发更新场景下，第一个事务写完redo log buffer 以后，接下来这个fsync越晚调用，组员可能越多，节约IOPS的效果就越好。为了让一次fsync带的组员更多，MySQL 有一个很有趣的优化：**拖时间**。如下图所示：
+
+<img src="https://static001.geekbang.org/resource/image/5a/28/5ae7d074c34bc5bd55c82781de670c28.png" alt="img" style="zoom:50%;" />
+
+上图是两阶段提交的分解版：
+
++ 先把binlog从binlog cache中写到磁盘上的binlog（page cache）文件；
++ 调用fsync持久化。MySQL为了让组提交的效果更好，把redo log做fsync的时间拖到步骤 1 之后。
+
+binlog 也可以组提交。在执行图中第4步把binlog fsync到磁盘时，如果有多个事务的 binlog 已经写完，也一起持久化，这样也可以减少 IOPS 的消耗。通常情况下第 3 步执行得会很快，所以binlog的write和fsync间的间隔时间短，导致能集合到一起持久化的 binlog 比较少，因此 binlog 的组提交的效果通常不如 redo log 的效果好。
+
+提升 binlog 组提交效果，设置 binlog_group_commit_sync_delay 和 binlog_group_commit_sync_no_delay_count 实现。
+
++ binlog_group_commit_sync_delay 参数，表示延迟多少微秒后才调用 fsync;
++ binlog_group_commit_sync_no_delay_count 参数，表示累积多少次以后才调用 fsync。
+
+这两个条件是或的关系，只要有一个满足条件就会调用 fsync。所以，当binlog_group_commit_sync_delay设置为 0 ，binlog_group_commit_sync_no_delay_count也无效。WAL机制是减少磁盘写，WAL 机制主要得益于两个方面：
+
++ redo log和binlog都是顺序写，磁盘的顺序写比随机写速度要快；
++ 组提交机制，可以大幅度降低磁盘的 IOPS 消耗。
+
+如果MySQL出现性能瓶颈，而且瓶颈在IO上，可以考虑以下三种方法：
+
++ 设置 binlog_group_commit_sync_delay 和 binlog_group_commit_sync_no_delay_count 参数，减少 binlog 的写盘次数。这个方法是基于“额外的故意等待”来实现的，因此可能会增加语句的响应时间，但没有丢失数据的风险。
++ 将 sync_binlog 设置为大于 1 的值（比较常见是 100~1000）。存在风险：主机掉电时会丢 binlog 日志。
++ 将 innodb_flush_log_at_trx_commit 设置为 2。存在风险：主机掉电的时候会丢数据。
+
+不建议把innodb_flush_log_at_trx_commit设置成 0。因为把这个参数设置成0，表示redo log只保存在内存中，MySQL 本身异常重启也会丢数据。而redo log写到文件系统的page cache的速度也很快，将这个参数设置成2跟设置成0其实性能差不多，但这样做 MySQL 异常重启时就不会丢数据了，相比之下风险会更小。
+
+## 高可用
+
+### 主备一致
+
+完整的主备同步流程如下图：
+
+<img src="https://static001.geekbang.org/resource/image/a6/a3/a66c154c1bc51e071dd2cc8c1d6ca6a3.png" alt="img" style="zoom: 50%;" />
+
+备库 B 跟主库 A 之间维持了一个长连接。主库 A 内部有一个线程，专门用于服务备库 B 的这个长连接。
+
+一个事务日志同步的完整过程是这样的：
+
+1. 在备库 B 上通过 change master 命令，设置主库 A 的 IP、端口、用户名、密码，以及要从哪个位置开始请求 binlog，这个位置包含文件名和日志偏移量。
+2. 在备库 B 上执行 start slave 命令，这时候备库会启动两个线程，就是图中的 io_thread 和 sql_thread。其中 io_thread 负责与主库建立连接。
+3. 主库 A 校验完用户名、密码后，开始按照备库 B 传过来的位置，从本地读取 binlog，发给 B。
+4. 备库 B 拿到 binlog 后，写到本地文件，称为中转日志（relay log）。
+5. sql_thread 读取中转日志，解析出日志里的命令，并执行。
+
+这里需要说明，后来由于多线程复制方案的引入，sql_thread 演化成为了多个线程。
+
+binlog 有两种格式，一种是 statement，一种是 row。可能在其他资料上还会看到第三种格式，叫作 mixed，其实就是前两种格式的混合。
+
+mixed格式存在的场景：
+
++ 因为有些 statement 格式的 binlog 可能会导致主备不一致，所以要使用 row 格式。
++ row格式的缺点是，很占空间。比如用一个delete语句删掉 10 万行数据，用 statement就是一个 SQL 语句被记录到binlog中，占用几十个字节的空间。但用row格式，就要把这 10 万条记录写到binlog中。不仅会占用更大的空间，同时写binlog也要耗费IO资源，影响执行速度。
++ 所以，MySQL就取了个折中方案，就是mixed格式。mixed格式的意思是，MySQL自己会判断这条SQL语句是否可能引起主备不一致，如果有可能，就用row格式，否则就用statement格式。
+
+#### 循环复制
+
+生产环境中使用双M结构比较多，图示为双M结构主备切换流程：
+
+<img src="https://static001.geekbang.org/resource/image/20/56/20ad4e163115198dc6cf372d5116c956.png" alt="img" style="zoom:50%;" />
+
+可以用下面的逻辑，来解决两个节点间的循环复制的问题：
+
++ 规定两个库的 server id 必须不同，如果相同，则它们之间不能设定为主备关系；
++ 一个备库接到 binlog 并在重放的过程中，生成与原 binlog 的 server id 相同的新的 binlog；
++ 每个库在收到从自己的主库发过来的日志后，先判断 server id，如果跟自己的相同，表示这个日志是自己生成的，就直接丢弃这个日志。
+
+按照这个逻辑，如果我们设置了双 M 结构，日志的执行流就会变成这样：
+
++ 从节点 A 更新的事务，binlog 里面记的都是 A 的 server id；
++ 传到节点 B 执行一次以后，节点 B 生成的 binlog 的 server id 也是 A 的 server id；
++ 再传回给节点 A，A 判断到这个 server id 与自己的相同，就不会再处理这个日志
+
+#### 备库延迟
+
+同步有关的时间点主要包括以下三个：
+
+1. 主库A执行完成一个事务，写入binlog，把这个时刻记为T1;
+2. 之后传给备库B，把备库 B 接收完这个binlog的时刻记为T2;
+3. 备库B执行完成这个事务，把这个时刻记为T3。
+
+所谓主备延迟，就是同一个事务，在备库执行完成的时间和主库执行完成的时间之间的差值，也就是 **T3-T1**。
+
+备库执行show slave status命令，返回的结果显示seconds_behind_master，表示备库延迟时间，精确到秒。每个事务的binlog里面有一个时间字段，记录主库写入时间，备库取出正在执行的事务的时间字段，计算它与当前系统时间的差值得到seconds_behind_master的值。主备库系统时间不同的情况，计算seconds_behind_master时会自动扣掉这个差值。
+
+在网络正常的时候，日志从主库传到备库的时间很短，即T2-T1的值很小，所以，在网络正常的情况下，主备延迟主要是因为备库接收完binlog和执行完这个事务之间的时间差。**主备延迟最直接的表现是，备库消费中转日志（relay log）的速度，比主库生产binlog的速度要慢。**
+
+##### 主备延迟的来源
+
+1. 备库的硬件性能没有主库的硬件性能好。
+2. 备库压力大
+   + 一主多从。除了备库外，可以多接几个从库，让这些从库来分担读的压力。
+   + 通过 binlog 输出到外部系统，比如 Hadoop 这类系统，让外部系统提供统计类查询的能力。
+3. 大事务、大表的DDL
+   + 将大事务拆分成多个小事务。
+4. 备库的并行复制能力
+
+### 高可用保证
+
+#### 可靠性优先策略
+
+双 M 结构下，从状态 1 到状态 2 切换的详细过程是这样的：
+
+1. 判断备库 B 现在的 seconds_behind_master，如果小于某个值（比如 5 秒）继续下一步，否则持续重试这一步；
+2. 把主库 A 改成只读状态，即把 readonly 设置为 true；
+3. 判断备库 B 的 seconds_behind_master 的值，直到这个值变成 0 为止；
+4. 把备库 B 改成可读写状态，也就是把 readonly 设置为 false；
+5. 把业务请求切到备库 B。
+
+<img src="https://static001.geekbang.org/resource/image/54/4a/54f4c7c31e6f0f807c2ab77f78c8844a.png" alt="img" style="zoom:50%;" />
+
+假设，主库A和备库B间的主备延迟是30分钟，这时候主库A掉电了，HA系统要切换B作为主库。在主动切换的时候，可以等到主备延迟小于5秒的时候再启动切换，但这时候已经别无选择了。
+
+采用可靠性优先策略，就必须得等到备库B的seconds_behind_master=0之后，才能切换。在**异常切换**的情况比刚刚更严重，并不是系统只读、不可写的问题了，而是系统处于完全不可用的状态。因为，主库A掉电后，连接还没有切到备库B。
+
+那能不能直接切换到备库 B，但是保持 B 只读呢？这样也不行。因为，这段时间内，relay log还没有应用完成，如果直接发起主备切换，客户端查询看不到之前执行完成的事务，会认为有“数据丢失”。虽然随着中转日志的继续应用，这些数据会恢复回来，但是对于一些业务来说，查询到“暂时丢失数据的状态”也是不能被接受的。
+
+#### 可用性优先策略
+
+如果我强行把步骤 4、5 调整到最开始执行，也就是说不等主备数据同步，直接把连接切到备库 B，并且让备库 B 可以读写，那么系统几乎就没有不可用时间了。把这个切换流程，暂时称作可用性优先流程。这个切换流程的代价，就是可能出现数据不一致的情况。
+
+假设，现在主库上其他的数据表有大量的更新，导致主备延迟达到 5 秒。在插入一条 c=4 的语句后，发起了主备切换。
+
+**可用性优先策略，且 binlog_format=mixed 时的切换流程和数据结果。**
+
+<img src="https://static001.geekbang.org/resource/image/37/3a/3786bd6ad37faa34aca25bf1a1d8af3a.png" alt="img" style="zoom: 67%;" />
+
+主库 A 和备库 B 上出现了两行不一致的数据。可以看到，这个数据不一致，是由可用性优先流程导致的。
+
+**用可用性优先策略，但设置 binlog_format=row切换流程和数据结果**。
+
+<img src="https://static001.geekbang.org/resource/image/b8/43/b8d2229b2b40dd087fd3b111d1bdda43.png" alt="img" style="zoom:67%;" />
+
+可以得出一些结论：
+
++ 使用 row 格式的 binlog 时，数据不一致的问题更容易被发现。而使用 mixed 或者 statement 格式的 binlog 时，数据很可能悄悄地就不一致了。如果你过了很久才发现数据不一致的问题，很可能这时的数据不一致已经不可查，或者连带造成了更多的数据逻辑不一致。
++ 主备切换的可用性优先策略会导致数据不一致。因此，大多数情况下，使用可靠性优先策略。毕竟对数据服务来说的话，数据的可靠性一般还是要优于可用性的。
+
+### 读写分离
+
+# 常用工具及命令
 
 **查看连接状态：**show processlist
 
@@ -544,7 +775,11 @@ call query_rewrite.flush_rewrite_rules();
 
 **重新统计索引：**analyze table t
 
-**binlog查看：**mysqlbinlog --no-defaults -v -v --base64-output=DECODE-ROWS mysql-bin.000010 | tail -n 20
+**binlog查看命令**： show binlog events in 'master.000001';
+
+**binlog查看工具：**mysqlbinlog --no-defaults -v -v --base64-output=DECODE-ROWS mysql-bin.000010 | tail -n 20
+
+**恢复数据：**mysqlbinlog master.000001  --start-position=2738 --stop-position=2973 | mysql -h127.0.0.1 -P13000 -u$user -p$pwd;
 
 # 重要参数
 
@@ -594,7 +829,41 @@ call query_rewrite.flush_rewrite_rules();
 
 **磁盘临时表引擎：**internal_tmp_disk_storage_engine（默认InnoDB）
 
+**binlog cache大小配置：**binlog_cache_size
+
+**bin log日志write和fsync的时机：**
+
+> 1、sync_binlog=0 的时候，表示每次提交事务都只 write，不 fsync；
+>
+> 2、sync_binlog=1 的时候，表示每次提交事务都会执行 fsync；
+>
+> 3、sync_binlog=N(N>1) 的时候，表示每次提交事务都 write，但累积 N 个事务后才 fsync。
+
+**redo log 写入策略：**innodb_flush_log_at_trx_commit
+
+> 1、设置为 0 的时候，表示每次事务提交时都只是把 redo log 留在 redo log buffer 中 ;
+>
+> 2、设置为 1 的时候，表示每次事务提交时都将 redo log 直接持久化到磁盘；
+>
+> 3、设置为 2 的时候，表示每次事务提交时都只是把 redo log 写到 page cache。
+
+**延迟多少微秒后才调用 fsync**：binlog_group_commit_sync_delay 
+
+**累积多少次以后才调用 fsync**：binlog_group_commit_sync_no_delay_count 
+
+**备库执行relay log后生成bin log：**log_slave_updates=on
+
 semi-consistent
+
+## 工具
+
+### 查看binlog日志：
+
+> mysqlbinlog  -vv /var/lib/mysql/logs/mysql-bin.000013 --start-position=423;
+
+### 重放binlog日志：
+
+> mysqlbinlog master.000001  --start-position=2738 --stop-position=2973 | mysql -h127.0.0.1 -P13000 -u$user -p$pwd;
 
 # 系统命令
 
