@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.autumn.framework.ClassUtilTest" time="0.038" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.class.path" value="E:\data\my-document\framework\autumn-framework\target\test-classes;E:\data\my-document\framework\autumn-framework\target\classes;E:\myWorkspaces\maven\mvnlib\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;E:\myWorkspaces\maven\mvnlib\javax\servlet\jsp\jsp-api\2.2\jsp-api-2.2.jar;E:\myWorkspaces\maven\mvnlib\javax\servlet\jstl\1.2\jstl-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-log4j12\1.7.25\slf4j-log4j12-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\myWorkspaces\maven\mvnlib\mysql\mysql-connector-java\8.0.19\mysql-connector-java-8.0.19.jar;E:\myWorkspaces\maven\mvnlib\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-databind\2.9.8\jackson-databind-2.9.8.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-core\2.9.8\jackson-core-2.9.8.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-lang3\3.9\commons-lang3-3.9.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;E:\myWorkspaces\maven\mvnlib\commons-dbutils\commons-dbutils\1.7\commons-dbutils-1.7.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-dbcp2\2.7.0\commons-dbcp2-2.7.0.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-pool2\2.7.0\commons-pool2-2.7.0.jar;E:\myWorkspaces\maven\mvnlib\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;E:\myWorkspaces\maven\mvnlib\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;E:\myWorkspaces\maven\mvnlib\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;E:\myWorkspaces\maven\mvnlib\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;E:\myWorkspaces\maven\mvnlib\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;E:\myWorkspaces\maven\mvnlib\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="D:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\ADMINI~1\AppData\Local\Temp\surefire5870329794756751454\surefirebooter4784892528389635650.jar C:\Users\Administrator\AppData\Local\Temp\surefire5870329794756751454 2020-04-26T22-20-07_324-jvmRun1 surefire5014146566662735811tmp surefire_07542863924915572413tmp"/>
+    <property name="surefire.test.class.path" value="E:\data\my-document\framework\autumn-framework\target\test-classes;E:\data\my-document\framework\autumn-framework\target\classes;E:\myWorkspaces\maven\mvnlib\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;E:\myWorkspaces\maven\mvnlib\javax\servlet\jsp\jsp-api\2.2\jsp-api-2.2.jar;E:\myWorkspaces\maven\mvnlib\javax\servlet\jstl\1.2\jstl-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-log4j12\1.7.25\slf4j-log4j12-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;E:\myWorkspaces\maven\mvnlib\log4j\log4j\1.2.17\log4j-1.2.17.jar;E:\myWorkspaces\maven\mvnlib\mysql\mysql-connector-java\8.0.19\mysql-connector-java-8.0.19.jar;E:\myWorkspaces\maven\mvnlib\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-databind\2.9.8\jackson-databind-2.9.8.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;E:\myWorkspaces\maven\mvnlib\com\fasterxml\jackson\core\jackson-core\2.9.8\jackson-core-2.9.8.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-lang3\3.9\commons-lang3-3.9.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;E:\myWorkspaces\maven\mvnlib\commons-dbutils\commons-dbutils\1.7\commons-dbutils-1.7.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-dbcp2\2.7.0\commons-dbcp2-2.7.0.jar;E:\myWorkspaces\maven\mvnlib\org\apache\commons\commons-pool2\2.7.0\commons-pool2-2.7.0.jar;E:\myWorkspaces\maven\mvnlib\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\myWorkspaces\maven\mvnlib\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;E:\myWorkspaces\maven\mvnlib\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;E:\myWorkspaces\maven\mvnlib\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;E:\myWorkspaces\maven\mvnlib\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;E:\myWorkspaces\maven\mvnlib\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;E:\myWorkspaces\maven\mvnlib\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Administrator"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="D:\Program Files\Java\jdk1.8.0_181\jre"/>
+    <property name="basedir" value="E:\data\my-document\framework\autumn-framework"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\ADMINI~1\AppData\Local\Temp\surefire5870329794756751454\surefirebooter4784892528389635650.jar"/>
+    <property name="sun.boot.class.path" value="D:\Program Files\Java\jdk1.8.0_181\jre\lib\endorsed\rt_debug.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\sunrsasign.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.8.0_181\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_181-b13"/>
+    <property name="user.name" value="Administrator"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="D:\Program Files\Java\jdk1.8.0_181\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="E:\myWorkspaces\maven\mvnlib"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_181"/>
+    <property name="user.dir" value="E:\data\my-document\framework\autumn-framework"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="idea.version2019.3.4" value="true"/>
+    <property name="java.library.path" value="D:\Program Files\Java\jdk1.8.0_181\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Program Files (x86)\NetSarang\Xlpd 6\;D:\Program Files (x86)\NetSarang\Xftp 6\;D:\Program Files (x86)\NetSarang\Xshell 6\;D:\Program Files (x86)\NetSarang\Xmanager 6\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\Java\jdk1.8.0_181\bin;D:\Program Files\TortoiseSVN\bin;d:\Program Files\Git\cmd;%GRADLE_HOME%\bin;D:\Program Files (x86)\scala\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;d:\Program Files\JetBrains\GoLand 2020.1\bin;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.181-b13"/>
+    <property name="java.ext.dirs" value="D:\Program Files\Java\jdk1.8.0_181\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="maven.repo.local" value="E:\myWorkspaces\maven\mvnlib"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testClassLoad" classname="com.autumn.framework.ClassUtilTest" time="0.023"/>
+</testsuite>

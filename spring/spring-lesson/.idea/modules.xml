@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/ioc-container-overview/ioc-container-overview.iml" filepath="$PROJECT_DIR$/thinking-in-spring/ioc-container-overview/ioc-container-overview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-feature/java-feature.iml" filepath="$PROJECT_DIR$/java-feature/java-feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-lesson.iml" filepath="$PROJECT_DIR$/.idea/spring-lesson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thinking-in-spring/thinking-in-spring.iml" filepath="$PROJECT_DIR$/thinking-in-spring/thinking-in-spring.iml" />
+    </modules>
+  </component>
+</project>

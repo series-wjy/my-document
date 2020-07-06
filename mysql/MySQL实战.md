@@ -533,8 +533,6 @@ call query_rewrite.flush_rewrite_rules();
 
 ### bin log
 
-
-
 ### 保证数据不丢失
 
 #### binlog写入机制
