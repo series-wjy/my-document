@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     <import resource="dependency-lookup-context.xml"/>
 
-    <bean id="userRepository" class="com.wjy.tis.ioc.overview.repository.UserRepository" autowire="byType">
+    <bean id="userRepository" class="com.wjy.spring.ioc.overview.repository.UserRepository" autowire="byType">
 <!--        <property name="list">-->
 <!--            <util:list>-->
 <!--                <ref bean="superUser"/>-->

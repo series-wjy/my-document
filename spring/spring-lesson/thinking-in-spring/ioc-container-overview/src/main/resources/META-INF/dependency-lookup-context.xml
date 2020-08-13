@@ -2,12 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="user" class="com.wjy.tis.ioc.overview.domain.User">
+    <bean id="user" class="com.wjy.spring.ioc.overview.domain.User">
         <property name="id" value="1" />
         <property name="name" value="LW" />
     </bean>
 
-    <bean id="superUser" class="com.wjy.tis.ioc.overview.domain.SuperUser" parent="user" primary="true">
+    <bean id="superUser" class="com.wjy.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
         <property name="addr" value="成都" />
     </bean>
 

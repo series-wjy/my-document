@@ -130,55 +130,64 @@ redo log和binlog有一个共同的字段XID，崩溃恢复时，会扫描redo l
 
 ## 事务
 
-​	事务就是要保证一组数据库操作，要么全部成功，要么全部失败。事务支持是在存储引擎层实现的。
+事务就是要保证一组数据库操作，要么全部成功，要么全部失败。事务支持是在存储引擎层实现的。更新数据都是先读后写的，而这个读称为“当前读”（current read）。
 
-+ **隔离性和隔离级别**
+### 隔离性和隔离级别
 
-  + MySQL默认隔离级别“可重复读”，Oracle默认隔离级别“提交读”。
-  + show variables like 'transaction-isolation';查看事务隔离级别。
++ MySQL默认隔离级别“可重复读”，Oracle默认隔离级别“提交读”。
++ show variables like 'transaction-isolation';查看事务隔离级别。
 
-+ **事务隔离的实现（可重复读隔离级别）**
+### 事务隔离的实现（可重复读隔离级别）
 
-  + MySQL每一个更新操作的同时，会记录一个回滚操作。回滚段示意如下（执行顺序1->2->3->4）：
++ MySQL每一个更新操作的同时，会记录一个回滚操作。回滚段示意如下（执行顺序1->2->3->4）：
 
-    ![1551011937733](E:\kaikeba\wjy\mysql\assets\1551011937733.png)
+  ![1551011937733](E:\kaikeba\wjy\mysql\assets\1551011937733.png)
 
-  + 不同时刻启动的事务，会有不同的read-view；同一条记录在系统中存在多个版本，就是数据库的多版本并发控制（MVCC）。
++ 不同时刻启动的事务，会有不同的read-view；同一条记录在系统中存在多个版本，就是数据库的多版本并发控制（MVCC）。
 
-  + 回滚段在系统判定不需要的时候，会删除回滚段（当系统中没有比这个回滚段更新的read-view的时候）。
++ 回滚段在系统判定不需要的时候，会删除回滚段（当系统中没有比这个回滚段更新的read-view的时候）。
 
-  + 如果存在长事务，意味着系统里存在很多老的事务视图，在这个事务提前之前，它用到的回滚段记录都必须保留，会占用大量存储空间
++ 如果存在长事务，意味着系统里存在很多老的事务视图，在这个事务提前之前，它用到的回滚段记录都必须保留，会占用大量存储空间
 
-  + 在MySQL5.5之前，回滚日志跟数据字典一起存放在ibdata文件里面，即使事务提交，回滚段被清理，文件也不会变小。
++ 在MySQL5.5之前，回滚日志跟数据字典一起存放在ibdata文件里面，即使事务提交，回滚段被清理，文件也不会变小。
 
-  + 长事务还会占用锁资源，可能拖垮整个库。
++ 长事务还会占用锁资源，可能拖垮整个库。
 
-+ **事务的启动方式**
+### 事务的启动方式
 
-  + 事务的开启方式有两种：
++ 事务的开启方式有两种：
 
-    + 显示启动事务，begin或start transaction，提交语句是commit，回滚语句是rollback。
-    + set autocommit=0，关闭自动提交；意味着你只执行一个select，事务就开始了，直到执行commit或rollback，或者断开连接。
+  + 显示启动事务，begin或start transaction，提交语句是commit，回滚语句是rollback。
 
-  + 在autocommit=1的情况下，执行begin显示开始一个事务，执行commit提交事务。如果执行commit work and chain，则提交事务并启动下一个事务。
+  + set autocommit=0，关闭自动提交；意味着你只执行一个select，事务就开始了，直到执行commit或rollback，或者断开连接。
 
-  + 可以在infomation_schema库的innodb_trx表中查询长事务：
+    **注意：** **begin/start transaction** 命令并不是一个事务的起点，在执行到它们之后的第一个操作 InnoDB 表的语句，事务才真正启动。如果想要马上启动一个事务，可以使用 **start transaction with consistent snapshot** 命令。
 
-    ```sql
-    select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx_started))>60
-    ```
+    > 第一种启动方式，一致性视图是在执行第一个快照读语句时创建的；
+    >
+    > 第二种启动方式，一致性视图是在执行 start transaction with consistent snapshot 时创建的。
 
-+ **如何避免长事务**
+  
 
-  + 应用开发端
-    + 确认是否使用了 set autocommit=0。这个确认工作可以在测试环境中开展，把 MySQL 的 general_log 开起来，然后随便跑一个业务逻辑，通过 general_log 的日志来确认。一般框架如果会设置这个值，也就会提供参数来控制行为，你的目标就是把它改成 1。
-    + 确认是否有不必要的只读事务。有些框架不管什么语句先用 begin/commit 框起来。只读事务可以去掉。
-    + 业务连接数据库的时候，根据业务本身的预估，通过 SET MAX_EXECUTION_TIME 命令，来控制每个语句执行的最长时间，避免单个语句意外执行太长时间。
-  + 数据库端
-    + 监控 information_schema.Innodb_trx 表，设置长事务阈值，超过就报警 / 或者 kill。
-    + Percona 的 pt-kill 这个工具不错，推荐使用。
-    + 在业务功能测试阶段要求输出所有的 general_log，分析日志行为提前发现问题。
-    + 如果使用的是 MySQL  5.6 或者更新版本，把 innodb_undo_tablespaces 设置成 2（或更大的值）。如果真的出现大事务导致回滚段过大，这样设置后清理起来更方便。
++ 在autocommit=1的情况下，执行begin显示开始一个事务，执行commit提交事务。如果执行commit work and chain，则提交事务并启动下一个事务。
+
++ 可以在infomation_schema库的innodb_trx表中查询长事务：
+
+  ```sql
+  select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx_started))>60
+  ```
+
+### 如何避免长事务
+
++ 应用开发端
+  + 确认是否使用了 set autocommit=0。这个确认工作可以在测试环境中开展，把 MySQL 的 general_log 开起来，然后随便跑一个业务逻辑，通过 general_log 的日志来确认。一般框架如果会设置这个值，也就会提供参数来控制行为，你的目标就是把它改成 1。
+  + 确认是否有不必要的只读事务。有些框架不管什么语句先用 begin/commit 框起来。只读事务可以去掉。
+  + 业务连接数据库的时候，根据业务本身的预估，通过 SET MAX_EXECUTION_TIME 命令，来控制每个语句执行的最长时间，避免单个语句意外执行太长时间。
++ 数据库端
+  + 监控 information_schema.Innodb_trx 表，设置长事务阈值，超过就报警 / 或者 kill。
+  + Percona 的 pt-kill 这个工具不错，推荐使用。
+  + 在业务功能测试阶段要求输出所有的 general_log，分析日志行为提前发现问题。
+  + 如果使用的是 MySQL  5.6 或者更新版本，把 innodb_undo_tablespaces 设置成 2（或更大的值）。如果真的出现大事务导致回滚段过大，这样设置后清理起来更方便。
 
 ## 索引
 
@@ -254,7 +263,7 @@ redo log和binlog有一个共同的字段XID，崩溃恢复时，会扫描redo l
   第二种情况，非唯一索引减少了磁盘随机I/O操作，对性能的提升明显。
 
 
-#### **change buffer的适用场景：**
+#### **change buffer的适用场景（只适用普通索引）：**
 
 + 对于写多读少的场景，数据更新完以后马上被访问的几率很小，**使用change buffer的效果最好**。常见的是账单类、日志类系统。
 + 对于读多写少的场景，数据更新完可能马上会被访问，这时会触发**merge**操作，随机I/O次数没有减少，增加了维护change buffer的代价，**不适合使用change buffer**。
@@ -285,19 +294,28 @@ redo log和binlog有一个共同的字段XID，崩溃恢复时，会扫描redo l
 ### 全局锁
 
 + 加全局读锁：Flush tables with read lock
+
+  可以使用 set global readonly=true，让全库进入只读状态，但还是建议 FTWRL 方式，主要有两个原因：
+
+  1. 在有些系统中，readonly 的值会被用来做其他逻辑，比如用来判断一个库是主库还是备库。因此，修改 global 变量的方式影响面更大，不建议使用。
+  2. 在异常处理机制上有差异。如果执行 FTWRL 命令之后由于客户端发生异常断开，那么 MySQL 会自动释放这个全局锁，整个库回到可以正常更新的状态。而将整个库设置为 readonly 之后，如果客户端发生异常，则数据库就会一直保持 readonly 状态，这样会导致整个库长时间处于不可写状态，风险较高。
+
 + 应用场景：做全库逻辑备份
   + 主库执行：主库处于只读状态，业务停摆。
   + 从库执行：从库不能同步主库binlog，存在主从延迟。
-+ 通过一致性读来备份数据（Innodb）：mysqldump使用-single-transaction参数启动事务，确保生成一致性视图。
+  
++ 在RR隔离级别下，通过一致性读来备份数据（Innodb）：mysqldump使用-single-transaction参数启动事务，确保生成一致性视图。只能针对支持事务引擎的库。
 
 ### 表级锁
 
 #### 表锁
 
-+ 语法：lock tables xxx read/write。
++ 语法：lock tables xxx read/write，unlock tables 主动释放锁或者客户端断开的时候自动释放。
 + 表锁对当前线程的下的操作也有限制。
 
 #### 元数据锁
+
+​		在 MySQL 5.5 版本中引入了 MDL，当对一个表做增删改查操作的时候，加 MDL 读锁；当要对表做结构变更操作的时候，加 MDL 写锁。
 
 + 访问表时自动加MDL读锁，当修改表结构时加MDL写锁。
 + 读锁之间不互斥，读与写之间、写与写之间互斥。
@@ -315,17 +333,17 @@ InnoDB支持行锁，减少锁冲突，提升并发处理能力。
 
 ### 两阶段锁
 
-加锁阶段和解锁阶段，加锁阶段只加锁，解锁阶段只解锁。只有在事务结束的时候，才解锁。因此，要把最容易引起锁冲突，影响并发度的锁，尽量放到事务的最后执行。
+加锁阶段和解锁阶段，加锁阶段只加锁，解锁阶段只解锁。只有在事务结束的时候，才解锁。因此，**要把最容易引起锁冲突，影响并发度的锁，尽量放到事务的最后执行**。
 
 ### 死锁和死锁检测
 
 + 死锁出现的解决策略（一般采用策略2）：
-  + 策略1：直接进入等待，直到超时。
-  + 策略2：发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务继续执行。
+  + 策略1：直接进入等待，直到超时。这个超时时间可以通过参数 **innodb_lock_wait_timeout** 来设置，默认50秒。。
+  + 策略2：发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务继续执行。将参数 **innodb_deadlock_detect** 设置为 on，表示开启这个逻辑。
 + 采用策略2会有**热点数据更新导致的性能问题**
   + 热点数据更新，每一条线程都要发起死锁检测，导致大量消耗CPU资源。
   + 解决方案：
-    + 关闭死锁检测
+    + 关闭死锁检测，存在风险
     + 控制并发度，让多余的更新操作排队
     + 将热点数据划分为多条数据，减少并发冲突
 + 死锁信息查询
@@ -622,10 +640,10 @@ InnoDB后台线程每隔1秒会将redo log buffer中的日志，调用write写�
 
 binlog 也可以组提交。在执行图中第4步把binlog fsync到磁盘时，如果有多个事务的 binlog 已经写完，也一起持久化，这样也可以减少 IOPS 的消耗。通常情况下第 3 步执行得会很快，所以binlog的write和fsync间的间隔时间短，导致能集合到一起持久化的 binlog 比较少，因此 binlog 的组提交的效果通常不如 redo log 的效果好。
 
-提升 binlog 组提交效果，设置 binlog_group_commit_sync_delay 和 binlog_group_commit_sync_no_delay_count 实现。
+提升 binlog 组提交效果，设置 **binlog_group_commit_sync_delay** 和 binlog_group_commit_sync_no_delay_count 实现。
 
-+ binlog_group_commit_sync_delay 参数，表示延迟多少微秒后才调用 fsync;
-+ binlog_group_commit_sync_no_delay_count 参数，表示累积多少次以后才调用 fsync。
++ **binlog_group_commit_sync_delay** 参数，表示延迟多少微秒后才调用 fsync;
++ **binlog_group_commit_sync_no_delay_count** 参数，表示累积多少次以后才调用 fsync。
 
 这两个条件是或的关系，只要有一个满足条件就会调用 fsync。所以，当binlog_group_commit_sync_delay设置为 0 ，binlog_group_commit_sync_no_delay_count也无效。WAL机制是减少磁盘写，WAL 机制主要得益于两个方面：
 
@@ -710,6 +728,8 @@ mixed格式存在的场景：
    + 将大事务拆分成多个小事务。
 4. 备库的并行复制能力
 
+#### 并行复制
+
 ### 高可用保证
 
 #### 可靠性优先策略
@@ -750,6 +770,173 @@ mixed格式存在的场景：
 
 + 使用 row 格式的 binlog 时，数据不一致的问题更容易被发现。而使用 mixed 或者 statement 格式的 binlog 时，数据很可能悄悄地就不一致了。如果你过了很久才发现数据不一致的问题，很可能这时的数据不一致已经不可查，或者连带造成了更多的数据逻辑不一致。
 + 主备切换的可用性优先策略会导致数据不一致。因此，大多数情况下，使用可靠性优先策略。毕竟对数据服务来说的话，数据的可靠性一般还是要优于可用性的。
+
+#### 主备切换问题
+
+​		虚线箭头表示的是主备关系，也就是 A 和 A’互为主备， 从库 B、C、D 指向的是主库 A。一主多从的设置，一般用于读写分离，主库负责所有的写入和一部分读，其他的读请求则由从库分担。
+
+<img src="E:\data\my-document\kafka\assets\aadb3b956d1ffc13ac46515a7d619e79.png" alt="img" style="zoom: 50%;" />
+
+##### 基于位点的主备切换
+
+把节点 B 设置成节点 A’的从库的时候，需要执行一条 change master 命令：
+
+```shell
+CHANGE MASTER TO 
+MASTER_HOST=$host_name 
+MASTER_PORT=$port 
+MASTER_USER=$user_name 
+MASTER_PASSWORD=$password 
+MASTER_LOG_FILE=$master_log_name 
+MASTER_LOG_POS=$master_log_pos  
+```
+
++ MASTER_HOST、MASTER_PORT、MASTER_USER 和 MASTER_PASSWORD 四个参数，分别代表了主库 A’的 IP、端口、用户名和密码。
++ 最后两个参数 MASTER_LOG_FILE 和 MASTER_LOG_POS 表示，要从主库的 master_log_name 文件的 master_log_pos 这个位置的日志继续同步。而这个位置就是我们所说的同步位点，也就是主库对应的文件名和日志偏移量。
+
+​       原来节点 B 是 A 的从库，本地记录的也是 A 的位点。但是相同的日志，A 的位点和 A’的位点是不同的。因此，从库 B 要切换的时候，就需要先经过“**找同步位点**”的逻辑。这个位点很难精确取到，只能取一个大概位置。考虑到切换过程中不能丢数据，所以找位点的时候，总是要找一个“稍微往前”的，然后再通过判断跳过那些在从库 B 上已经执行过的事务。
+
+找同步点位的方法如下：
+
+1. 等待新主库 A’把中转日志（relay log）全部同步完成；
+
+2. 在 A’上执行 show master status 命令，得到当前 A’上最新的 File 和 Position；
+
+3. 取原主库 A 故障的时刻 T；
+
+4. 用 mysqlbinlog 工具解析 A’的 File，得到 T 时刻的位点。
+
+   ```shell
+   mysqlbinlog File --stop-datetime=T --start-datetime=T
+   ```
+
+   ![img](https://static001.geekbang.org/resource/image/34/dd/3471dfe4aebcccfaec0523a08cdd0ddd.png)
+
+​        图中，end_log_pos 后面的值“123”，表示的就是 A’这个实例，在 T 时刻写入新的 binlog 的位置。然后，就可以把 123 这个值作为 $master_log_pos ，用在节点 B 的 change master 命令里。
+
+​	**这个值是不精确的。**设想有这么一种情况，假设在 T 这个时刻，主库 A 已经执行完成了一个 insert 语句插入了一行数据 R，并且已经将 binlog 传给了 A’和 B，然后在传完的瞬间主库 A 的主机就掉电了。
+
+这时候系统的状态是这样的：
+
+1. 在从库 B 上，由于同步了 binlog， R 这一行已经存在；
+2. 在新主库 A’上， R 这一行也已经存在，日志是写在 123 这个位置之后的；
+3. 我们在从库 B 上执行 change master 命令，指向 A’的 File 文件的 123 位置，就会把插入 R 这一行数据的 binlog 又同步到从库 B 去执行。
+
+​        这时候，从库 B 的同步线程就会报告 Duplicate entry ‘id_of_R’ for key ‘PRIMARY’ 错误，提示出现了主键冲突，然后停止同步。
+
+**通常情况下，在切换任务的时候，要先主动跳过这些错误，有两种常用的方法。**
+
++ 主动跳过一个事务
+
+  ```shell
+  set global sql_slave_skip_counter=1;
+  start slave;
+  ```
+
+  切换过程中，可能会不止重复执行一个事务，所以需要在从库 B 刚开始接到新主库 A’时，持续观察，每次碰到这些错误就停下来，执行一次跳过命令，直到不再出现停下来的情况，以此来跳过可能涉及的所有事务。
+
++ 通过设置 slave_skip_errors 参数，直接设置跳过指定的错误
+
+  在执行主备切换时，有这么两类错误，是经常会遇到的：
+
+  + 1062 错误是插入数据时唯一键冲突；
+  + 1032 错误是删除数据时找不到行。
+
+  因此，可以把 slave_skip_errors 设置为 “1032,1062”，这样中间碰到这两个错误时就直接跳过。这里需要注意的是，这种直接跳过指定错误的方法，针对的是主备切换时，由于找不到精确的同步位点，所以只能采用这种方法来创建从库和新主库的主备关系。这个背景是，我们很清楚在主备切换过程中，直接跳过 1032 和 1062 这两类错误是无损的，所以才可以这么设置 slave_skip_errors 参数。等到主备间的同步关系建立完成，并稳定执行一段时间之后，需要把这个参数设置为空，以免真的出现了主从数据不一致，也跳过了。
+
+##### GTID
+
+MySQL 5.6 版本引入了 GTID，解决主库切换后数据同步的问题。GTID 全称是 **Global Transaction Identifier**，也就是全局事务 ID，是一个事务在提交的时候生成的，是这个事务的唯一标识。它由两部分组成，格式是：
+
+```shell
+GTID=server_uuid:gno
+```
+
++ server_uuid 是一个实例第一次启动时自动生成的，是一个全局唯一的值；
++ gno 是一个整数，初始值是 1，每次提交事务的时候分配给这个事务，并加 1。
+
+需要说明一下，在 MySQL 的官方文档里，GTID 格式是这么定义的：
+
+```shell
+GTID=source_id:transaction_id
+```
+
+这里的 source_id 就是 server_uuid；而后面的这个 transaction_id和事务 id 不是一回事。在 MySQL 里面transaction_id 就是指事务 id，事务 id 是在事务执行过程中分配的，如果这个事务回滚了，事务 id 也会递增，而 gno 是在事务提交的时候才会分配。
+
+在 GTID 模式下，每个事务都会跟一个 GTID 一一对应。这个 GTID 有两种生成方式，而使用哪种方式取决于 session 变量 gtid_next 的值。
+
+1. 如果 gtid_next=automatic，代表使用默认值。这时，MySQL 就会把 server_uuid:gno 分配给这个事务。
+
+   a.  记录 binlog 的时候，先记录一行 SET @@SESSION.GTID_NEXT=‘server_uuid:gno’;
+
+   b.  把这个 GTID 加入本实例的 GTID 集合。
+
+2. 如果 gtid_next 是一个指定的 GTID 的值，比如通过 set gtid_next='current_gtid’指定为 current_gtid，那么就有两种可能：
+
+   a.  如果 current_gtid 已经存在于实例的 GTID 集合中，接下来执行的这个事务会直接被系统忽略；
+
+   b.  如果 current_gtid 没有存在于实例的 GTID 集合中，就将这个 current_gtid 分配给接下来要执行的事务，也就是说系统不需要给这个事务生成新的 GTID，因此 gno 也不用加 1。
+
+注意，一个 current_gtid 只能给一个事务使用。这个事务提交后，如果要执行下一个事务，就要执行 set 命令，把 gtid_next 设置成另外一个 gtid 或者 automatic。这样，每个 MySQL 实例都维护了一个 GTID 集合，用来对应“这个实例执行过的所有事务”。
+
+用一个简单的例子，来和你说明 GTID 的基本用法：
+
+```sql
+CREATE TABLE `t` (
+  `id` int(11) NOT NULL,
+  `c` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+insert into t values(1,1);
+```
+
+![img](https://static001.geekbang.org/resource/image/28/c2/28a5cab0079fb12fd5abecd92b3324c2.png)
+
+可以看到，事务的 BEGIN 之前有一条 SET @@SESSION.GTID_NEXT 命令。这时，如果实例 X 有从库，那么将 CREATE TABLE 和 insert 语句的 binlog 同步过去执行，执行事务之前就会先执行这两个 SET 命令， 这样被加入从库的 GTID 集合的，就是图中的这两个 GTID。
+
+假设，现在这个实例 X 是另外一个实例 Y 的从库，并且此时在实例 Y 上执行了下面这条插入语句：
+
+```sql
+insert into t values(1,1);
+```
+
+并且，这条语句在实例 Y 上的 GTID 是 “aaaaaaaa-cccc-dddd-eeee-ffffffffffff:10”。那么，实例 X 作为 Y 的从库，就要同步这个事务过来执行，显然会出现主键冲突，导致实例 X 的同步线程停止。这时，可以执行下面的这个语句序列：
+
+```shell
+set gtid_next='aaaaaaaa-cccc-dddd-eeee-ffffffffffff:10';
+begin;
+commit;
+set gtid_next=automatic;
+start slave;
+```
+
+其中，前三条语句的作用，是通过提交一个空事务，把这个 GTID 加到实例 X 的 GTID 集合中。如图所示，就是执行完这个空事务之后的 show master status 的结果。
+
+![img](https://static001.geekbang.org/resource/image/c8/57/c8d3299ece7d583a3ecd1557851ed157.png)
+
+可以看到实例 X 的 Executed_Gtid_set 里面，已经加入了这个 GTID。
+
+这样，再执行 start slave 命令让同步线程继续执行，虽然实例 X 上还是会继续执行实例 Y 传过来的事务，但是由于“aaaaaaaa-cccc-dddd-eeee-ffffffffffff:10”已经存在于实例 X 的 GTID 集合中了，所以实例 X 就会直接跳过这个事务，也就不会再出现主键冲突的错误。
+
+在上面的这个语句序列中，start slave 命令之前还有一句 set gtid_next=automatic。这句话的作用是“恢复 GTID 的默认分配行为”，也就是说如果之后有新的事务再执行，就还是按照原来的分配方式，继续分配 gno=3。
+
+##### 基于 GTID 的主备切换
+
+在 GTID 模式下，备库 B 要设置为新主库 A’的从库的语法如下：
+
+```shell
+CHANGE MASTER TO 
+MASTER_HOST=$host_name 
+MASTER_PORT=$port 
+MASTER_USER=$user_name 
+MASTER_PASSWORD=$password 
+master_auto_position=1 
+```
+
+其中，master_auto_position=1 就表示这个主备关系使用的是 GTID 协议。可以看到，前面基于位点主备切换的 MASTER_LOG_FILE 和 MASTER_LOG_POS 参数，已经不需要指定了。
+
+##### GTID 和在线 DDL
 
 ### 读写分离
 
@@ -815,7 +1002,7 @@ mixed格式存在的场景：
 >select VARIABLE_VALUE into @b from global_status where VARIABLE_NAME = 'Innodb_buffer_pool_pages_total';
 >select @a/@b;
 
-**刷新相邻脏页：**innodb_flush_neighbors（1：刷新 0：不刷新，Mysql5.8默认为0。注意：使用传统机械硬盘时设置为1可以提升效率，SSD等快速磁盘应设置为0）
+**刷新相邻脏页：**innodb_flush_neighbors（1：刷新 0：不刷新，Mysql8.0默认为0。注意：使用传统机械硬盘时设置为1可以提升效率，SSD等快速磁盘应设置为0）
 
 **数据文件：**innodb_file_per_table（Mysql5.8默认ON，设置为ON，drop table时直接删除对应数据文件，回收空间；如果设置为OFF，不会回收空间）
 
@@ -850,6 +1037,8 @@ mixed格式存在的场景：
 **累积多少次以后才调用 fsync**：binlog_group_commit_sync_no_delay_count 
 
 **备库执行relay log后生成bin log：**log_slave_updates=on
+
+**GTID 模式的启动**：gtid_mode=on 和 enforce_gtid_consistency=on
 
 semi-consistent
 
