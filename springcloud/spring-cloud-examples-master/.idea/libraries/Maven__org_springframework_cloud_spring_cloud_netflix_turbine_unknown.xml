@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.cloud:spring-cloud-netflix-turbine:unknown">
+    <CLASSES>
+      <root url="jar://E:/myWorkspaces/maven/mvnlib/org/springframework/cloud/spring-cloud-netflix-turbine/unknown/spring-cloud-netflix-turbine-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/myWorkspaces/maven/mvnlib/org/springframework/cloud/spring-cloud-netflix-turbine/unknown/spring-cloud-netflix-turbine-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/myWorkspaces/maven/mvnlib/org/springframework/cloud/spring-cloud-netflix-turbine/unknown/spring-cloud-netflix-turbine-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
