@@ -29,6 +29,8 @@ public class DependencyInjectionDemo {
         ObjectFactory applicationContextObjectFactory = userRepository.getApplicationContextObjectFactory();
         System.out.println(applicationContextObjectFactory.getObject());
         System.out.println(applicationContextObjectFactory.getObject() == beanFactory);
+
+        // 注入外部单例 bean
     }
 
     private static void collectionPropertyInjection(BeanFactory beanFactory) {

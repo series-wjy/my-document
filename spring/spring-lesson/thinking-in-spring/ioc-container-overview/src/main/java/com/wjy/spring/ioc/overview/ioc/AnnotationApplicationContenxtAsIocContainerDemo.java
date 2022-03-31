@@ -19,11 +19,17 @@ import java.util.Map;
  */
 public class AnnotationApplicationContenxtAsIocContainerDemo {
     public static void main(String[] args) {
+        // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        // 将当前类作为配置类注册到容器
         applicationContext.register(AnnotationApplicationContenxtAsIocContainerDemo.class);
+        // 启动应用上下文
         applicationContext.refresh();
-
+        // 依赖查找演示
         lookupCollection(applicationContext);
+
+        // 关闭应用上下文
+        applicationContext.close();
     }
 
     @Bean

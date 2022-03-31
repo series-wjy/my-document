@@ -5,6 +5,16 @@
     <bean id="user" class="com.wjy.spring.ioc.overview.domain.User">
         <property name="id" value="1" />
         <property name="name" value="LW" />
+        <property name="city" value="CHENGDU"/>
+        <property name="workCities" value="CHENGDU,XIAN"/>
+<!--        <property name="lifCities" value="CHONGQING,XIAN"/>-->
+        <property name="resource" value="classpath:META-INF/user-config.properties"/>
+        <property name="lifCities">
+            <list>
+                <value>CHONGQING</value>
+                <value>XIAN</value>
+            </list>
+        </property>
     </bean>
 
     <bean id="superUser" class="com.wjy.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
