@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/completable-future/completable-future.iml" filepath="$PROJECT_DIR$/completable-future/completable-future.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/concurrent-action.iml" filepath="$PROJECT_DIR$/.idea/concurrent-action.iml" />
       <module fileurl="file://$PROJECT_DIR$/concurrent-base/concurrent-base.iml" filepath="$PROJECT_DIR$/concurrent-base/concurrent-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/disruptor-base/disruptor-base.iml" filepath="$PROJECT_DIR$/disruptor-base/disruptor-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fork-join-pool/fork-join-pool.iml" filepath="$PROJECT_DIR$/fork-join-pool/fork-join-pool.iml" />
     </modules>
   </component>
 </project>

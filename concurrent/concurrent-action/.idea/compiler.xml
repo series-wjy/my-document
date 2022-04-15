@@ -2,17 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="concurrent-base" />
         <module name="disruptor-base" />
+        <module name="completable-future" />
+        <module name="fork-join-pool" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="completable-future" target="9" />
       <module name="concurrent-base" target="1.8" />
       <module name="disruptor-base" target="1.8" />
+      <module name="fork-join-pool" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
