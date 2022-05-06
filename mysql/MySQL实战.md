@@ -457,6 +457,8 @@ select VARIABLE_VALUE into @b from performance_schema.session_status where varia
 select @b-@a;
 ```
 
+### 连接查询
+
 ### 排序
 
 非索引字段排序，如果排序数据大于sort_buffer_size时，就会使用到filesort磁盘临时文件辅助排序。filesort使用归并排序，将排序数据划分到多个文件中分别排序，排序完成后再合并到一个文件。
@@ -940,6 +942,56 @@ master_auto_position=1
 
 ### 读写分离
 
+## 临时表
+
+<img src="E:\data\my-document\kafka\assets\3cbb2843ef9a84ee582330fb1bd0d6e3.png" alt="img" style="zoom: 50%;" />
+
+临时表的特点：
+
+1. 建表语法是 create temporary table …。
+2. 临时表只能被创建它的 session 访问，对其他线程不可见。所以，图中 session A 创建的临时表 t，对于 session B 就是不可见的。
+3. 临时表可以与普通表同名。
+4. session A 内有同名的临时表和普通表的时候，show create 语句，以及增删改查语句访问的是临时表。
+5. show tables 命令不显示临时表。
+
+**临时表就特别适合BLJ（Block Nest-Loop Join）的 join 优化这种场景。**主要原因如下：
+
+1. 不同 session 的临时表是可以重名的，如果有多个 session 同时执行 join 优化，不需要担心表名重复导致建表失败的问题。不需要担心数据删除问题。
+2. 如果使用普通表，在流程执行过程中客户端发生了异常断开，或者数据库发生异常重启，还需要专门来清理中间过程中生成的数据表。而临时表由于会自动回收，所以不需要这个额外的操作。
+
+### 临时表的应用
+
+临时表经常被用作复杂查询的优化过程。分库分表系统的跨库查询是一个典型的应用场景。例如，将一个大表 ht，按照字段 f，拆分成 1024 个分表，然后分布到 32 个数据库实例上。
+
+<img src="E:\data\my-document\kafka\assets\ddb9c43526dfd9b9a3e6f8c153478181.jpg" alt="img" style="zoom:50%;" />
+
+这种分库分表系统通常都有一个中间层 proxy，也有一些方案会让客户端直连数据库。在这个架构中，分区 key 的选择是以“**减少跨库和跨表查询**”为依据。如果大部分的语句都会包含 f 的等值条件，那么就要用 f 做分区键。这样，在 proxy 层解析完 SQL 语句，就能确定将这条语句路由到哪个分表做查询。例如下面的语句：
+
+```sql
+select v from ht where f=N;
+```
+
+可以通过分表规则（比如，N%1024) 来确认应该路由到哪个分表。但是，如果这个表上还有另一个索引 k，并且查询语句是这样的：
+
+```sql
+select v from ht where k >= M order by t_modified desc limit 100;
+```
+
+由于查询条件里面没有用到分区字段 f，只能到所有的分区中去查找满足条件的所有数据，然后统一做 order by 的操作。这种场景有两种解决方案：
+
+1. 在proxy层代码实现排序
+
+   这种方式的优势是处理速度快，拿到分库的数据以后，直接在内存中参与计算。这个方案的缺点也比较明显：
+
+   + 需要的开发工作量比较大。如果涉及到复杂的操作，比如 group by，甚至 join 这样的操作，对中间层的开发能力要求比较高；
+   + 对 proxy 端的压力比较大，尤其是很容易出现内存不够用和 CPU 瓶颈的问题。
+
+2. 把分库分表的数据汇总到一个数据库实例中，实现逻辑操作
+
+   <img src="E:\data\my-document\kafka\assets\f5ebe0f5af37deeb4d0b63d6fb11fc0d.jpg" alt="img" style="zoom:50%;" />
+
+在实践中，通常发现每个分库的计算量都不饱和，所以会直接把临时表 temp_ht 放到 32 个分库中的某一个上。
+
 # 常用工具及命令
 
 **查看连接状态：**show processlist
@@ -1039,6 +1091,10 @@ master_auto_position=1
 **备库执行relay log后生成bin log：**log_slave_updates=on
 
 **GTID 模式的启动**：gtid_mode=on 和 enforce_gtid_consistency=on
+
+**限制并发线程数（并发查询）：**innodb_thread_concurrency 默认为0，表示不限制
+
+**限制SQL的安全性：**sql_safe_updates=on
 
 semi-consistent
 

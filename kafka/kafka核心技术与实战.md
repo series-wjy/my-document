@@ -1700,7 +1700,201 @@ $ bin/kafka-consumer-groups.sh --bootstrap-server broker-ip:port --describe --gr
 
 图中的 CURRENT-OFFSET 表示该消费者当前消费的最新位移，LOG-END-OFFSET 表示对应分区最新生产消息的位移，LAG 列是两者的差值。CONSUMER-ID 是 Kafka 消费者程序自动生成的一个 ID。截止到 2.2 版本，都无法干预这个 ID 的生成过程。如果运行该命令时，这个消费者程序已经终止了，那么此列的值为空。
 
-### 常见主题错误处理
+### Kafka AdminClient
+
+#### 功能
+
+鉴于社区还在不断地完善 AdminClient 的功能，所以需要时刻关注不同版本的发布说明（Release Notes），看看是否有新的运维操作被加入进来。在最新的 2.3 版本中，AdminClient 提供的功能有 9 大类。
+
+1. 主题管理：包括主题的创建、删除和查询。
+2. 权限管理：包括具体权限的配置与删除。
+3. 配置参数管理：包括 Kafka 各种资源的参数设置、详情查询。所谓的 Kafka 资源，主要有 Broker、主题、用户、Client-id 等。
+4. 副本日志管理：包括副本底层日志路径的变更和详情查询。
+5. 分区管理：即创建额外的主题分区。
+6. 消息删除：即删除指定位移之前的分区消息。
+7. Delegation Token 管理：包括 Delegation Token 的创建、更新、过期和详情查询。
+8. 消费者组管理：包括消费者组的查询、位移查询和删除。
+9. Preferred 领导者选举：推选指定主题分区的 Preferred Broker 为领导者。
+
+#### 工作原理
+
+**从设计上来看，AdminClient 是一个双线程的设计：前端主线程和后端 I/O 线程**。前端线程负责将用户要执行的操作转换成对应的请求，然后再将请求发送到后端 I/O 线程的队列中；而后端 I/O 线程从队列中读取相应的请求，然后发送到对应的 Broker 节点上，之后把执行结果保存起来，以便等待前端线程的获取。
+
+<img src="E:\data\my-document\kafka\assets\4b520345918d0429801589217270d1eb.png" alt="img" style="zoom: 25%;" />
+
+如图所示，前端主线程会创建名为 Call 的请求对象实例。该实例有两个主要的任务：
+
+1. **构建对应的请求对象。**比如，如果要创建主题，那么就创建 CreateTopicsRequest；如果是查询消费者组位移，就创建 OffsetFetchRequest。
+2. **指定响应的回调逻辑。**比如从 Broker 端接收到 CreateTopicsResponse 之后要执行的动作。一旦创建好 Call 实例，前端主线程会将其放入到新请求队列（New Call Queue）中，此时，前端主线程的任务就算完成了。它只需要等待结果返回即可。
+
+I/O线程使用了 3 个队列来承载不同时期的请求对象，分别是**新请求队列**、**待发送请求队列**和**处理中请求队列**。使用3个队列的原因是目前新请求队列的线程安全是由 Java 的 monitor 锁来保证的。为了确保前端主线程不会因为 monitor 锁被阻塞，后端 I/O 线程会定期地将新请求队列中的所有 Call 实例全部搬移到待发送请求队列中进行处理。图中的待发送请求队列和处理中请求队列只由后端 I/O 线程处理，因此无需任何锁机制来保证线程安全。
+
+当 I/O 线程在处理某个请求时，它会显式地将该请求保存在处理中请求队列。一旦处理完成，I/O 线程会自动地调用 Call 对象中的回调逻辑完成最后的处理。把这些都做完之后，I/O 线程会通知前端主线程，结果已经准备完毕，这样前端主线程能够及时获取到执行操作的结果。AdminClient 是使用 Java Object 对象的 wait 和 notify 实现的这种通知机制。
+
+#### 构造和销毁 AdminClient 实例
+
+```java
+Properties props = new Properties();
+props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka-host:port");
+props.put("request.timeout.ms", 600000);
+
+try (AdminClient client = AdminClient.create(props)) {
+         // 执行你要做的操作……
+}
+```
+
+#### 常见 AdmineClient 应用示例
+
+**创建主题**
+
+```java
+String newTopicName = "test-topic";
+try (AdminClient client = AdminClient.create(props)) {
+         NewTopic newTopic = new NewTopic(newTopicName, 10, (short) 3);
+         CreateTopicsResult result = client.createTopics(Arrays.asList(newTopic));
+         result.all().get(10, TimeUnit.SECONDS);
+}
+```
+
+**查询消费者组位移**
+
+```java
+String groupID = "test-group";
+try (AdminClient client = AdminClient.create(props)) {
+         ListConsumerGroupOffsetsResult result = client.listConsumerGroupOffsets(groupID);
+         Map<TopicPartition, OffsetAndMetadata> offsets = 
+                  result.partitionsToOffsetAndMetadata().get(10, TimeUnit.SECONDS);
+         System.out.println(offsets);
+}
+```
+
+返回的 Map 对象中保存着按照分区分组的位移数据。可以调用 OffsetAndMetadata 对象的 offset() 方法拿到实际的位移数据。
+
+**获取 Broker 磁盘占用**
+
+```java
+try (AdminClient client = AdminClient.create(props)) {
+         DescribeLogDirsResult ret = client.describeLogDirs(Collections.singletonList(targetBrokerId)); // 指定Broker id
+         long size = 0L;
+         for (Map<String, DescribeLogDirsResponse.LogDirInfo> logDirInfoMap : ret.all().get().values()) {
+                  size += logDirInfoMap.values().stream().map(logDirInfo -> logDirInfo.replicaInfos).flatMap(
+                           topicPartitionReplicaInfoMap ->
+                           topicPartitionReplicaInfoMap.values().stream().map(replicaInfo -> replicaInfo.size))
+                           .mapToLong(Long::longValue).sum();
+         }
+         System.out.println(size);
+}
+```
+
+使用 AdminClient 的 describeLogDirs 方法获取指定 Broker 上所有分区主题的日志路径信息，然后把它们累积在一起，得出总的磁盘占用量。
+
+### Kafka认证机制
+
+### Kafka调优
+
+优化漏斗是一个调优过程中的分层漏斗，可以在每一层上执行相应的优化调整。总体来说，层级越靠上，其调优的效果越明显，整体优化效果是自上而下衰减的，如下图所示：
+
+<img src="E:\data\my-document\kafka\assets\94486dc0eb55b68855478ef7e5709359.png" alt="img" style="zoom: 25%;" />
+
+**第 1 层：应用程序层**。它是指优化 Kafka 客户端应用程序代码。比如，使用合理的数据结构、缓存计算开销大的运算结果，抑或是复用构造成本高的对象实例等。这一层的优化效果最为明显，通常也是比较简单的。
+
+**第 2 层：框架层。**它指的是合理设置 Kafka 集群的各种参数。毕竟，直接修改 Kafka 源码进行调优并不容易，但根据实际场景恰当地配置关键参数的值，还是很容易实现的。
+
+**第 3 层：JVM 层。**Kafka Broker 进程是普通的 JVM 进程，各种对 JVM 的优化在这里也是适用的。优化这一层的效果虽然比不上前两层，但有时也能带来巨大的改善效果。
+
+**第 4 层：操作系统层。**对操作系统层的优化很重要，但效果往往不如想象得那么好。与应用程序层的优化效果相比，它是有很大差距的。
+
+#### 操作系统调优
+
+1. 挂载（Mount）文件系统时禁掉 atime 更新。
+
+   atime 的全称是 access time，记录的是文件最后被访问的时间。记录 atime 需要操作系统访问 inode 资源，而禁掉 atime 可以避免 inode 访问时间的写入操作，减少文件系统的写操作数。可以执行 mount -o noatime 命令进行设置。
+
+2. 文件系统
+
+   建议至少选择 ext4 或 XFS。尤其是 XFS 文件系统，它具有高性能、高伸缩性等特点，特别适用于生产服务器。 ZFS 多级缓存的机制能够帮助 Kafka 改善 I/O 性能。
+
+3.  swap 空间的设置
+
+   建议将 swappiness 设置成一个很小的值，比如 1～10 之间，以防止 Linux 的 OOM Killer 开启随意杀掉进程。可以执行 sudo sysctl vm.swappiness=N 来临时设置该值，如果要永久生效，可以修改 /etc/sysctl.conf 文件，增加 vm.swappiness=N，然后重启机器即可。
+
+4. 操作系统参数
+
+   分别是 **ulimit -n** 和 **vm.max_map_count**。前者如果设置得太小，会碰到 Too Many File Open 这类的错误，而后者的值如果太小，在一个主题数超多的 Broker 机器上，你会碰到 OutOfMemoryError：Map failed 的严重错误，因此，建议在生产环境中适当调大此值，比如将其设置为 655360。具体设置方法是修改 /etc/sysctl.conf 文件，增加 vm.max_map_count=655360，保存之后，执行 sysctl -p 命令使它生效。
+
+5. 操作系统页缓存大小
+
+   操作系统页缓存大小对 Kafka 而言至关重要。在某种程度上，可以说：给 Kafka 预留的页缓存越大越好，最小值至少要容纳一个日志段的大小，也就是 Broker 端参数 log.segment.bytes 的值。该参数的默认值是 1GB。预留出一个日志段大小，至少能保证 Kafka 可以将整个日志段全部放入页缓存，这样，消费者程序在消费时能直接命中页缓存，从而避免昂贵的物理磁盘 I/O 操作。
+
+#### JVM调优
+
+1. 设置堆大小
+
+   **将Kafka的JVM 堆大小设置成 6～8GB。**精确调整的话，建议可以查看 GC log，特别关注 Full GC 之后堆上存活对象的总大小，然后把堆大小设置为该值的 1.5～2 倍。如果发现 Full GC 没有被执行过，手动运行 jmap -histo:live < pid > 就能人为触发 Full GC。
+
+2. GC收集器的选择
+
+   **强烈建议使用 G1 收集器，主要原因是方便省事，至少比 CMS 收集器的优化难度小得多。**另外，一定要尽力避免 Full GC 的出现。不论使用哪种收集器，都要竭力避免 Full GC。G1 中的Full GC 是单线程运行的，它真的非常慢。如果 Kafka 环境中经常出现 Full GC，可以配置 JVM 参数 -XX:+PrintAdaptiveSizePolicy，来探查一下到底是谁导致的 Full GC。
+
+   使用 G1 还很容易碰到的一个问题，就是**大对象（Large Object）**，反映在 GC 上的错误，就是“too many humongous allocations”。所谓的大对象，一般是指至少占用半个区域（Region）大小的对象。举个例子，如果JVM的区域尺寸是 2MB，那么超过 1MB 大小的对象就被视为是大对象。要解决这个问题，除了增加堆大小之外，还可以适当地增加区域大小，设置方法是增加 JVM 启动参数 -XX:+G1HeapRegionSize=N。默认情况下，如果一个对象超过了 N/2，就会被视为大对象，从而直接被分配在大对象区。如果 Kafka 环境中的消息体都特别大，就很容易出现这种大对象分配的问题。
+
+#### Broker端调优
+
+1. 尽力保持客户端版本和 Broker 端版本一致
+
+    Kafka 丧失很多性能收益，比如 Zero Copy。
+
+   <img src="E:\data\my-document\kafka\assets\5310d7d29235b080c872e0a9eb396e6e.png" alt="img" style="zoom: 67%;" />
+
+图中蓝色的 Producer、Consumer 和 Broker 的版本是相同的，它们之间的通信可以享受 Zero Copy 的快速通道；相反，一个低版本的 Consumer 程序想要与 Producer、Broker 交互的话，就只能依靠 JVM 堆中转一下，丢掉了快捷通道，就只能走慢速通道了。因此，在优化 Broker 这一层时，你只要保持服务器端和客户端版本的一致，就能获得很多性能收益了。
+
+#### 应用层调优
+
+其实，这一层的优化方法各异，毕竟每个应用程序都是不一样的。不过，有一些公共的法则依然是值得遵守。
+
++ **不要频繁地创建 Producer 和 Consumer 对象实例。**构造这些对象的开销很大，尽量复用它们。
++ **用完及时关闭。**这些对象底层会创建很多物理资源，如 Socket 连接、ByteBuffer 缓冲区等。不及时关闭的话，势必造成资源泄露。
++ **合理利用多线程来改善性能。**Kafka 的 Java Producer 是线程安全的，可以放心地在多个线程中共享同一个实例；而 Java Consumer 虽不是线程安全的，但可以使用多线程的方案。
+
+#### 性能指标调优
+
+##### 调优吞吐量
+
+很多人对吞吐量和延时之间的关系似乎有些误解。比如这样的计算方法：假设 Kafka 每发送一条消息需要花费 2ms，那么延时就是 2ms。显然，吞吐量就应该是 500 条 / 秒，因为 1 秒可以发送 1 / 0.002 = 500 条消息。因此，吞吐量和延时的关系可以用公式来表示：TPS = 1000 / Latency(ms)。
+
+但实际上，吞吐量和延时的关系远不是这么简单。以 Kafka Producer 为例。假设它以 2ms 的延时来发送消息，如果每次只是发送一条消息，那么 TPS 自然就是 500 条 / 秒。但如果 Producer 不是每次发送一条消息，而是在发送前等待一段时间，然后统一发送一批消息，比如 Producer 每次发送前先等待 8ms，8ms 之后，Producer 共缓存了 1000 条消息，此时总延时就累加到 10ms（即 2ms + 8ms）了，而 TPS 等于 1000 / 0.01 = 100,000 条 / 秒。**由此可见，虽然延时增加了 4 倍，但 TPS 却增加了将近 200 倍。**这其实也是批次化（batching）或微批次化（micro-batching）目前会很流行的原因。
+
+在实际环境中，用户似乎总是愿意用较小的延时增加的代价，去换取 TPS 的显著提升。毕竟，从 2ms 到 10ms 的延时增加通常是可以忍受的。事实上，Kafka Producer 就是采取了这样的设计思想。
+
+Producer 累积消息时，一般仅仅是将消息发送到内存中的缓冲区，而发送消息却需要涉及网络 I/O 传输。内存操作和 I/O 操作的时间量级是不同的，前者通常是几百纳秒级别，而后者则是从毫秒到秒级别不等，因此，Producer 等待 8ms 积攒出的消息数，可能远远多于同等时间内 Producer 能够发送的消息数。
+
+<img src="E:\data\my-document\kafka\assets\7aec00207dc149bd804d20df6e3b9ccb.jpg" alt="img" style="zoom: 25%;" />
+
+Broker 端参数 **num.replica.fetchers** 表示的是 Follower 副本用多少个线程来拉取消息，默认使用 1 个线程。如果 Broker 端 CPU 资源很充足，可以适当调大该参数值，加快 Follower 副本的同步速度。因为在实际生产环境中，配置了 acks=all 的 Producer 程序吞吐量被拖累的首要因素，就是副本同步性能。调大这个值后，通常可以看到 Producer 端程序的吞吐量增加。
+
+另外需要注意的，就是避免经常性的 Full GC。目前不论是 CMS 收集器还是 G1 收集器，其 Full GC 采用的是 Stop The World 的单线程收集策略，非常慢，因此一定要避免。
+
+**在 Producer 端，如果要改善吞吐量，通常的标配是增加消息批次的大小以及批次缓存时间，即 batch.size 和 linger.ms。**目前它们的默认值都偏小，默认的 16KB 的消息批次一般不适用于生产环境。假设消息体大小是 1KB，默认一个消息批次也就大约 16 条消息，显然太小了。我们还是希望 Producer 能一次性发送更多的消息。
+
+压缩算法配置可以减少网络 I/O 传输量，从而间接提升吞吐量。当前，和 Kafka 适配最好的两个压缩算法是 **LZ4 和 zstd**。
+
+同时，如果优化目标是吞吐量，最好不要设置 **acks=all** 以及开启重试。前者引入的副本同步时间通常都是吞吐量的瓶颈，而后者在执行过程中也会拉低 Producer 应用的吞吐量。
+
+最后，如果在多个线程中共享一个 Producer 实例，就可能会碰到缓冲区不够用的情形。如果频繁地遭遇 TimeoutException：Failed to allocate memory within the configured max blocking time 这样的异常，那么就必须显式地增加 **buffer.memory** 参数值，确保缓冲区总是有空间可以申请的。
+
+Consumer 端提升吞吐量的手段有限，可以利用多线程方案增加整体吞吐量，也可以增加 **fetch.min.bytes** 参数值。默认是 1 字节，表示只要 Kafka Broker 端积攒了 1 字节的数据，就可以返回给 Consumer 端，默认值太小，可以适当调大这个参数，让 Broker 端一次性多返回点数据。
+
+##### 调优延时
+
+<img src="E:\data\my-document\kafka\assets\2688329a0614601fed497f3858c98e3a.jpg" alt="img" style="zoom: 25%;" />
+
+在 Broker 端，要增加 **num.replica.fetchers** 值以加快 Follower 副本的拉取速度，减少整个消息处理的延时。
+
+在 Producer 端，希望消息尽快地被发送出去，不要有过多停留，所以必须设置 **linger.ms=0**，同时不要启用压缩。因为压缩操作本身要消耗 CPU 时间，会增加消息发送的延时。另外，最好不要设置 **acks=all**，因为Follower 副本同步往往是降低 Producer 端吞吐量和增加延时的首要原因。
+
+在 Consumer 端，保持 fetch.min.bytes=1 即可，也就是说，只要 Broker 端有能返回的数据，立即返回给 Consumer，缩短 Consumer 消费延时。
+
+## 六、常见主题错误处理
 
 1. **主题删除失败**
 
@@ -1717,3 +1911,29 @@ $ bin/kafka-consumer-groups.sh --bootstrap-server broker-ip:port --describe --gr
    一旦发现这个主题消耗了过多的磁盘空间，那么，一定要显式地用 jstack 命令查看一下 kafka-log-cleaner-thread 前缀的线程状态。通常情况下，这都是因为该线程挂掉了，无法及时清理此内部主题。倘若真是这个原因导致的，那我们就只能重启相应的 Broker 了。另外，请注意保留出错日志，因为这通常都是 Bug 导致的，最好提交到社区看一下。
    
    
+
+## Kafka 推荐学习资料
+
+推荐一些很有价值的 Kafka 学习资料。
+
+第 1 个[Kafka 官网](https://kafka.apache.org/documentation/)。很多人会忽视官网，但其实官网才是最重要的学习资料。只需要通读几遍官网，并切实掌握里面的内容，就已经能够较好地掌握 Kafka 了。
+
+第 2 个是 Kafka 的[JIRA 列表](https://issues.apache.org/jira/browse/KAFKA-8832?filter=-4&jql=project%20%3D%20KAFKA%20ORDER%20BY%20created%20DESC)。当碰到 Kafka 抛出的异常的时候，不妨使用异常的关键字去 JIRA 中搜索一下，看看是否是已知的 Bug。很多时候碰到的问题早就已经被别人发现并提交到社区了。
+
+第 3 个是Kafka [KIP 列表](https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Improvement+Proposals)。KIP 的全称是 Kafka Improvement Proposals，即 Kafka 新功能提议。可以看到 Kafka 的新功能建议及其讨论。如果想了解 Kafka 未来的发展路线，KIP 不能不看。当然，也可以在 KIP 中提交自己的提议申请，等待社区的评审。
+
+第 4 个是 Kafka 内部团队维护的[设计文档](https://cwiki.apache.org/confluence/display/KAFKA/Index)。在这里几乎可以找到所有的 Kafka 设计文档。其中关于 Controller 和新版本 Consumer 的文章都很有深度。
+
+第 5 个是著名的[StackOverflow 论坛](https://stackoverflow.com/questions/tagged/apache-kafka?sort=newest&pageSize=15)。这里面的 Kafka 问题很有深度。
+
+第 6 个是 Confluent 公司维护的[技术博客](https://www.confluent.io/blog/)。这是 Kafka 商业化公司 Confluent 团队自己维护的技术博客，里面的技术文章皆出自 Kafka Committer 之手，质量上乘，我从中受益匪浅。比如讲述 Kafka 精确一次处理语义和事务的文章，含金量极高，一定要去看一下。
+
+第 7 个是[胡夕的博客](https://www.cnblogs.com/huxi2b/)。我会定期在博客上更新 Kafka 方面的原创文章。有对 Kafka 技术的一些理解，有的是 Kafka 的最新动态。虽然不是国内质量最好的，但应该是坚持时间最长的，这个博客就只有 Kafka 的内容，而且已经写了好几年了。
+
+最后，推荐 3 本学习 Kafka 的书。
+
+第 1 本是胡希的《Apache Kafka 实战》，里面总结了使用和学习 Kafka 的各种实战心得。这本书成书于 2018 年，虽然是以 Kafka 1.0 为模板撰写的，而 Kafka 目前已经出到了 2.3 版本，但其消息引擎方面的功能并没有什么重大变化，因此绝大部分内容依然是有效的。
+
+第 2 本是《Kafka 技术内幕》。个人非常喜欢这个作者的书写风格，而且这本书内容翔实，原理分析得很透彻，配图更是精彩。
+
+第 3 本是 2019 年新出的一本名为《深入理解 Kafka》的书。这本书的作者是一位精通 RabbitMQ 和 Kafka 的著名技术人，对消息中间件有着自己独特的见解。

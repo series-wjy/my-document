@@ -14,8 +14,8 @@ import java.util.stream.IntStream;
  * @Create 2020年10月11日 15:17:00
  */
 @RestController
-@RequestMapping("lock")
-public class LockDemoController {
+@RequestMapping("lockscope")
+public class LockStaticFieldDemoController {
 
     @GetMapping("wrong")
     public int wrong(@RequestParam(value = "count", required = false, defaultValue = "100000") int count) {

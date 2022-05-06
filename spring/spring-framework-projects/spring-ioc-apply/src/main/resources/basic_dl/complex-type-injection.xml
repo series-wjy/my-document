@@ -2,12 +2,67 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--引入注解配置-->
+    <context:annotation-config />
 
-    <!-- more bean definitions for services go here -->
-    <bean id="user" class="com.wjy.dependency.model.User"></bean>
+    <context:component-scan base-package="com.wjy.dependency.model"></context:component-scan>
+    <!-- 复杂类型注入 -->
+    <bean id="company" class="com.wjy.dependency.model.CompanyByXml">
+        <!--数组-->
+        <property name="staffNames">
+            <array>
+                <value>老马</value>
+                <value>老牛</value>
+                <value>老羊</value>
+            </array>
+        </property>
+        <!--list-->
+        <property name="tels">
+            <list>
+                <value>13800000000</value>
+                <value>13811111111</value>
+                <value>13822222222</value>
+            </list>
+        </property>
+        <!--set-->
+        <property name="staffs">
+            <set>
+                <bean class="com.wjy.dependency.model.User"></bean>
+                <ref bean="casualWorker"></ref>
+            </set>
+        </property>
+        <!--Map-->
+        <property name="events">
+            <map>
+                <entry key="老猴" value-type="java.lang.Integer" value="10"></entry>
+                <entry key="老猪" value="老猪能吃能睡"></entry>
+                <entry key="老狗">
+                    <bean class="com.wjy.dependency.model.User"></bean>
+                </entry>
+                <entry key="老猫" value-ref="casualWorker"></entry>
+            </map>
+        </property>
+        <!--Properties-->
+        <property name="props">
+<!--            <props>-->
+<!--                <prop key="name">your name</prop>-->
+<!--                <prop key="age">33</prop>-->
+<!--            </props>-->
+            <value>
+                name=your name
+                age=33
+            </value>
+        </property>
+    </bean>
 
-    <context:component-scan base-package="com.wjy.dependency"></context:component-scan>
+    <!--临时工-->
+    <bean id="casualWorker" class="com.wjy.dependency.model.User">
+        <property name="name">
+            <value>临时工</value>
+        </property>
+    </bean>
 </beans>

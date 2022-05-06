@@ -11,7 +11,7 @@ import java.util.Set;
  * @Version 1.0.0
  * @Create 2020年09月23日 17:03:00
  */
-public class Company {
+public class CompanyByXml {
 
     private String[] staffNames;
     private List<String> tels;

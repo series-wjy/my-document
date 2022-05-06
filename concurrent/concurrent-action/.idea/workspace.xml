@@ -88,38 +88,6 @@
       <change afterPath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/java/com/wjy/experience/concurrent/ThreadSafeDemo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/java/com/wjy/experience/model/Item.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/resources/image/1685d9db2602e1de8483de171af6fd7e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/completable-future.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureAllofDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureAnyofDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureCallbackDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureCombineDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureComposeDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureSimpleDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/main/java/com/gblw/instrument/future/CompletableFutureSubmitTaskDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/src/test/java/com/gblw/instrument/future/CompletableFutureSubmitTaskTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/target/classes/com/gblw/instrument/future/CompletableFutureDemo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/target/classes/com/gblw/instrument/future/CompletableFutureSimpleDemo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/target/classes/com/gblw/instrument/future/CompletableFutureSubmitTaskDemo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/completable-future/target/test-classes/com/gblw/instrument/future/CompletableFutureSubmitTaskTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concurrent-base/src/main/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concurrent-base/src/main/java/com/wjy/base/utils/PrintBinaryDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/concurrent-base/src/main/java/com/wjy/base/utils/ReentrantLockDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fork-join-pool/fork-join-pool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fork-join-pool/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fork-join-pool/src/main/java/com/gblw/concurrent/tool/ForkJoinPoolDemo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../netty/netty-simple/netty-simple/netty-simple.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../netty/netty-simple/netty-simple/netty-study/netty-study.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-data-jpa/.idea/.gitignore" afterDir="false" />
@@ -237,13 +205,34 @@
       <change afterPath="$PROJECT_DIR$/../../spring/spring-data-jpa/spring-data-jpa-simple/src/test/java/com/wjy/jpa/repository/relation/UserOneToOneRpositoryTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-data-jpa/spring-data-jpa-simple/src/test/java/com/wjy/jpa/service/OptimisticLockServiceTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/.idea/libraries/Maven__com_alibaba_druid_1_1_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/.idea/libraries/Maven__commons_dbutils_commons_dbutils_1_7.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/conditional-assemble.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/cond/annotation/ConditionalOnClassName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/cond/annotation/EnableJdbc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/cond/app/EnableJdbcApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/cond/condition/OnClassNameConditional.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/cond/configuration/JdbcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/spi/H2DataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/spi/MyDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/spi/MysqlDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/spi/SpiServicesProviderDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/spi/SpringSpiProviderDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v1/annotation/ConditionalOnClassName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v1/annotation/EnableJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v1/app/EnableJdbcApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v1/condition/OnClassNameConditional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v1/configuration/JdbcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/annotation/ConditionalOnClassName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/annotation/EnableJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/app/EnableJdbcApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/condition/OnClassNameConditional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/configuration/H2JdbcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/configuration/JdbcConfigurationAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/configuration/MysqlJdbcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v2/selector/JdbcConfigurationSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v3/app/EnableJdbcApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v3/configuration/DataSourceConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/java/com/gblw/conditional/v3/registry/DataSourceRegisterPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/resources/META-INF/services/com.gblw.conditional.spi.MyDataSource" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/conditional-assemble/src/main/resources/jdbc/jdbc.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/ioc-container-overview/src/main/java/com/wjy/spring/ioc/overview/ioc/GenericApplicationContextDemo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/post-processor/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring/spring-lesson/thinking-in-spring/post-processor/post-processor.iml" afterDir="false" />
@@ -290,12 +279,7 @@
       <change beforePath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/java/com/wjy/experience/concurrent/ThreadLocalDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/java/com/wjy/experience/concurrent/ThreadLocalDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../best-practice-experience/java-base-exercise/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JAVA并发编程实战.md" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVA并发编程实战.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disruptor-base/disruptor-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/disruptor-base/disruptor-base.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../dubbo.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../elasticsearch分享.pptx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gcviewer-1.36-SNAPSHOT.jar" beforeDir="false" />
@@ -745,17 +729,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ConcurrentBaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="concurrent-base" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.wjy.base.ConcurrentBaseApplication" />
@@ -850,7 +823,8 @@
       <workItem from="1649897436726" duration="135000" />
       <workItem from="1649903315558" duration="15999000" />
       <workItem from="1649929495296" duration="4489000" />
-      <workItem from="1649984279100" duration="1555000" />
+      <workItem from="1649984279100" duration="3010000" />
+      <workItem from="1650074798413" duration="92000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1567150221079</created>
@@ -859,7 +833,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567150221080</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="提交">
+      <created>1649992791037</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649992791037</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

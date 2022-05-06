@@ -22,7 +22,7 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryMaster",//配置连接工厂 entityManagerFactory
-        transactionManagerRef = "transactionManagerMaster", //配置 事物管理器  transactionManager
+        transactionManagerRef = "transactionManagerMaster", //配置事务管理器  transactionManager
         basePackages = {"com.wjy.jpa.dao"}
 )
 public class MasterDataSourceConfig {

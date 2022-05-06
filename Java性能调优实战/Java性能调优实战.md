@@ -36,6 +36,10 @@ java -XX:+PrintFlagsFinal -version | grep HeapSize
 - -XX:+UnlocakDiagnosticVMOptions 解锁诊断参数
 - -XX:+PrintCommandLineFlags -version打印命令行参数
 
+jinfo -flags PID
+
+查看JVM启动参数
+
 ### 常用监控和诊断内存工具
 
 #### Linux系统工具
@@ -133,7 +137,7 @@ jstack PID命令查看线程的堆栈信息，通常结合top -Hp PID或pidstat 
 
 + jstack PID > log.txt
 
-+ prinf "%x" PID将进程号转成16进制字符串，在log.txt里搜索对应的16进制进程号
++ printf "%x" PID将进程号转成16进制字符串，在log.txt里搜索对应的16进制进程号
 
 ##### jmap
 

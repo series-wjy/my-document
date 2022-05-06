@@ -3,11 +3,12 @@ package com.wjy.sort;
 import java.util.Arrays;
 
 /**
+ * 分为排序区间和非排序区间，选择非排序区间最小的数进行比较
  * @author wangjiayou
  * @version 1.0.0
  * @date 2022年04月16日 22:27:00
  */
-public class InsertSort {
+public class SelectSort {
     public static void main(String[] args) {
         int[] nums = new int[] {1,2,5,9,0,1};
         sortArray(nums);
@@ -15,15 +16,18 @@ public class InsertSort {
     }
 
     public static int[] sortArray(int[] nums) {
-        int tmp = 0;
-        for(int i = 1; i < nums.length; i ++) {
-            for(int j = i - 1; j >= 0; j --) {
-                if(nums[j] > nums[j + 1]) {
+        for(int i = 0; i < nums.length - 1; i ++) {
+            int j = i + 1;
+            int tmp = nums[j];
+            int min = j;
+            for(; j <nums.length; j ++) {
+                if(nums[j] < tmp) {
                     tmp = nums[j];
-                    nums[j] = nums[j + 1];
-                    nums[j + 1] = tmp;
+                    min = j;
                 }
             }
+            nums[min] = nums[i];
+            nums[i] = tmp;
         }
         return nums;
     }

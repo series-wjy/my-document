@@ -1,0 +1,2 @@
+com.gblw.conditional.spi.H2DataSource
+com.gblw.conditional.spi.MysqlDataSource
