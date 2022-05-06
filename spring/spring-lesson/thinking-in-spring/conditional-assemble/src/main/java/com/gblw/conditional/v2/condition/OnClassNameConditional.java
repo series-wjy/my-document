@@ -1,6 +1,6 @@
-package com.gblw.conditional.v1.condition;
+package com.gblw.conditional.v2.condition;
 
-import com.gblw.conditional.v1.annotation.ConditionalOnClassName;
+import com.gblw.conditional.v2.annotation.ConditionalOnClassName;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;

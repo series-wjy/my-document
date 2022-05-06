@@ -1,9 +1,10 @@
-package com.gblw.conditional.v1.app;
+package com.gblw.conditional.v2.app;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.gblw.conditional.v1.annotation.EnableJdbc;
+import com.gblw.conditional.v2.annotation.EnableJdbc;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * 测试条件装配
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableJdbc
+@PropertySource("jdbc/jdbc.properties")
 public class EnableJdbcApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package com.gblw.conditional.v1.annotation;
+package com.gblw.conditional.v2.annotation;
 
-import com.gblw.conditional.v1.condition.OnClassNameConditional;
+import com.gblw.conditional.v2.condition.OnClassNameConditional;
 import org.springframework.context.annotation.Conditional;
 
 import java.lang.annotation.Documented;

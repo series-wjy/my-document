@@ -1,6 +1,7 @@
 package com.gblw.conditional.v1.app;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.gblw.conditional.spi.OracleDataSource;
 import com.gblw.conditional.v1.annotation.EnableJdbc;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
@@ -21,5 +22,8 @@ public class EnableJdbcApplication {
 //        context.refresh();
         DruidDataSource bean = context.getBean(DruidDataSource .class);
         System.out.println(bean.getUrl());
+
+        OracleDataSource oracle = context.getBean(OracleDataSource.class);
+        System.out.println(oracle);
     }
 }

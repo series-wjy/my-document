@@ -1,10 +1,16 @@
-package com.gblw.conditional.v2.app;
+package com.gblw.conditional.v3.app;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.gblw.conditional.v2.annotation.EnableJdbc;
+import com.alibaba.druid.pool.DruidPooledConnection;
+import com.gblw.conditional.v3.annotation.EnableJdbc;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Arrays;
 
 /**
  * 测试条件装配
@@ -23,5 +29,24 @@ public class EnableJdbcApplication {
 //        context.refresh();
         DruidDataSource bean = context.getBean(DruidDataSource .class);
         System.out.println(bean.getUrl());
+        try {
+            DruidPooledConnection connection = bean.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from user");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (true) {
+                boolean b = rs.next();
+                if ( false == b ) {
+                    break;
+                }
+                String userName = rs.getString( "name" );
+                String userPassword = rs.getString( 3 );
+                System.out.println( userName + " : " + userPassword );
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        Arrays.stream(beanDefinitionNames).forEach(System.out :: println);
     }
 }

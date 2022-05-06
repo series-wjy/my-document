@@ -1,6 +1,7 @@
-package com.gblw.conditional.v1.annotation;
+package com.gblw.conditional.v2.annotation;
 
-import com.gblw.conditional.v1.configuration.JdbcConfiguration;
+import com.gblw.conditional.v2.configuration.MysqlJdbcConfiguration;
+import com.gblw.conditional.v2.selector.JdbcConfigurationSelector;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.Documented;
@@ -18,6 +19,6 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Import(JdbcConfiguration.class)
+@Import(JdbcConfigurationSelector.class)
 public @interface EnableJdbc {
 }

@@ -13,6 +13,11 @@
         <module>spring-bean</module>
         <module>dependency-lookup</module>
         <module>dependency-injection</module>
+        <module>post-processor</module>
+        <module>program-drive-ioc</module>
+        <module>conditional-assemble</module>
+        <module>bean-life-cycle</module>
+        <module>aop-simple-action</module>
     </modules>
 
     <dependencies>

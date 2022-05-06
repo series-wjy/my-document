@@ -11,14 +11,13 @@ import org.springframework.core.env.Environment;
 import javax.sql.DataSource;
 
 /**
- * jdbc 配置
+ * mysql jdbc 配置
  * @author wangjiayou
  * @version 1.0.0
  * @date 2022年04月15日 09:08:00
  */
 @Configuration
-public class JdbcConfiguration extends JdbcConfigurationAdapter {
-    private Environment environment;
+public class MysqlJdbcConfiguration extends JdbcConfigurationAdapter {
 
     @Bean
     @ConditionalOnClassName("com.mysql.jdbc.Driver")
@@ -29,26 +28,5 @@ public class JdbcConfiguration extends JdbcConfigurationAdapter {
         dataSource.setUsername(environment.getProperty("jdbc.username"));
         dataSource.setPassword(environment.getProperty("jdbc.password"));
         return dataSource;
-    }
-
-    @Bean
-    @ConditionalOnClassName("org.h2.Driver")
-    public DataSource h2() {
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl(environment.getProperty("jdbc.url"));
-        dataSource.setUsername(environment.getProperty("jdbc.username"));
-        dataSource.setPassword(environment.getProperty("jdbc.password"));
-        return dataSource;
-    }
-
-    @Bean
-    public QueryRunner queryRunner(DataSource dataSource) {
-        return new QueryRunner(dataSource);
-    }
-
-    @Override
-    public void setEnvironment(Environment environment) {
-        this.environment = environment;
     }
 }

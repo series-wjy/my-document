@@ -1,5 +1,6 @@
 package com.gblw.conditional.v1.annotation;
 
+import com.gblw.conditional.spi.OracleDataSource;
 import com.gblw.conditional.v1.configuration.JdbcConfiguration;
 import org.springframework.context.annotation.Import;
 
@@ -18,6 +19,6 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Import(JdbcConfiguration.class)
+@Import({JdbcConfiguration.class, OracleDataSource.class})
 public @interface EnableJdbc {
 }
